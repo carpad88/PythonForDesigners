@@ -18,3 +18,13 @@ name = production
 enabled = yes
 default = no
 target = rsync://robari1@richard-stockton.dreamhost.com/home/robari1/pythonfordesigners.com
+
+[alternatives.en]
+name = English
+primary = yes
+locale = en_US
+
+[alternatives.es]
+name = Español
+url_prefix = /es/
+locale = es

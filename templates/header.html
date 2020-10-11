@@ -1,27 +1,55 @@
 <header>
-
     <div class='basic-container'>
-        <p id="resource_title"><a href="/">Python for Designers</a></p>
-        <p id="author_name">by Roberto Arista</p>
+        {% if this.alt == 'es' %}
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <p id="resource_title"><a href="/es">Python para Diseñadores</a></p>
+                    <p id="author_name">por Roberto Arista</p>
+                </div>
 
-        <input class="responsive-menu-btn" type="checkbox" id="responsive-menu-btn" />
-        <label class="responsive-menu-icon" for="responsive-menu-btn"><span class="navicon"></span></label>
-        <ul class="responsive-menu">
-            <li><a href="/">Table of Contents</a></li>
-            <li><a href="/online-courses">Online courses</a></li>
-            <li><a href="https://github.com/roberto-arista/PythonForDesigners">GitHub Repository</a></li>
-            <li><a href="/impressum">Impressum</a></li>
-        </ul>
+                <div style="font-size: 0.5rem;">
+                    <a href="{{ this.path|url(alt='en') }}">>>> English()</a>
+                </div>
+            </div>
 
+            <input class="responsive-menu-btn" type="checkbox" id="responsive-menu-btn"/>
+            <label class="responsive-menu-icon" for="responsive-menu-btn"><span class="navicon"></span></label>
+            <ul class="responsive-menu">
+                <li><a href="/">Tabla de contenidos</a></li>
+                <li><a href="/online-courses">Cursos en línea</a></li>
+                <li><a href="https://github.com/roberto-arista/PythonForDesigners">Repositorio de GitHub</a></li>
+                <li><a href="/impressum">Impressum</a></li>
+            </ul>
+        {% else %}
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <p id="resource_title"><a href="/">Python for Designers</a></p>
+                    <p id="author_name">by Roberto Arista</p>
+                </div>
+
+                <div style="font-size: 0.5rem;">
+                    <a href="{{ this.path|url(alt='es') }}">>>> Español()</a>
+                </div>
+            </div>
+
+            <input class="responsive-menu-btn" type="checkbox" id="responsive-menu-btn"/>
+            <label class="responsive-menu-icon" for="responsive-menu-btn"><span class="navicon"></span></label>
+            <ul class="responsive-menu">
+                <li><a href="/">Table of Contents</a></li>
+                <li><a href="/online-courses">Online courses</a></li>
+                <li><a href="https://github.com/roberto-arista/PythonForDesigners">GitHub Repository</a></li>
+                <li><a href="/impressum">Impressum</a></li>
+            </ul>
+        {% endif %}
     </div>
 
     <!-- ribbon -->
-    <a href="https://github.com/roberto-arista/PythonForDesigners">
-        <img class='ribbon'
-             width="125"
-             height="125"
-             src="{{ 'static/imgs/ribbon.svg' | asseturl }}"
-             alt="Fork me on GitHub">
-    </a>
+    <!--    <a href="https://github.com/roberto-arista/PythonForDesigners">-->
+    <!--        <img class='ribbon'-->
+    <!--             width="125"-->
+    <!--             height="125"-->
+    <!--             src="{{ 'static/imgs/ribbon.svg' | asseturl }}"-->
+    <!--             alt="Fork me on GitHub">-->
+    <!--    </a>-->
 
 </header>

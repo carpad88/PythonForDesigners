@@ -24,7 +24,7 @@
         });
     </script>
 
-    <title>{% block title %}{% endblock %} — Python for designers</title>
+    <title>{% block title %}{% endblock %} — {% if this.alt == 'es' %} Python para Diseñadores {% else %} Python for designers {% endif %} </title>
 
     {% block openGraph %}{% endblock %}
     {% include "analytics.html" %}

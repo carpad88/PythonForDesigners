@@ -2,102 +2,119 @@
 {% from 'macros.html' import renderSvgImage %}
 
 {% block styles %}
-  <link rel="stylesheet" href="{{ '/static/css/index.css'|asseturl }}" >
+    <link rel="stylesheet" href="{{ '/static/css/index.css'|asseturl }}">
 {% endblock %}
 
 {% block title %}{{ this.title }}{% endblock %}
 {% block openGraph %}{% include "openGraph.html" %}{% endblock %}
 {% block content %}
 
-  <section id="welcome">
-    <div class='basic-container'>
-      <h1>{{ this.welcome }}</h1>
-      <p>{{ this.intro }}</p>
-    </div>
-  </section>
-
-  <section id="toc">
-    <div class='basic-container'>
-
-    {% for chapter in site.get('/chapters').children.order_by('sort_key') %}
-
-    {% if loop.revindex0 == 0 %}
-      <div class="toc-item noBorder">
-    {% else %}
-      <div class="toc-item">
-    {% endif %}
-
-        <div class="toc-left">
-          <img class='lazyload' src="index-elements/{{ chapter._id }}.svg">
-
-          {% if 0 < chapter.sort_key < 15 %}
-            <h3>{{ "%#02d"|format(chapter.sort_key) }}</h3>
-          {% endif %}
+    <section id="welcome">
+        <div class='basic-container'>
+            <h1>{{ this.welcome }}</h1>
+            <p>{{ this.intro }}</p>
         </div>
+    </section>
 
-        <div class="toc-right">
-          <h2><a href="{{ chapter.path | url }}">{{ chapter.title }}</a></h2>
-          <p>{{ chapter.abstract }}</p>
-          <p><a href="{{ chapter.path | url }}">>>> read()</a></p>
+    <section id="toc">
+        <div class='basic-container'>
+
+            {% for chapter in site.get('/chapters', alt=this.alt).children.order_by('sort_key') %}
+
+                {% if loop.revindex0 == 0 %}
+                    <div class="toc-item noBorder">
+                {% else %}
+                    <div class="toc-item">
+                {% endif %}
+
+            <div class="toc-left">
+                <img class='lazyload' src="index-elements/{{ chapter._id }}.svg">
+
+                {% if 0 < chapter.sort_key < 15 %}
+                    <h3>{{ "%#02d"|format(chapter.sort_key) }}</h3>
+                {% endif %}
+            </div>
+
+            <div class="toc-right">
+                <h2><a href="{{ chapter.path | url }}">{{ chapter.title }}</a></h2>
+                <p>{{ chapter.abstract }}</p>
+                <p><a href="{{ chapter.path | url }}">>>> {% if this.alt == 'es' %} leer{% else %} read{% endif %}()</a></p>
+            </div>
+
+            </div>
+
+            {% endfor %}
+            </div>
+
         </div>
+    </section>
 
-      </div>
-
-    {% endfor %}
-    </div>
-
-    </div>
-  </section>
-
-  <!-- tutorials -->
-  <section id='tutorial-access'>
-    <div class="basic-container">
-
-      <h4>Tutorials</h4>
-      <h1><a href="/tutorials">Hands-on Guides</a></h1>
-      <p>Looking for an opportunity to use the knowledge you acquired from the manual? This section is packed with step-by-step guides for real application scenarios</p>
-      <p class='read-more'><a href="/tutorials">>>> read()</a></p>
-
-    </div>
-  </section>
-
-  <!-- callout -->
-  <section id="callouts">
-    <div class="basic-container">
-      <div class="callout">
-        <h4>{{ this.leftBoxTitle }}</h4>
-            {{ this.leftBox }}
-      </div>
-
-      <div class="callout">
-        <h4>{{ this.middleBoxTitle }}</h4>
-            {{ this.middleBox }}
-      </div>
-
-      <div class="callout">
-        <h4>{{ this.rightBoxTitle }}</h4>
-            {{ this.rightBox }}
-      </div>
-    </div>
-  </section>
-
-  <!-- newsletter -->
-  <section id='newsletter'>
-
-    <!-- Begin Mailchimp Signup Form -->
-    <div id="mc_embed_signup" class="basic-container">
-    <form action="https://xyz.us19.list-manage.com/subscribe/post?u=a6cdfced9229049b93b75a13e&amp;id=d5199f98f9" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-        <div id="mc_embed_signup_scroll">
-          <label for="mce-EMAIL">Join our newsletter!</label>
-          <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address (no spam, I swear!)" required>
-            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a6cdfced9229049b93b75a13e_d5199f98f9" tabindex="-1" value=""></div>
-            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    <!-- tutorials -->
+    <section id='tutorial-access'>
+        <div class="basic-container">
+            {% if this.alt == 'es' %}
+                <h4>Tutoriales</h4>
+                <h1><a href="/tutorials">Guías prácticas</a></h1>
+                <p>¿Buscas una oportunidad para utilizar los conocimientos adquiridos con el manual? Esta sección está repleta de guías paso a paso
+                    para escenarios de aplicaciones reales.</p>
+                <p class='read-more'><a href="/tutorials">>>> leer()</a></p>
+            {% else %}
+                <h4>Tutorials</h4>
+                <h1><a href="/tutorials">Hands-on Guides</a></h1>
+                <p>Looking for an opportunity to use the knowledge you acquired from the manual? This section is packed with step-by-step guides for
+                    real application scenarios</p>
+                <p class='read-more'><a href="/tutorials">>>> read()</a></p>
+            {% endif %}
         </div>
-    </form>
-    </div>
-    <!--End mc_embed_signup-->
+    </section>
 
-  </section>
+    <!-- callout -->
+    <section id="callouts">
+        <div class="basic-container">
+            <div class="callout">
+                <h4>{{ this.leftBoxTitle }}</h4>
+                {{ this.leftBox }}
+            </div>
+
+            <div class="callout">
+                <h4>{{ this.middleBoxTitle }}</h4>
+                {{ this.middleBox }}
+            </div>
+
+            <div class="callout">
+                <h4>{{ this.rightBoxTitle }}</h4>
+                {{ this.rightBox }}
+            </div>
+        </div>
+    </section>
+
+    <!-- newsletter -->
+    <section id='newsletter'>
+
+        <!-- Begin Mailchimp Signup Form -->
+        <div id="mc_embed_signup" class="basic-container">
+            <form action="https://xyz.us19.list-manage.com/subscribe/post?u=a6cdfced9229049b93b75a13e&amp;id=d5199f98f9" method="post"
+                  id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+                    {% if this.alt == 'es' %}
+                        <label for="mce-EMAIL">¡Suscríbete a nuestro boletín!</label>
+                    {% else %}
+                        <label for="mce-EMAIL">Join our newsletter!</label>
+                    {% endif %}
+
+                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL"
+                           style="font-size: 0.5rem;"
+                           placeholder="{% if this.alt == 'es' %} correo electrónico (no spam, ¡Lo juro!){% else %} email address (no spam, I swear!){% endif %}"
+                           required>
+                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                        <input type="text" name="b_a6cdfced9229049b93b75a13e_d5199f98f9" tabindex="-1" value=""></div>
+                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                </div>
+            </form>
+        </div>
+        <!--End mc_embed_signup-->
+
+    </section>
 
 {% endblock %}

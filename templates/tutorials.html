@@ -28,7 +28,7 @@
                     <!-- <img src="{{ tutorial.path | url }}{{ tutorial.visual_abstract }}"> -->
                     <h2><a href="{{ tutorial.path | url }}">{{ tutorial.title }}</a></h2>
                     <p class='abstract'>{{ tutorial.abstract }}</p>
-                    <p class='read-more'><a href="{{ tutorial.path | url }}">>>> read()</a></p>
+                    <p class='read-more'><a href="{{ tutorial.path | url }}">>>> {% if this.alt == 'es' %} leer{% else %} read{% endif %}()</a></p>
                 </div>
             {% endfor %}
 

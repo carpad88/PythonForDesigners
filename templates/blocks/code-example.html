@@ -5,21 +5,21 @@
     <div class='example'>
 {% endif %}
 
-    {% if this.image %}
-        {% set imageObj = record.attachments.get(this.image) %}
-        {{ renderRasterImage(this.image, imageObj, 'example-image') }}
-        <!-- <img class="example-image" src="{{ this.image }}"> -->
-    {% elif this.diagram %}
-        {{ renderSvgImage(this.diagram, 'diagram') }}
-        <!-- <img class="diagram" src="{{ this.diagram }}"> -->
-    {% endif %}
+{% if this.image %}
+    {% set imageObj = record.attachments.get(this.image) %}
+    {{ renderRasterImage(this.image, imageObj, 'example-image') }}
+    <!-- <img class="example-image" src="{{ this.image }}"> -->
+{% elif this.diagram %}
+    {{ renderSvgImage(this.diagram, 'diagram') }}
+    <!-- <img class="diagram" src="{{ this.diagram }}"> -->
+{% endif %}
 
-    <div>
-        <div class='snippet-download-wrapper'>
-            <p class='snippet-download'><a download="{{ this.snippet }}" href="{{ this.snippet | url }}">.py</a></p>
-        </div>
-        <pre data-src="{{ this.snippet | url }}"></pre>
+<div>
+    <div class='snippet-download-wrapper'>
+        <p class='snippet-download'><a download="{{ this.snippet }}" href="{{ this.snippet | url }}">.py</a></p>
     </div>
+    <pre data-src="{{ this.snippet | url }}"></pre>
+</div>
 
 {% if this.image or this.diagram %}
     </div>
