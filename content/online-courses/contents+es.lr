@@ -1,0 +1,68 @@
+_model: page
+---
+_slug: cursos-en-linea
+---
+title: Cursos en línea
+---
+body:
+
+#### text-block ####
+content:
+## Perspectiva general
+
+Hace unos meses decidí ofrecer cursos en línea de Python para diseñadores que se basan en este manual. Este tipo de solución alivia muchos problemas logísticos y me permite llegar a una audiencia más amplia. Los cursos también brindan ayuda financiera para desarrollos de proyectos adicionales.
+
+El curso en línea de Python para diseñadores está estructurado en ocho clases (en inglés) de tres horas cada una. Durante cada sesión, explicaré los conceptos, lanzaré algo de código y realizaré ejercicios de práctica. El curso te guiará a través del contenido del manual (y más) enfocándose en estrategias y habilidades de resolución de problemas. Tendrás dos horas entre cada clase para completar las tareas. Los recursos y las soluciones se compartirán a través del espacio de trabajo de Slack.
+
+No hace falta decir que un curso de 24 horas como este no es un título en Ciencias de la Computación. Es solo una forma de romper el hielo, necesitarás tiempo y práctica regular para dominar la programación.
+
+## Audiencia
+El curso está destinado a principiantes sin experiencia previa en programación, que operen en los campos del diseño y el arte (o cualquier campo que trate con imágenes, en realidad). Si ya conoces los fundamentos de la programación y Python, pero deseas aumentar aún más tus habilidades, comunícate con nosotros y organizaremos algo para ti.
+
+## Testimonios
+«Recomiendo mucho este curso. Como diseñador, ya estaba involucrado en la programación, pero este curso me dio mucha más confianza para desarrollar mis scripts. El curso tiene un enfoque orientado al diseño, lo que me permite entender todo con bastante facilidad» <br/>[Emilio Grazzi](https://www.emiliograzzi.com/), *Diseñador gráfico y de información*
+
+«Python para diseñadores fue realmente revelador. El curso cubrió todas las bases y proporcionó una buena base para el desarrollo de habilidades en el futuro. Extremadamente útil fue la corrección del ejercicio utilizando diferentes métodos para lograr el mismo resultado final y la aplicación en el mundo real del material cubierto durante las clases» <br/>[Alessia Mazzarella](https://twitter.com/ammazzarella), *Diseñadora de tipografías*
+
+«Si está buscando una mejor comprensión de Python y Drawbot, le recomiendo tomar este curso. Sin embargo, requerirá paciencia y un poco de investigación en busca de principios matemáticos olvidados. Nunca había escrito código antes y esto fue un desafío, pero Roberto ofrece una explicación detallada de los principios básicos más varios ejercicios que lo guían a través de diferentes conceptos paso a paso. Y lo mejor es que todo el curso está grabado y puedes volver a visitar la explicación y las soluciones a los diferentes principios cuando quieras» <br/>[Sabina Kipara](http://www.sabinakipara.com/), *Diseñadora gráfica y de tipografías*
+
+«Python para diseñadores fue el curso perfecto para mí. Desarrollé mis conceptos básicos de programación y aprendí los conceptos básicos de Python. Los ejercicios fueron desafiantes pero digeribles y al final del curso estaba usando DrawBot para complementar mi flujo de trabajo diario» <br/>[Jeffrey Dunn](https://twitter.com/jeffreydotdunn), *Diseñador de producto*
+
+## Cuota y suscripción
+La matrícula cuesta €400 impuestos incluidos. Pero, para el curso que comienza el 27 de marzo, ofrezco un 25% de descuento. Si es una empresa que reside fuera de Italia, no se le cobrará el 22% de IVA. Cada curso tiene un mínimo de 4 y un máximo de 10 participantes.
+
+Para inscribirte, consulta los cursos abiertos y haz clic en el botón "suscribirse" para completar el formulario de google. Poco después te enviaré una factura con los detalles del pago. Podrás pagar con tarjeta de crédito (a través de Stripe), Paypal o transferencia bancaria. No te preocupe, no compartiré tus datos con nadie.
+
+# Cursos activos
+
+### Python para Diseñadores en línea, 3ª ed. (intensivo)
+*Lunes & Viernes, 16:00 – 19:00 GMT+1, 8 clases*
+
+<del>€400</del> **€300**, IVA incl. (🎁 25% off! #WFH venta)
+
+* Marzo 2020: 27º and 30º
+* Abril 2020: 3º, 6º, 10º, 17º, 20º and 24º
+
+<form action="" method="get" target="_blank">
+    <button type="submit" class="button" disabled><del>Subscribirse</del></button>
+</form>
+
+### Python para Diseñadores en línea, 4ª ed.
+*Jueves, <del>16:00 – 19:00</del> 19:00 – 22:00 GMT+1, 8 clases*
+
+**€400**, IVA incl.
+
+* Abril 2020: 23º and 30º
+* Mayo 2020: 7º, 14º, 21º, 28º
+* Junio 2020: 4º, 11º
+
+<form action="" method="get" target="_blank">
+    <button type="submit" class="button" disabled><del>Subscribirse</del></button>
+</form>
+
+Si no puedes atender ningún curso listado aquí, <a class='grayscale' href="mailto:&#x68;&#x65;&#x6C;&#x6C;&#x6F;&#x40;&#x72;&#x6F;&#x62;&#x65;&#x72;&#x74;&#x6F;&#x61;&#x72;&#x69;&#x73;&#x74;&#x61;&#x2E;&#x69;&#x74;">ponte en contacto</a> y avíseme qué hora se adapta a tus necesidades. ¡Intentaré arreglar algo!
+
+---
+visual_abstract: abstract.svg
+---
+og_image: abstract.png

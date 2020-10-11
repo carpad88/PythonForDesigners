@@ -54,10 +54,10 @@
         <div class="basic-container">
             {% if this.alt == 'es' %}
                 <h4>Tutoriales</h4>
-                <h1><a href="/tutorials">Guías prácticas</a></h1>
+                <h1><a href="{{ 'tutorials'|url(alt='es') }}">Guías prácticas</a></h1>
                 <p>¿Buscas una oportunidad para utilizar los conocimientos adquiridos con el manual? Esta sección está repleta de guías paso a paso
                     para escenarios de aplicaciones reales.</p>
-                <p class='read-more'><a href="/tutorials">>>> leer()</a></p>
+                <p class='read-more'><a href="{{ 'tutorials'|url(alt='es') }}">>>> leer()</a></p>
             {% else %}
                 <h4>Tutorials</h4>
                 <h1><a href="/tutorials">Hands-on Guides</a></h1>

@@ -10,12 +10,12 @@ intro: Este manual es una introducción a [Python3](https://www.python.org/) y [
 ---
 leftBoxTitle: Cursos en línea
 ---
-leftBox: Este manual es gratuito y sin anuncios (y será así para siempre). Para mantener su desarrollo, ofrezco [cursos en línea](/online-courses) impartidos en inglés. Obtendrás una introducción adecuada a Python y Drawbot, además de soporte para resolver ejercicios de código. ¡Échales un vistazo y házmelo saber!
+leftBox: Este manual es gratuito y sin anuncios (y será así para siempre). Para mantener su desarrollo, ofrezco [cursos en línea]({{ 'online-courses'|url(alt='es') }}) impartidos en inglés. Obtendrás una introducción adecuada a Python y Drawbot, además de soporte para resolver ejercicios de código. ¡Échales un vistazo y házmelo saber!
 ---
 middleBoxTitle: Contribuye
 ---
-middleBox: Este recurso está lejos de estar completo, si deseas saber hacia dónde se dirige el desarrollo, consulta la [Hoja de ruta](/road-map). Si detectas algún error o crees que algo podría explicarse mejor, abre un _issue_ en el [repositorio del proyecto](https://github.com/roberto-arista/PythonForDesigners). También acepto revisar *pull requests*.
+middleBox: Este recurso está lejos de estar completo, si deseas saber hacia dónde se dirige el desarrollo, consulta la [Hoja de ruta]({{ 'road-map'|url(alt='es') }}). Si detectas algún error o crees que algo podría explicarse mejor, abre un _issue_ en el [repositorio del proyecto](https://github.com/roberto-arista/PythonForDesigners). También acepto revisar *pull requests*.
 ---
 rightBoxTitle: Quiénes
 ---
-rightBox: _Python para diseñadores_ es una iniciativa de [Roberto Arista](http://projects.robertoarista.it/). [Beatrice Bianchet](http://www.instagram.com/beatrice.bianchet/) y [Silvio Lorusso](http://silviolorusso.com/) brindaron una ayuda sustancial. Si deseas consultar una lista completa de la tecnología y las personas involucradas en la creación de este sitio web, puedes consultar las páginas de [Agradecimientos](/acknowledgements) e [Impressum](/impressum).
+rightBox: _Python para diseñadores_ es una iniciativa de [Roberto Arista](http://projects.robertoarista.it/). [Beatrice Bianchet](http://www.instagram.com/beatrice.bianchet/) y [Silvio Lorusso](http://silviolorusso.com/) brindaron una ayuda sustancial. Si deseas consultar una lista completa de la tecnología y las personas involucradas en la creación de este sitio web, puedes consultar las páginas de [Agradecimientos]({{ 'acknowledgements'|url(alt='es') }}) e [Impressum]({{ 'impressum'|url(alt='es') }}).

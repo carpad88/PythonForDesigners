@@ -1,5 +1,7 @@
 _model: page
 ---
+_slug: agradecimientos
+---
 title: Agradecimientos
 ---
 visual_abstract: thanksgiving.svg
@@ -13,7 +15,7 @@ content:
 
   Este manual no sería el mismo sin la contribución de algunas personas. Este es el lugar para agradecerles uno a uno. ¡Empecemos!
 
-  + En primer lugar, un enorme agradecimiento a [Just van Rossum](https://twitter.com/justvanrossum) y [Frederik Berlaen](https://twitter.com/typemytype) por todo el trabajo que han realizado –y todavía hacen– en el proyecto DrawBot. Si deseas saber más sobre la historia de la herramienta, consulta el capítulo [Uso de DrawBot](/using-drawbot).
+  + En primer lugar, un enorme agradecimiento a [Just van Rossum](https://twitter.com/justvanrossum) y [Frederik Berlaen](https://twitter.com/typemytype) por todo el trabajo que han realizado –y todavía hacen– en el proyecto DrawBot. Si deseas saber más sobre la historia de la herramienta, consulta el capítulo [Uso de DrawBot]({{ '/chapters/using-drawbot'|url(alt='es') }}).
   + Incluso si no escribe una línea de código, [Luciano Perondi](http://www.molotro.com/) es quien me metió en la programación. ¿Cómo se las arregló? Mediante tipografía paramétrica. El propio Luciano se metió en ello gracias a otro profesor, Giovanni Lussu. El impacto del trabajo de Lussu en mi educación es sustancial, incluso la conexión entre la tipografía y la programación. Estoy orgulloso de considerarlos a ambos amigos.
   + [Beatrice Bianchet](https://www.instagram.com/beatrice.bianchet/) hizo un trabajo extraordinario con las ilustraciones. Comenzó como un proyecto de pasantía y luego dio un paso adelante. Estoy muy contento de que esté a bordo.
   + [Silvio Lorusso](http://silviolorusso.com/) me ayudó a salir del pantano del primer borrador. Buenos comentarios, algunas reescrituras y discusiones francas me mantuvieron en la línea.
