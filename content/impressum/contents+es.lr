@@ -1,0 +1,35 @@
+_model: page
+---
+title: Impressum
+---
+visual_abstract: abstract-snake.svg
+---
+og_image: abstract-snake.png
+---
+body:
+
+#### text-block ####
+content:
+
+[Python para Diseñadores](/es) es una iniciativa de [Roberto Arista](http://projects.robertoarista.it/).
+
+[Beatrice Bianchet](https://www.instagram.com/beatrice.bianchet/) dibujó las ilustraciones, [Silvio Lorusso](http://silviolorusso.com/) proporcionó la edición y comentarios. [Python](https://www.python.org/) tiene derechos de autor de [Python Software Foundation](https://www.python.org/about/legal/). [DrawBot](http://www.drawbot.com/) tiene derechos de autor de [Erik van Blokland](http://letterror.com/), [Just van Rossum](https://twitter.com/justvanrossum), [Frederik Berlaen](http://typemytype.com/).
+
+El contenido de este sitio web tiene licencia de [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). ¿Qué significa eso? Puedes compartir y adaptar el contenido del manual, incluso con fines comerciales. Debes otorgar el crédito correspondiente y proporcionar un enlace a la licencia de _creative commons_. Si mezclas, transformas o construyes sobre el material, debes distribuir tus contribuciones bajo la misma licencia que el original. El código proporcionado en el sitio web se distribuye con una [Licencia MIT](https://opensource.org/licenses/MIT).
+
+El texto de este sitio web es renderizado utilizando las siguientes fuentes:
+#### text-block ####
+content:
++ [Laica](http://alessiodellena.com/) de Alessio D’Ellena
++ [Gig](http://www.futurefonts.xyz/franziska-weitgruber/gig) de Franziska Weitgruber
++ [Arnold](http://www.futurefonts.xyz/rudiger/arnold) de Rüdiger
+
+#### text-block ####
+content: Este sitio web es desarrollado utilizando [Lektor](https://www.getlektor.com/) de Armin Ronacher. Hace uso de las siguientes librerías de javascript:
+#### text-block ####
+content:
+
++ [anchor.js](https://www.bryanbraun.com/anchorjs/) de Bryan Braun
++ [hypher](https://github.com/bramstein/hypher/) de Bram Stein
++ [prism.js](https://prismjs.com/) de Lea Verou
++ [smartquotes.js](https://smartquotes.js.org/) de Kelly Martin

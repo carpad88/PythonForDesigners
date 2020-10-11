@@ -1,0 +1,21 @@
+_model: page
+---
+title: Agradecimientos
+---
+visual_abstract: thanksgiving.svg
+---
+og_image: thanksgiving.png
+---
+body:
+
+#### text-block ####
+content:
+
+  Este manual no sería el mismo sin la contribución de algunas personas. Este es el lugar para agradecerles uno a uno. ¡Empecemos!
+
+  + En primer lugar, un enorme agradecimiento a [Just van Rossum](https://twitter.com/justvanrossum) y [Frederik Berlaen](https://twitter.com/typemytype) por todo el trabajo que han realizado –y todavía hacen– en el proyecto DrawBot. Si deseas saber más sobre la historia de la herramienta, consulta el capítulo [Uso de DrawBot](/using-drawbot).
+  + Incluso si no escribe una línea de código, [Luciano Perondi](http://www.molotro.com/) es quien me metió en la programación. ¿Cómo se las arregló? Mediante tipografía paramétrica. El propio Luciano se metió en ello gracias a otro profesor, Giovanni Lussu. El impacto del trabajo de Lussu en mi educación es sustancial, incluso la conexión entre la tipografía y la programación. Estoy orgulloso de considerarlos a ambos amigos.
+  + [Beatrice Bianchet](https://www.instagram.com/beatrice.bianchet/) hizo un trabajo extraordinario con las ilustraciones. Comenzó como un proyecto de pasantía y luego dio un paso adelante. Estoy muy contento de que esté a bordo.
+  + [Silvio Lorusso](http://silviolorusso.com/) me ayudó a salir del pantano del primer borrador. Buenos comentarios, algunas reescrituras y discusiones francas me mantuvieron en la línea.
+  + [Ruggero Castagnola](http://www.ruggerocastagnola.com/) y [Emanuele Bonetti](https://parcodiyellowstone.it/en) me ayudaron a resolver muchos pequeños problemas en este sitio web. Desde la estrategia de _media queries_ hasta las clases de CSS, incluso si muchos misterios del desarrollo web todavía son inaccesibles para mí, ellos me ayudaron a superar muchos problemas desagradables.
+  + Envié un borrador de este sitio web un poco antes de la publicación a [Frank Grießhammer](http://www.frgr.de/) y [Gustavo Ferreira](http://www.hipertipo.com/). En un par de semanas, ambos me enviaron un montón de notas útiles. Fue completamente inesperado y, por lo tanto, muy bienvenido.

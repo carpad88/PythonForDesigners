@@ -29,7 +29,7 @@
             <li>
                 <div class="toc-bar-key {% if this._path == eachArticle._path %}toc-bar-active{% endif %}">
                     {% if eachArticle.hasTocNumber %}{{ eachArticle.sort_key }}&#8199;{% endif %}</div>
-                <div class="toc-bar-title"><a href="{{ eachArticle|url }}">{{ eachArticle.title }}</a></div>
+                <div class="toc-bar-title"><a href="{{ eachArticle|url(alt=this.alt) }}">{{ eachArticle.title }}</a></div>
             </li>
         {% endfor %}
 

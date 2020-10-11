@@ -1,0 +1,6 @@
+_model: page
+---
+title: ¡Página no encontrada!
+---
+_template: 404.html
+---

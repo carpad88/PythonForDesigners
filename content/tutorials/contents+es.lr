@@ -1,0 +1,10 @@
+_model: tutorials
+---
+title: Guías práticas
+---
+intro:
+
+Esta sección contiene una selección de guías prácticas para [Python3](https://www.python.org/) y [Drawbot](https://www.drawbot.com/). El objetivo es contrarrestar el contexto aislado proporcionado por los capítulos del manual. Este es el lugar donde se mezclan varios temas y se utilizan para resolver escenarios del mundo real. Espera mucho código y problemas complicados.
+
+---
+og_image: tutorials.png

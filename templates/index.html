@@ -36,9 +36,9 @@
             </div>
 
             <div class="toc-right">
-                <h2><a href="{{ chapter.path | url }}">{{ chapter.title }}</a></h2>
+                <h2><a href="{{ chapter.path | url(alt=this.alt) }}">{{ chapter.title }}</a></h2>
                 <p>{{ chapter.abstract }}</p>
-                <p><a href="{{ chapter.path | url }}">>>> {% if this.alt == 'es' %} leer{% else %} read{% endif %}()</a></p>
+                <p><a href="{{ chapter.path | url(alt=this.alt) }}">>>> {% if this.alt == 'es' %} leer{% else %} read{% endif %}()</a></p>
             </div>
 
             </div>

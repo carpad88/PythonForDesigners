@@ -1,0 +1,37 @@
+_model: page
+---
+title: Hoja de ruta
+---
+body:
+
+#### text-block ####
+content:
+
+*Escribir un libro es una aventura. Para empezar, es un juguete y una diversión;
+  luego se convierte en amante, luego en amo, y luego en tirano.
+  La última fase es que justo cuando estás a punto de reconciliarte con tu servidumbre,
+  matas al monstruo y lo arrojas al público.* - Sir Winston Churchill
+
+Nunca hubiera pensado que una cita de un primer ministro conservador haría su aparición en estas instalaciones. Lo encontré en el prefacio de _Essential Math for Games and Interactive Applications_; Inmediatamente sentí simpatía por los autores.
+
+Escribir cualquier manual es toda una tarea, especialmente si se hace durante el tiempo libre. Y esta es una publicación un poco inusual. No quería esperar años antes de terminarlo y, por lo tanto, compartirlo con mis alumnos, así que decidí publicar un manual de "trabajo en progreso". Por esta razón, elegí no imprimir el contenido en un libro y mantenerlo ajustable por el momento. Además, también preferí publicar el contenido yo mismo para mantener el control sobre él en lugar de pasar por un editor.
+
+Hay muchos temas que me gustaría abordar en el futuro. Aquí está una lista corta; siéntete libre de proponer algo en [este](https://github.com/roberto-arista/PythonForDesigners/issues/1) _issue_ de GitHub.
+
++ Colores
++ Transformaciones de matrices
++ Lidiar con tiempo y fechas
++ <code>BezierPath()</code>
++ <code>FormattedString()</code>
++ Curvas mecánicas
++ Interpolación lineal y 2d
++ Interpolaición con _mutatorMath_
+
+El sitio web tambíen podría hacer uso de algunas mejoras:
+
++ función de búsqueda
++ los complementos (_plugins_) de lektor que hice para tablas de csv y scripts de Python apenas funcionan
+---
+visual_abstract: roadmap.svg
+---
+og_image: roadmap.png
