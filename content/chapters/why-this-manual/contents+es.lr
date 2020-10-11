@@ -1,0 +1,33 @@
+_model: chapter
+---
+_slug: porque-este-manual
+---
+title: ¿Porqué este manual?
+---
+abstract: Entra si quieres descubrir las razones detrás de este proyecto
+---
+visual_abstract: abstract-0.svg
+---
+og_image: abstract-0.png
+---
+sort_key: -1
+---
+body: #### text-block ####
+content: Mientras escribía este manual, a menudo me preguntaba si sería útil. Especialmente después de explorar la literatura disponible sobre programación creativa. ¡Hay mucho por ahí! ¿Necesitamos otro recurso? John Maeda escribió en 1999 *Design By Numbers*, un texto histórico para diseñadores interesados en la programación. Asumiría que 18 años son suficientes para reconciliar a los diseñadores gráficos con la programación informática. Y, sin embargo, cuando miro a mi alrededor, todavía veo que muchos diseñadores rechazan la idea de escribir código por completo. Mientras que algunos creen que la programación no es su "preocupación", otros se ven obligados por la competencia a improvisar un poco de Javascript sin una introducción adecuada. En el primer caso, existe una contraposición simplista entre sujeto humanista y científico/técnico: "Me gusta dibujar, por lo que no quiero lidiar con ningún tecnicismo". En el segundo caso, el enfoque es mucho más pragmático, pero podría convertirse en una pesadilla. Personalizar y mantener algo sin un conocimiento extenso puede ser estresante. Las escuelas de diseño suelen ser parte del problema, porque la programación aparece demasiado tarde en sus planes de estudio. No se trata solo de enseñar "cómo instruir correctamente una máquina", sino de invitar a los estudiantes a resolver tareas de diseño que superen el tríptico estándar de Photoshop/Illustrator/InDesign: la mejor manera de aprender a programar es programar con un propósito. Afortunadamente, en los últimos años la situación también mejoró gracias a la adopción generalizada del _Processing_ y Javascript, pero los diseñadores gráficos tienen un largo camino por recorrer antes de sentirse generalmente cómodos con la automatización de tareas simples.
+
+Por supuesto, los manuales deben seguir el desarrollo de nuevas herramientas. El entorno de desarrollo presentado en *Design By Numbers* ya no se mantiene, y la tecnología ha evolucionado bastante en estos 18 años. No hay manuales de programación de Python escritos con un diseñador en mente. Además, mi módulo/aplicación de gráficos de Python favorito, –DrawBot–, viene con una documentación de API detallada pero sin un extenso manual de introducción. Por eso pensé que sería bueno fusionar esa brecha para mis estudiantes y luego compartir el resultado con el mundo exterior.
+
+Los recursos de programación concebidos para diseñadores se dedican principalmente al _Processing_ o Javascript y sus _frameworks_. Durante mis estudios descubrí Python. Es el lenguaje de programación estándar en aplicaciones de edición de fuentes. Y me apasiona mucho. Estoy convencido de que es, con mucho, una de las mejores opciones para un diseñador. ¿Por qué? He aquí algunas razones:
+----
+#### text-block ####
+content: + En Python, el espacio en blanco es semántico. El intérprete del lenguaje requiere una estructura tipográfica que ayude a los escritores y lectores a organizar los bloques de código de forma ordenada.
++ Propósito general. Python no fue diseñado para una aplicación específica; en cambio, es un lenguaje de propósito general que puede brindarte acceso a muchos lugares diferentes: análisis de datos, aplicaciones web y de escritorio, computación científica y numérica, visión por computadora, manipulación de imágenes, etc.
++ Ha existido desde los años 90; por lo tanto, la cantidad de documentación y ayuda disponible en línea es amplia y está bien organizada.
++ Podría definirse como un lenguaje terminal con esteroides. Este manual se centra en su máquina. ¿Qué puedes lograr con tu computadora que no se pueda hacer a través de una interfaz de usuario? Créeme, mucho.
++ Los cientificos de la computación no eran los principales usuarios del equipo de desarrollo de Python. Un lenguaje de programación democrático, pero hermoso. Permite a cualquier persona escribir desde programas simples hasta complejos sin un conocimiento profundo de la memoria y el hardware (a diferencia de lenguajes como C++).
+----
+#### text-block ####
+content: Python puede ayudarte a diseñar y hacer libros, ilustraciones, visuali­zaciones de datos, mapas, animaciones, manejar sitios web, prototipos de aplicaciones de escritorio o web, ordenar cosas, procesar números, sumergirse en su disco duro, descargar datos y más. ¿Qué quieres hacer con eso?
+
+Disclaimer: Si deseas aprender los conceptos básicos del diseño y desarrollo web, este no es el manual adecuado para ti. Si ese es el caso, recomiendo un manual de introducción a HTML y CSS. Entonces, si deseas poder manipular HTML y CSS con algunos scripts, creo que necesitarás Javascript.
+----

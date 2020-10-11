@@ -16,9 +16,9 @@
             <label class="responsive-menu-icon" for="responsive-menu-btn"><span class="navicon"></span></label>
             <ul class="responsive-menu">
                 <li><a href="/">Tabla de contenidos</a></li>
-                <li><a href="/online-courses">Cursos en línea</a></li>
+                <li><a href="{{ '/online-courses'|url(alt='es') }}">Cursos en línea</a></li>
                 <li><a href="https://github.com/roberto-arista/PythonForDesigners">Repositorio de GitHub</a></li>
-                <li><a href="/impressum">Impressum</a></li>
+                <li><a href="{{ '/impressum'|url(alt='es') }}">Impressum</a></li>
             </ul>
         {% else %}
             <div style="display: flex; justify-content: space-between; align-items: center;">

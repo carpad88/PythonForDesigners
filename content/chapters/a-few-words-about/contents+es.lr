@@ -1,0 +1,53 @@
+_model: chapter
+---
+_slug: unas-pocas-palabras-sobre
+---
+title: Unas pocas palabras sobre
+---
+abstract: Advertencias, agradecimientos y diversas notas sobre la audiencia y las fuentes
+---
+og_image: head+books.png
+---
+sort_key: 0
+---
+body: #### section-title ####
+content: … ¿Para quién es este libro?
+----
+class: default
+----
+#### text-block ####
+content: Mientras trabajaba en este manual, tenía en mente a un lector hipotético: mis alumnos. Están inscritos en un curso de diseño gráfico de pregrado y, a menudo, no tienen experiencia previa en programación. Por lo tanto, el conocimiento necesario para comprender este libro lo ofrece cualquier plan de estudios de secundaria: una cantidad decente de lógica, análisis textual, algo de álgebra elemental y el sistema de coordenadas cartesianas. Por esta razón, creo que no le resultará demasiado difícil seguirlo..
+----
+#### image ####
+name: students.svg
+----
+class: large-image
+----
+#### section-title ####
+content: … ¿Cómo usar este manual?
+----
+class: default
+----
+#### image ####
+name: hopscotch.svg
+----
+class: small-image
+----
+#### text-block ####
+content: Navega, salta, hojea, desde el final hasta el principio o viceversa. Tú estás a cargo, el manual es tuyo. Pero ten en cuenta que lo concebí en un orden específico. En mi experiencia, este orden es importante. Te aconsejo que escribas ma­nualmente los ejemplos que encontrarás en el libro. Sé que puede ser tedioso al principio, pero te ayudará a memorizar la sintaxis. También recomiendo participar con otro material educativo relacionado con Python; No estoy celoso. La web está llena de excelentes recursos, como la documentación del lenguaje que encontrarás en el sitio web oficial de Python. Se puede encontrar una lista detallada en la bibliografía de este manual.
+----
+#### section-title ####
+content: … Autoría y fuentes
+----
+class: default
+----
+#### image ####
+name: head+books.svg
+----
+class: small-image
+----
+#### text-block ####
+content: Lucho por considerarme el autor de este manual. Por supuesto, soy enteramente responsable de su contenido, pero reuní, reorganicé y reformulé contenido proveniente de diferentes fuentes. No soy un desarrollador de ninguna de las herramientas que menciono, y solo puedo desear hacerlas más accesibles para un público más amplio. Sin embargo, hay algunos libros que utilicé más que otros y creo que merecen más que una simple mención en la bibliografía: *Think Python* de Allen B. Downey y *Design by Numbers* de John Maeda.
+
+Como programador autodidacta, puedo admitir tranquilamente que resolví muchos problemas y errores utilizando un motor de búsqueda y leyendo discusiones en Stack Overflow. Mi formación no es sólida y formal, pero eso es lo que pasa cuando eres autodidacta. Si tuviera que destacar un libro sobre los demás, sería _Think Python_ de Allen B. Downey. Me encanta el hecho de que un profesor universitario lo escribió originalmente para un curso de Java y luego –gracias a su licencia de código abierto–, el libro fue traducido por un profesor de secundaria para un curso de Python. El autor original decidió usar la versión Python en su lugar, debido a los resultados que observó con sus estudiantes: era más divertido estudiar, la curva de aprendizaje era menos inclinada, los estudiantes podían desarrollar proyectos más emocionantes. Antes de escribir este manual, ofrecí _Think Python_ como la principal referencia de programación para mis estudiantes en _ISIA Urbino_. También sugerí el mencionado *Design by Numbers* de John Maeda y el _Processing Manual_ de Ben Fry y Casey Reas. Estos trabajos fueron cruciales para formalizar formas de enseñar programación en entornos de artes visuales. Este manual hereda mucho de ellos en cuanto a estructura, organización y tono. Para concluir, me gustaría mencionar la documentación que he estado navegando casi a diario durante algunos años: [DrawBot](http://www.drawbot.com/), [RoboFab](http://robofab.org) & [RoboFont](http://robofont.com/), [vanilla](http://ts-vanilla.readthedocs.io/), [Pillow](https://pillow.readthedocs.io), [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/)..
+----

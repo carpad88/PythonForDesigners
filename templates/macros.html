@@ -16,7 +16,7 @@
             <li>
                 <div class="toc-bar-key">&#8199;</div>
                 {% if this.alt == 'es' %}
-                    <div class="toc-bar-title"><a href="/es/tutorials">Tutoriales</a></div>
+                    <div class="toc-bar-title"><a href="{{ '/tutorials'|url(alt='es') }}">Tutoriales</a></div>
                 {% else %}
                     <div class="toc-bar-title"><a href="/tutorials">Tutorials</a></div>
                 {% endif %}
@@ -43,7 +43,7 @@
             <li>
                 <div class="toc-bar-key">&#8199;</div>
                 {% if this.alt == 'es' %}
-                    <div class="toc-bar-title"><a href="/es/tutorials">Tutoriales</a></div>
+                    <div class="toc-bar-title"><a href="{{ '/tutorials'|url(alt='es') }}">Tutoriales</a></div>
                 {% else %}
                     <div class="toc-bar-title"><a href="/tutorials">Tutorials</a></div>
                 {% endif %}
@@ -53,7 +53,7 @@
         <li>
             <div class="toc-bar-key">&#8199;</div>
             {% if this.alt == 'es' %}
-                <div class="toc-bar-title"><a href="/es/online-courses">Cursos en línea</a></div>
+                <div class="toc-bar-title"><a href="{{ '/online-courses'|url(alt='es') }}">Cursos en línea</a></div>
             {% else %}
                 <div class="toc-bar-title"><a href="/online-courses">Online Courses</a></div>
             {% endif %}
@@ -61,7 +61,11 @@
 
         <li>
             <div class="toc-bar-key">&#8199;</div>
-            <div class="toc-bar-title"><a href="/impressum">Impressum</a></div>
+            {% if this.alt == 'es' %}
+                <div class="toc-bar-title"><a href="{{ '/impressum'|url(alt='es') }}">Impressum</a></div>
+            {% else %}
+                <div class="toc-bar-title"><a href="/impressum">Impressum</a></div>
+            {% endif %}
         </li>
 
         <button onclick="topFunction()" id="topButton" title="Go to top">↑</button>
