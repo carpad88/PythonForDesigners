@@ -1,0 +1,21 @@
+_model: index
+---
+title: ¡Bienvendo!
+---
+og_image: welcome.png
+---
+welcome: Bienvenido a Python para Diseñadores
+---
+intro: Este manual es una introducción a [Python3](https://www.python.org/) y [DrawBot](http://www.drawbot.com/). Cubre algunos conceptos básicos de lenguaje y programación, así como una buena parte de la API de DrawBot. Si estás buscando una introducción amigable a la programación y a menudo estás ocupado dibujando cosas en una pantalla, ¡este es quizás el lugar adecuado para ti!
+---
+leftBoxTitle: Cursos en línea
+---
+leftBox: Este manual es gratuito y sin anuncios (y será así para siempre). Para mantener su desarrollo, ofrezco [cursos en línea](/online-courses) impartidos en inglés. Obtendrás una introducción adecuada a Python y Drawbot, además de soporte para resolver ejercicios de código. ¡Échales un vistazo y házmelo saber!
+---
+middleBoxTitle: Contribuye
+---
+middleBox: Este recurso está lejos de estar completo, si deseas saber hacia dónde se dirige el desarrollo, consulta la [Hoja de ruta](/road-map). Si detectas algún error o crees que algo podría explicarse mejor, abre un _issue_ en el [repositorio del proyecto](https://github.com/roberto-arista/PythonForDesigners). También acepto revisar *pull requests*.
+---
+rightBoxTitle: Quiénes
+---
+rightBox: _Python para diseñadores_ es una iniciativa de [Roberto Arista](http://projects.robertoarista.it/). [Beatrice Bianchet](http://www.instagram.com/beatrice.bianchet/) y [Silvio Lorusso](http://silviolorusso.com/) brindaron una ayuda sustancial. Si deseas consultar una lista completa de la tecnología y las personas involucradas en la creación de este sitio web, puedes consultar las páginas de [Agradecimientos](/acknowledgements) e [Impressum](/impressum).
