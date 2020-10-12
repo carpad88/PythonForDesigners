@@ -16,9 +16,9 @@
 
 <div>
     <div class='snippet-download-wrapper'>
-        <p class='snippet-download'><a download="{{ this.snippet }}" href="{{ this.snippet | url }}">.py</a></p>
+        <p class='snippet-download'><a download="{{ this.snippet }}" href="{{ this.snippet | url(alt='en') }}">.py</a></p>
     </div>
-    <pre data-src="{{ this.snippet | url }}"></pre>
+    <pre data-src="{{ this.snippet | url(alt='en') }}"></pre>
 </div>
 
 {% if this.image or this.diagram %}

@@ -1,0 +1,222 @@
+_model: chapter
+---
+_slug: los-elementos-de-un-programa-de-python
+---
+title: Los elementos de un programa de Python
+---
+sort_key: 3
+---
+abstract: Palabras clave, operadores, expresiones. Aquí nos familiarizamos con los conceptos básicos del lenguaje.
+---
+visual_abstract: abstract-2.svg
+---
+og_image: abstract-2.png
+---
+body:
+
+#### image ####
+name: orchestra.svg
+----
+class: small-image
+----
+#### text-block ####
+content:
+La programación es una forma peculiar de escribir. Usando un lenguaje específico, es posible instruir a una máquina para que ejecute algunas acciones. Este proceso tiene muchas analogías con la coreografía y la escritura teatral. Un director necesita escribir instrucciones con claridad, dejando ambigüedades tanto como sea posible fuera de ellas. La computadora es un actor y programar significa componer coreografías para ella. Tienes que decirle lo que debe hacer, pero debes recordar que una máquina es menos capaz de interpretar que un ser humano. De hecho, no es capaz en absoluto. Además, escribir un texto que sea enteramente comprensible por una máquina sin alguna traducción o adaptación es muy difícil y tedioso. No quieres escribir solo 0 y 1, ¿verdad? Los lenguajes de bajo nivel son detallados y se utilizan para una aplicación específica. Afortunadamente, en las últimas décadas se creó una gran variedad de lenguajes de programación de alto nivel. Hacen que instruir a las máquinas sea mucho más agradable y divertido. Como cualquier herramienta, los lenguajes de programación traen consigo propósitos y visiones del mundo específicos, por lo que elegir el correcto es un factor crucial. Python salió a la luz en los años 90 y en pocos años se volvió ampliamente utilizado en muchos campos, como la educación.
+----
+#### exercise ####
+assignment: Muchas empresas conocidas utilizan Python para proporcionar servicios digitales que probablemente utilizas a diario. Consulta en la web y descubre a cuáles me refiero. Quedarás asombrado.
+----
+#### image ####
+name: script_CLI.svg
+----
+class: small-image
+----
+#### text-block ####
+content:
+Python es un lenguaje *interpretado*. Significa que las instrucciones contenidas en un _script_ se leen línea por línea y se ejecutan inmediatamente. El programa dedicado a la interpretación y ejecución de comandos es el intérprete de Python. Este intérprete se puede usar de forma interactiva (simplemente abre la terminal, escribe <code>'python'</code> y presiona enter) o se le puede llamar para leer un archivo de texto con la extensión .py.
+
+Por el contrario, lenguajes como C ++ o Java son _compilados_, lo que significa que el código fuente se transforma primero en código objeto y solo entonces se ejecuta. La ventaja de este proceso es que la traducción del código de alto nivel al de bajo nivel se realiza solo una vez; por lo tanto, la ejecución del código objeto probablemente será más rápida. Así es como funcionan generalmente las aplicaciones insta­ladas en su máquina. Su código fuente se almacena en la computadora del desarrollador, y solo el código objeto se distribuye a los usuarios, que a veces lo compran.
+----
+#### image ####
+name: interpreted_vs_compiled.svg
+----
+class: large-image
+----
+#### text-block ####
+content: La sintaxis de Python se basa en gran medida en los espacios en blanco. Lo que significa que tanto el eje vertical como el horizontal del campo de escritura son significativos para el intérprete.
+----
+#### image ####
+name: themerson.svg
+----
+class: large-image
+----
+#### text-block ####
+content: <figcaption>Stefan Themerson, traducción semántica poética de Drinking under the moon de Li Bo, Bayamus, 1949 </figcaption>
+----
+#### text-block ####
+content: Esta característica tiene dos importantes consecuencias positivas:
+----
+#### text-block ####
+content:
++ Si tienes experiencia en artes visuales, probablemente sepas que el espacio ocupado tiene tanto significado como el vacío. Del mismo modo, los músicos son conscientes del valor del silencio. Empleando <code>fuentes monoespaciadas</code> el editor de código se convierte en una matriz tipográfica donde, como en la poesía, se activa el eje vertical de la composición.
++ Si echas un vistazo a un fragmento de Java o C++, inmediatamente verás mucha más puntuación. Estos dos lenguajes no se basan en espacios en blanco para organizar bloques de código, sino que utilizan punto y coma <code>;</code> y corchetes <code>{}</code>
+----
+#### image ####
+name: magnification.svg
+----
+class: small-image
+----
+#### text-block ####
+content: Python ha sido diseñado teniendo en cuenta la legibilidad. Cualquier diseñador debería ser consciente de lo resbaladiza que puede ser esa noción, pero en general podemos decir que ha sido concebida con una simple suposición: el código lo ejecutan las máquinas, pero los humanos lo leen. El código fuente suele ser el mejor recurso de estudio que tiene. Donde no llegan manuales y documentación, sí llega el código fuente.
+
+En Python, las declaraciones individuales terminan al final de la línea, aunque en algunos casos, cuando es práctico, pueden extenderse por más de una línea. El espacio en blanco se utiliza para definir los bloques de la estructura del código. Para decirlo de otra manera, el espacio en blanco define la jerarquía de nuestras coreo­grafías.
+----
+#### image ####
+name: casual_vs_formal.svg
+----
+class: small-image
+----
+#### text-block ####
+content: Los lenguajes de programación son lenguajes formales. Significa que están diseñados específicamente con un propósito en mente, instruir a las máquinas. Por el contrario, los lenguajes natu­rales evolucionan de forma autónoma: tienen múltiples reglas que a menudo chocan. La capacidad de interpretación del receptor es un factor clave para resolver este tipo de conflictos. En cambio, los lenguajes formales tienen reglas de sintaxis estrictas porque apuntan a tener la menor cantidad de excepciones. Dado que el intérprete de Python no puede manejar los conflictos y la ambigüedad, los errores de sintaxis en el código simplemente no se admiten.
+----
+#### exercise ####
+assignment: ¿Puedes señalar una oración en tu lenguaje natural que alguna vez se consideró un error pero que ahora se acepta como correcta?
+----
+#### text-block ####
+content: Estos errores pueden afectar a dos aspectos diferentes. Por ejemplo, errores de símbolo como:
+----
+#### text-block ####
+content: + <code>c£sa</code>
++ <code>3ancho</code>
+----
+#### text-block ####
+content: o errores de estructura, como:
+----
+#### text-block ####
+content: + <code>3 $ 4</code>
++ <code>+ anchoRect %</code>
+----
+#### text-block ####
+content: Hagamos algunos ejemplos usando una oración simple en español:
+----
+#### text-block ####
+content: + El gato esta en la mesa (correcto)
++ El g@t0 esta en la m&s4 (*símbolos incorrectos*)
++ Gato esta la en mesa el (*estructura incorrecta*)
+----
+#### text-block ####
+content: Incluso si hay errores, el significado sigue siendo fácil de entender.
+
+De manera similar, en Python tendríamos (voy a explicar más adelante por qué):
+----
+#### text-block ####
+content: + <code>anchoRect = 86</code>	(correcto)
++ <code>3anchoRect = 86</code>	(*símbolos incorrectos*)
++ <code>= anchoRect 86</code>	(*estructura incorrecta*)
+----
+#### text-block ####
+content: Pero aquí el intérprete de Python detendrá sus rutinas porque, sin las instrucciones adecuadas, no puede manejar estas excepciones.
+
+Un programa es una colección de declaraciones. Cuando se combinan, describen una coreografía realizada por una máquina. El lenguaje formal puede ser muy denso y difícil de leer para un ser humano. Esta es la razón por la que los lenguajes de programación le permiten escribir anotaciones amigables para los humanos que son ignoradas por el compilador/intérprete. La sintaxis de Python para los comentarios es el carácter de signo de número: <code>#</code>. Cada carácter que sigue al signo de número en la misma línea será ignorado por el intérprete de Python.
+
+Debes evitar usar comentarios para expresar lo obvio, en su lugar, debes explicar tus intenciones al escribir una declaración específica o un bloque de código, tal vez teniendo en cuenta que alguien más podría leerlos. Lo siguiente es obvio:
+----
+#### code-example ####
+snippet: 01+es.py
+----
+#### text-block ####
+content: Esto es menos obvio:
+----
+#### code-example ####
+snippet: 02+es.py
+----
+#### image ####
+name: notes.svg
+----
+class: small-image
+----
+#### text-block ####
+content: Toma en cuenta que el primer lector de tu código eres tu mismo en el futuro. Entonces, escribe comentarios mientras estás programando, porque todavía sabes lo que estás haciendo. Más adelante en el futuro, sin anotaciones, sería mucho más difícil recordar el significado de algunas líneas de código oscuras.
+
+Volviendo a nuestra primera declaración, aquí estamos usando un operador muy importante: el operador de asignación. Estará en todas partes en nuestros programas. Entonces, una declaración como
+----
+#### code-example ####
+snippet: 03+es.py
+----
+#### text-block ####
+content: establece <code>anchoRect</code> como un identificador (también conocido como un nombre) y lo asocia a un valor entero (número entero) de <code>86</code>. El operador de asignación trabaja en una dirección de izquierda a derecha, vinculando el identificador de la izquierda con el valor de la derecho. Si al operador de asignación le sigue algún tipo de expresión, esto se resolverá primero, luego la asignación en sí. Podemos traducir esta declaración en un diagrama de pila.
+----
+#### image ####
+name: alias.svg
+----
+class: large-image
+----
+#### text-block ####
+content: Los identificadores son un tipo de símbolo muy importante en Python. Tienen algunas reglas específicas, pero muy simples:
+----
+#### text-block ####
+content: + son sensibles a las mayúsculas y minúsculas (<code>anchoRect</code> es diferente de <code>anchorect</code> o <code>AnchoRect</code>)
++ pueden incluir letras (<code>A-Z</code>, <code>a-z</code>), dígitos (<code>0-9</code>) y guiones bajos (_)
++ no puden empezar con un dígito (correcto: <code>my3sidePolygon</code>, incorrecto: <code>3sidePolygon</code>)
++ hay un número limitado de palabras clave que no se pueden utilizar como identificadores
+----
+#### text-block ####
+content: Solicitemos directamente a Python estas palabras clave reservadas. Es una buena oportunidad para utilizar el intérprete interactivo de Python. Abre la terminal (Terminal.app en Mac), escribe python y presiona <code>enter</code>. El carácter antes del cursor debería haber cambiado de <code>$</code> a <code>>>></code> (también llamado comillas angulares). Ahora estás utilizando el intérprete interactivo de Python. Estas son las declaraciones que debes escribir en la consola del intérprete para obtener las palabras clave que estamos buscando:
+----
+#### code-example ####
+snippet: 04.py
+----
+#### text-block ####
+content: La lista incluye <code>'global'</code>, ¿no es así? Acabas de ejecutar tus primeras declaraciones de importación e impresión. Bien hecho. Entraremos en estos más adelante.
+----
+#### exercise ####
+assignment: Abre tu terminal, define una variable e imprímela en la consola.
+----
+#### image ####
+name: cookies.svg
+----
+class: small-image
+----
+#### text-block ####
+content: Los lenguajes de programación están diseñados teniendo en cuenta la eficiencia. Ofrecen varias formas de ensamblar declaraciones y evitar la redundancia. La más común es definir funciones. Una función es una secuencia de instrucciones con nombre que realiza una serie de operaciones. Una función puede "tomar" algunos valores y puede devolver algunos valores de vuelta. Los primeros se llaman argumentos, los últimos son los valo­res de retorno. Para utilizar una función, debes definir su nombre para poder "llamar" a la función por su nombre después.
+
+Aquí hay una definición de función muy simple:
+----
+#### code-example ####
+snippet: 05+es.py
+----
+#### text-block ####
+content: Observemos la anatomía de lo que hemos ejecutado:
+----
+#### image ####
+name: commented_function.svg
+----
+class: large-image
+----
+#### text-block ####
+content: Recuerda que las funciones recopilan una secuencia de declaraciones. Agrupando comandos básicos, facilitan acciones más articuladas. Entonces, cuando tengas que elegir un nombre para el identificador de función, mi consejo es elegir una forma verbal. Un verbo podría alargar un poco el nombre, pero al principio ayudará mucho a distinguir qué es qué. Un ejemplo de pseudocódigo inspirado en la vida real:
+----
+#### code-example ####
+snippet: 06+es.py
+----
+#### text-block ####
+content: Volvamos a nuestro ejemplo de código anterior. Una vez creada la definición, podemos invocar la función usando la siguiente declaración:
+----
+#### code-example ####
+snippet: 07+es.py
+----
+#### text-block ####
+content: Como era de esperar, el valor vinculado al identificador <code>miValor</code> es <code>15</code>.
+
+Observemos la anatomía de la declaración de llamada:
+----
+#### image ####
+name: commented_invoke.svg
+----
+class: large-image
+----
+#### text-block ####
+content: Genial, ahora es el momento de sumergirse en DrawBot.
+----
+---
+hasTocNumber: yes

@@ -1,0 +1,58 @@
+_model: chapter
+---
+_slug: utilizar-drawbot
+---
+title: Utilizar DrawBot
+---
+abstract: Esta herramienta nos acompañará durante nuestro viaje en el mundo de Python.
+---
+sort_key: 4
+---
+visual_abstract: abstract-3.svg
+---
+og_image: abstract-3.png
+---
+body:
+
+#### text-block ####
+content:
+Dado que Python no tiene una biblioteca de gráficos nativa, debe depender de recursos externos para crear imágenes. Por ejemplo, en el mundo científico, donde Python es muy popular, la visualización de datos generalmente se realiza con la biblioteca [matplotlib](https://matplotlib.org/).
+
+Nuestras necesidades difieren de las de los científicos de datos. Es por eso que vamos a utilizar DrawBot, un software creado por diseñadores para diseñadores.
+#### image ####
+name: raster_vs_vectors.svg
+----
+class: small-image
+#### text-block ####
+content:
+DrawBot tiene dos fuentes importantes de influencia: por un lado, la enseñanza de Gerrit Noordzij, un tipógrafo y diseñador tipográfico holandés muy importante que sentó las bases para la enseñanza del diseño tipográfico en KABK en La Haya y autor de un libro muy influyente (y aún debatido), [The Stroke](https://hyphenpress.co.uk/products/books/978-0-907259-30-5). Por otro lado, puedes encontrar _Design by Numbers_ de John Maeda (seguido de Reas, Fry y muchos otros) que fluyó hacia el _Processing_.
+
+Ambas fuentes destacan la influencia que tienen las herramientas en las prácticas de arte y diseño, de ahí la necesidad de controlar tus medios en lugar de someterte a ellos. DIY (_do it yourself_ [hazlo tu mismo]), no por el simple hecho de hacerlo, sino porque los diseñadores con una perspectiva clara no pueden sufrir los flujos de trabajo convencionales.
+
+Tan pronto como se sale de la fase de boceto del diseño de un tipo de letra, las tareas repetitivas crecen exponencialmente. Colocando acentos, interpolando masters, y cada proyecto tiene sus peculiaridades. Por eso, diseñar una interfaz o un flujo de trabajo que pudiera facilitar todas las necesidades pronto apareció como un esfuerzo inútil: es mejor hacer que cualquiera pueda salirse con la suya. El equipo decidió abrir la puerta a las funcionalidades centrales de la aplicación a las que cualquiera podía acceder a través de un lenguaje de programación. Después del primer intento con AWK, Just propuso darle una oportunidad a Python, un lenguaje de código abierto inventado por su hermano mayor Guido unos años antes. Fue una unión feliz, destinada a influir radicalmente en la industria tipográfica.
+
+Incluso si RoboFog no sobrevivió a la revolución de OSX, su trabajo continuó a lo largo de los años en un montón de otras herramientas y, con la contribución de desarrolladores y diseñadores como Tal Leming, Frederik Berlaen y muchos otros, originó lo que me gusta llamar la Galaxia UFO.
+
+Muy pronto, Just estuvo activo como profesor en la academia KABK en La Haya, y quería encontrar una manera de permitir que los estudiantes probaran ese tipo de enfoque. Por este motivo, decidió hacer una aplicación capaz de generar gráficos a través del código de forma similar a Processing pero usando Python en lugar de Java. Con la primera versión de DrawBot, Just permitió a sus estudiantes poner sus manos directamente en el núcleo de gráficos de macOS sin la intrusión de una interfaz de usuario. Esta edición se publicó en 2003 y se mantuvo durante unos diez años sin cambios sustanciales.
+
+Unos años más tarde, Frederik Berlaen intentó imitar la estructura de la aplicación DrawBot, pero en lugar de crear una envoltura alrededor de Cocoa (biblioteca de gráficos macOS), conectó una interfaz de codificación en Python con el lienzo de HTML. El proyecto se llamó TinyDrawBot. Ya no está vivo, pero esta experiencia empujó a Frederik a pedirle a Just que reviviera el proyecto DrawBot y que transformara la aplicación en una pila de acciones que pudiera dialogar con diferentes tipos de interfaces. En 2013, se lanzó DrawBot 3.0. El enfoque se movió un poco desde el propósito de enseñanza inicial, hacia un conjunto de herramientas refinadas y poderosas para configurar la tipografía y las pruebas del diseño de tipos. Hoy en día, DrawBot es una aplicación/módulo grande y robusta que muchas empresas y diseñadores utilizan regularmente en su flujo de trabajo.
+
+Puede descargar el paquete binario de la aplicación desde el [sitio web de DrawBot](http://www.drawbot.com/). El binario es auto-contenido: viene con una versión de Python en su interior. Esto significa que no necesita instalar nada más en este momento.
+
+Es posible instalar DrawBot como un módulo separado y dejar que interactúe con otros módulos de Python fuera de la aplicación. Echa un vistazo al archivo [README](https://github.com/typemytype/drawbot/blob/master/README.md) del código fuente para obtener más información.
+
+DrawBot tiene una interface muy simple:
+#### image ####
+name: GUI.svg
+----
+class: large-image
+#### text-block ####
+content: Pega el siguiente código de Python en el área de código, presiona cmd+R y verás algunos resultados en el lienzo.
+#### code-example ####
+snippet: 01.py
+----
+image: 
+----
+diagram: 
+---
+hasTocNumber: yes

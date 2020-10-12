@@ -34,9 +34,10 @@ class: default
 #### text-block ####
 content:
 The economic model on which production of digital work tools is based is a devotee of the scalability mantra. Since distribution of the software takes place in the liquid realm of the Web, the latter is not forced into the logistic confines that characterize any other material goods. The result is a rapid contraction and expansion of exchanges. The production costs of multiples are almost non-existent, as is the difficulty to duplicate fraudulently. The aim of developers is to sell enough licenses to cover promotion and development costs, while all the rest is profit. From the design point of view this encourages tool designers to aim to satisfy the needs of a very large number of customers, while seeking the complex balance between userfriendliness and specialism. In the political jargon of a few decades ago, this approach would have been defined as a desire for an absolute majority. Its maximum aspiration is, after burning piles and piles of banknotes, to dominate a sector through monopoly. And behind every desire for an absolute majority there is a desire for a plebiscite.
+
 In the compromise between large numbers and complexity of access, not all possible scenarios will be taken into account during the tool’s development. Some problems will require a sequence of very inconvenient operations in order to be linked, especially repeatedly, resulting in that strange feeling where you find yourself clicking for hours yet producing very little. In computer jargon these settings are coded in user stories, informal descriptions of typical scenarios. Let’s imagine the user story of Indesign’s “print booklet” function: “As a graphic designer for a small agency, I want to develop a 16-page booklet in order to print a prototype to discuss with my art director.”
-Most of our daily digital activities have found space on some IT development company’s post-its. This is one of the various methods by which product designers keep track of software development. It is logical at this point to ask whether the user stories are made to fit our profession or do we progressively adapt our work to what the available tools are capable of doing? By definition designing means producing solutions that do not exist yet. If a solution we think up has never been produced before, it is reasonable to assume that it might never have been codified within a user story. Therefore, the most suitable digital tool to implement this solution might be missing. The question that arises at this point is: if the tool is missing, do we change the solution or create the tool? The budget and skills available for
-the project usually provide the answer to this. The most common tools will not serve radical designers. Those with their own opinion about working methods feel the need to be able to sharpen their tools independently.
+
+Most of our daily digital activities have found space on some IT development company’s post-its. This is one of the various methods by which product designers keep track of software development. It is logical at this point to ask whether the user stories are made to fit our profession or do we progressively adapt our work to what the available tools are capable of doing? By definition designing means producing solutions that do not exist yet. If a solution we think up has never been produced before, it is reasonable to assume that it might never have been codified within a user story. Therefore, the most suitable digital tool to implement this solution might be missing. The question that arises at this point is: if the tool is missing, do we change the solution or create the tool? The budget and skills available for the project usually provide the answer to this. The most common tools will not serve radical designers. Those with their own opinion about working methods feel the need to be able to sharpen their tools independently.
 ----
 #### section-title ####
 content: The shape of the tools
@@ -55,6 +56,7 @@ class: large-image
 ----
 #### text-block ####
 content: No mechanic would disassemble a component from a car using a Swiss army knife, unless it was the only tool at his disposal. The lack of specificity of a tool makes any task performed with it more complicated, especially if repeated. In an emergency you make do, but you don’t base your work on exceptions. How is it that image designers do not feel the need to use more specific tools? Has digital razed their workshops to the ground?
+
 Desktop publishing software - like personal computers in general - have condensed a myriad of features within a single large confined space, discouraging research and development of alternatives. Let’s not forget that for commercial reasons they are designed to communicate little with the outside. Unless two digital tools are developed by the same company, it is unlikely that they will be able to exchange data and functionality profitably. Cases where a file’s working format is shared by applications developed by multiple entities are very rare. More often than not an export format - like PDF - becomes a de facto standard.
 ----
 #### text-block ####
@@ -72,10 +74,12 @@ class: default
 ----
 #### text-block ####
 content:
-Simplifying drastically, we could put an expiry date on skills. For
-example, the theoretical principles that underlie the composition of movable type are crystallized in the history of the method (so there is no expiry date), but composing lead type by hand will not prove very useful in daily life. However, it will be useful to remember that knowing how to compose type manually will help to impress on the mind similarities and differences between composing lead and silicon. There are many seemingly useless skills that regain enormous value if translated into contemporary practice.
+Simplifying drastically, we could put an expiry date on skills. For example, the theoretical principles that underlie the composition of movable type are crystallized in the history of the method (so there is no expiry date), but composing lead type by hand will not prove very useful in daily life. However, it will be useful to remember that knowing how to compose type manually will help to impress on the mind similarities and differences between composing lead and silicon. There are many seemingly useless skills that regain enormous value if translated into contemporary practice.
+
 Teaching is therefore based on a delicate balance between skills with expiry dates and those with different types of use. One of the greatest difficulties often lies in demonstrating the value that teaching some skills not currently of use can have during the course of continuous training.
+
 The pace at which educational courses are updated and organized are not (and should not try to be) the same as in the professional world. The rate of change in informatics and technology is oppressive. By their very nature schools and universities should not pursue unsustainable rhythms, but rather concentrate on medium-term skills that allow the student to make their own way once training is completed. No one can state with certainty how the work of the graphic designer will change over the next few years and the least an educational establishment can do is to try is to equip its students to manage their skills autonomously.
+
 On a technological level, I consider it wrong to teach the use of tools of a profession whose coding will become obsolete before long. I think it more appropriate to aim at creating a package of solid technical skills that prepare the student to move in the ever changing workshop of calculators. Less desktop publishing software and more graphics-oriented programming.
 ----
 #### image ####
@@ -95,7 +99,9 @@ class: default
 #### text-block ####
 content:
 What usually escapes the popular narrative about programming is its linguistic side. Programming is first of all writing a machine’s performance. Using monospaced characters, composition generally works on two active spatial axes. It is not difficult to find echoes in the concrete poetry or internal vertical justification of Stefan Themerson.
+
 Programming languages belong within the wide group of formal languages, that is those forms of notation and expression designed at a given moment (updated there and then if necessary) to fulfill a specific purpose. While a natural language evolves naturally through cycles of contraction and expansion along a time span that exceeds the life of the individual, a formal language comes to life through the work of a small group of human beings. Formal languages include scientific notations of various kinds, in areas such as chemistry, physics and mathematics. Or in the arts, the music notation and the Laban notation used in choreography. It is no coincidence that Progetto Grafico has dedicated a great deal of space to it over the years.
+
 Being a writing activity, one of the purposes of programming is to create a system of organized knowledge. One of the most often repeated principles in managing all these data and behavioral segments is DRY (do not repeat yourself), coined by Andy Hunt and Dave Thomas in the late 1990s. Each segment of knowledge organized within a system should be devoid of ambiguity. If this is not so, sooner or later the different representations will inevitably fall out of step with each other. Taking into account that systems are subject to updates, multiple representations also have to be kept aligned.
 ----
 #### image ####
@@ -107,6 +113,7 @@ class: large-image
 #### text-block ####
 content:
 Cartography is perhaps the field in which it is easiest to find a connection with this principle: when the elements of a map are associated with a group of visual variables it is essential that the attributions do not conflict so as not to generate confusion. If you decide to use the double red dashed line to signal highways, the same group of visual variables cannot be used for any of the other elements.
+
 Building grammatically solid images involves building a system of equally solid syntactic rules. When you arrange a system of images, write a typographical regulation or take a series of photos you perform a more or less informal type of programming. Is programming then perhaps not so different from writing images?
 ----
 #### section-title ####
@@ -116,11 +123,12 @@ class: default
 ----
 #### text-block ####
 content:
-An increase in complexity corresponds proportionally to an increase
-in the number of devices that separate us from an understanding of the
-underlying processes. For every interface accepted uncritically, a degree of understanding and the ability to manipulate the image material is forfeited.
+An increase in complexity corresponds proportionally to an increase in the number of devices that separate us from an understanding of the underlying processes. For every interface accepted uncritically, a degree of understanding and the ability to manipulate the image material is forfeited.
+
 Fitted tightly into the monopoly of tools that impose a highly standardized workflow, image designing is thus forced to be part of an assembly line of creativity where the designer will sooner or later become obsolete.
+
 Digital graphics workshops need to be brought back through the world of teaching. Hopefully, there will be a reaction to the marginalization of the job of the graphic designer, who will be given skills that restore their independence in this technological model.
+
 Let’s make one thing clear – computers themselves are not the cause of this impoverishment, but the surrender to the changes they have imposed. The potential is enormous, the problem is that the language skills are lacking to harness it. It wouldn’t take much to understand each other better; to peel a few layers off the computer and take a look inside.
 ----
 #### section-title ####
@@ -144,7 +152,8 @@ class: small-image
 #### text-block ####
 content:
 Programming languages exist to suit all tastes, and it is worth spending a little time to understand what might come in really useful without requiring years of study. For example, there is a popular programming language that allows you to code a pattern of text characters. These patterns are called regular expressions. It is a notation that allows you to make statements like: “A sequence of characters that begins with uppercase letters, contains at least one digit, does not end in a T and is set between spaces or punctuation marks.” This notation is so powerful as to be everywhere. Every selfrespecting text editor supports regular expressions for its search capabilities, Adobe Indesign is no exception.
-When I made the rough draft of this article I overused adverbs that end in –ly. This often happens when you are just jotting down. They make for heavy reading and can in some cases be distracting. So I decided to use the regular expression \b[AZa- z] + ly\b to select all the adverbs from the article and delete them. Then when re-reading, I put them back only where I felt the meaning had been lost. Here is the list of those I couldn’t do without (in order of appearance): especially, progressively, usually, specifically, decidedly, especially, unlikely, patiently, drastically, seemingly, autonomously, usually, generally, naturally, grammatically, proportionally, acritically, highly.
+
+When I made the rough draft of this article I overused adverbs that end in –ly. This often happens when you are just jotting down. They make for heavy reading and can in some cases be distracting. So I decided to use the regular expression \b[AZa- z] + ly\b to select all the adverbs from the article and delete them. Then when re-reading, I put them back only where I felt the meaning had been lost. Here is the list of those I couldn’t do without (in order of appearance): especially, progressively, usually, specifically, decidedly, especially, unlikely, patiently, drastically, seemingly, autonomously, generally, naturally, grammatically, proportionally, acritically, highly.
 ----
 #### section-title ####
 content: The craftsman and his workshop
@@ -173,6 +182,7 @@ class: small-image
 #### text-block ####
 content:
 At the dawn of digital graphics, champions of American graphic modernism such as Paul Rand and Massimo Vignelli showed an illconcealed contempt for what the new generation of designers was producing. The computer was, after all, causing their hierarchy to crumble, making it harder for them to criticize the world of the image.
+
 In the preface to Design by Numbers by John Maeda, Paola Antonelli recounts how Maeda went on a pilgrimage to the bad-tempered Paul Rand. The purpose of the mission was to try to convince the maestro that a computer could also be used to make good modernist design, and not only the crazy graphics of Carson, Brody and Emigre. The episode speaks volumes about the awareness the rule writers had of the tools of their trade, whether these were typefaces or design tools.
 
 ----

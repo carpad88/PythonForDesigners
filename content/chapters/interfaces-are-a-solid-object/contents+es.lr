@@ -1,0 +1,207 @@
+_model: chapter
+---
+_slug: las-interfaces-son-un-objeto-solido
+---
+title: Las interfaes son un objeto sólido
+---
+abstract: Monopolio, enseñanza y autonomía de gráficos y código.
+---
+sort_key: 2
+---
+visual_abstract: hand.svg
+---
+body:
+
+#### text-block ####
+content: *Este artículo apareció originalmente en* Progetto Grafico #33. *A diferencia del resto del contenido, lo escribí en italiano. Isobel Butters se encargó de traducirlo al inglés, [Silvio Lorusso](https://silviolorusso.com/) fue mi editor. Dado que el problema ahora está agotado, decidí agregarlo aquí. Creo que es una adición útil al manual; agrega algunas respuestas a la pregunta "¿Debería un diseñador programar?". ¡Disfruta la lectura!*
+----
+#### text-block ####
+content:
+**Progetto Grafico** me pidió una contribución sobre el valor de la programación en la enseñanza del diseño gráfico. En varias ocasiones el miembro del consejo editorial Silvio Lorusso y yo hemos discutido los méritos y límites de la programación y la estrecha relación con las herramientas que se deriva. Hace dos años fui nombrado profesor del curso básico de informática en el ISIA de Urbino y, a petición del entonces director Luciano Perondi, trasladé el temario del habitual software de autoedición a programación. También me embarqué hace unos meses en la tarea de escribir un manual de programación en lenguaje Python para mis alumnos. "No tendré problemas para escribir este artículo", me dije. En cambio, ha resultado complicado. Finalmente, me di cuenta de por qué me estaba causando tantas dificultades: no eran los tecnicismos o la naturaleza abstracta de algunos de los conceptos, sino el hecho de que aprender a programar para mí resultó ser un proceso de emancipación. Y el proceso de emancipación es personal por naturaleza.
+----
+#### text-block ####
+content:
+El trabajo del diseñador se basa en gran parte en un diálogo con monolitos de metal, vidrio y cerámica que cada día entendemos menos y en los que delegamos cada vez más porciones sustanciales de nuestro trabajo. Ya se han apoderado de los lugares donde se produjeron las imágenes, lugares que alguna vez estuvieron poblados por máquinas de impresión y ampliadoras de fotografías. El precio que estamos pagando por aligerar el peso de nuestro trabajo es una pérdida de contacto con los materiales que lo caracterizan. La relación entre el diseñador y la ejecución de sus ideas está mediada por ese panel a menudo impenetrable que ahora forma parte del discurso cotidiano: la interfaz. Abdicamos de cierto grado de control sobre esta superficie lisa a cambio de una reconfortante simplificación. El aura de competencia que brindan las habilidades manuales y técnicas de los profesionales se ha desvanecido, y con ella la percepción colectiva de un oficio: "Solo te llevará cinco minutos, ¿verdad?".
+----
+#### image ####
+name: wall.svg
+----
+class: large-image
+----
+#### section-title ####
+content: Un escritorio impenetrable
+----
+class: default
+----
+#### text-block ####
+content:
+El modelo económico en el que se basa la producción de herramientas de trabajo digitales es un devoto del mantra de la escalabilidad. Dado que la distribución del software tiene lugar en el ámbito líquido de la Web, esta última no está forzada a los límites logísticos que caracterizan a cualquier otro bien material. El resultado es una rápida contracción y expansión de los intercambios. Los costos de producción de los múltiplos son casi inexistentes, al igual que la dificultad de duplicarlos de manera fraudulenta. El objetivo de los desarrolladores es vender suficientes licencias para cubrir los costos de promoción y desarrollo, mientras que el resto son ganancias. Desde el punto de vista del diseño, esto anima a los diseñadores de herramientas a apuntar a satisfacer las necesidades de un gran número de clientes, mientras buscan el complejo equilibrio entre facilidad de uso y especialización. En la jerga política de hace unas décadas, este enfoque se habría definido como un deseo de mayoría absoluta. Su máxima aspiración es, después de quemar montones y montones de billetes, dominar un sector mediante el monopolio. Y detrás de todo deseo de mayoría absoluta hay un deseo de plebiscito.
+
+En el compromiso entre un gran número y la complejidad del acceso, no se tendrán en cuenta todos los escenarios posibles durante el desarrollo de la herramienta. Algunos problemas requerirán una secuencia de operaciones muy inconvenientes para poder vincularse, especialmente de manera repetida, lo que dará como resultado esa extraña sensación en la que te encuentras haciendo clic durante horas pero produciendo muy poco. En la jerga informática, estas configuraciones están programadas en historias de usuarios, descripciones informales de escenarios típicos. Imaginemos la historia de usuario de la función "imprimir folleto" de Indesign: "Como diseñador gráfico para una pequeña agencia, quiero desarrollar un folleto de 16 páginas para imprimir un prototipo y discutirlo con mi director de arte".
+
+
+La mayoría de nuestras actividades digitales diarias han encontrado espacio en los _post-its_ de algunas empresas de desarrollo de TI. Este es uno de los diversos métodos mediante los cuales los diseñadores de productos realizan un seguimiento del desarrollo de software. Es lógico en este punto preguntarse si ¿las historias de usuario están hechas para encajar con nuestra profesión o adaptamos progresivamente nuestro trabajo a lo que las herramientas disponibles son capaces de hacer? Por definición, diseñar significa producir soluciones que aún no existen. Si una solución que pensamos nunca se ha producido antes, es razonable suponer que nunca podría haber sido programada dentro de una historia de usuario. Por tanto, podría faltar la herramienta digital más adecuada para implementar esta solución. La pregunta que surge en este punto es: si falta la herramienta, ¿cambiamos la solución o creamos la herramienta? El presupuesto y las habilidades disponibles para el proyecto generalmente brindan la respuesta a esto. Las herramientas más comunes no servirán a los diseñadores radicales. Quienes tienen su propia opinión sobre los métodos de trabajo sienten la necesidad de poder afilar sus herramientas de forma independiente.
+----
+#### section-title ####
+content: La forma de las herramientas
+----
+class: default
+----
+#### text-block ####
+content:
+Cada herramienta es el resultado de una visión que tiene como objetivo definir el rango de acción. El ancho de esta gama está inscrito en su forma. Consideremos el manejo de las herramientas que usamos todos los días; dice mucho sobre la forma en que se debe usar la herramienta. Cuanto menos específica es una herramienta, menos forma tiene. No creo que sea absurdo creer que la razón por la cual las disciplinas de diseño de Interfaz de Usuario (UI) y Experiencia de Usuario (UX) han florecido se deba directamente a la necesidad de lograr que nos comuniquemos satisfactoriamente con monolitos que dicen muy poco sobre la forma en que les gustaría ser utilizados. Comparemos un cortador de pasta y un cuchillo de mesa común: el cortador está diseñado específicamente para cortar algo delgado y suave –como pasta comestible–, mientras que un cuchillo tiene una gama mucho más amplia de opciones. La forma diferente de los dos instrumentos lo demuestra claramente.
+----
+#### image ####
+name: tools.svg
+----
+class: large-image
+----
+#### text-block ####
+content:
+Ningún mecánico desmontaría un componente de un automóvil con una navaja suiza, a menos que fuera la única herramienta a su disposición. La falta de especificidad de una herramienta hace que cualquier tarea realizada con ella sea más complicada, especialmente si se repite. En una emergencia te las arreglas, pero no basas tu trabajo en excepciones. ¿Cómo es que los diseñadores de imágenes no sienten la necesidad de utilizar herramientas más específicas? ¿Lo digital ha arrasado con sus talleres?
+
+El software de autoedición, –como las computadoras personales en general–, ha condensado una gran cantidad de funciones en un solo gran espacio confinado, desalentando la investigación y el desarrollo de alternativas. No olvidemos que por motivos comerciales están diseñados para comunicarse poco con el exterior. A menos que la misma empresa desarrolle dos herramientas digitales, es poco probable que puedan intercambiar datos y funciones de forma rentable. Los casos en los que el formato de trabajo de un archivo es compartido por aplicaciones desarrolladas por múltiples entidades son muy raros. La mayoría de las veces, un formato de exportación, –como PDF–, se convierte en un estándar de facto.
+----
+#### text-block ####
+content:
+La programación puede convertirse entonces en una forma de escapar de este confinamiento, conectando diferentes regiones y reconstruyendo pacientemente el taller con las herramientas que efectivamente destruyeron estas regiones. Es una forma de empezar a producir herramientas radicales de nuevo, útil para hacer una cosa perfectamente con un propósito general: exactamente lo que el diseño y el diseñador necesitan.
+----
+#### image ####
+name: map-isle.svg
+----
+class: large-image
+----
+#### section-title ####
+content: Cómo nos traiciona el sistema educativo
+----
+class: default
+----
+#### text-block ####
+content:
+Simplificando drásticamente, podríamos poner una fecha de vencimiento a las habilidades. Por ejemplo, los principios teóricos que subyacen a la composición de tipos móviles se cristalizan en la historia del método (por lo que no hay fecha de caducidad), pero componer tipos de plomo a mano no resultará muy útil en la vida diaria. Sin embargo, será útil recordar que saber cómo componer texto ma­nualmente ayudará a grabar en la mente las similitudes y diferencias entre componer plomo y silicio. Hay muchas habilidades aparentemente inútiles que recuperan un valor enorme si se traducen en la práctica contemporánea.
+
+La enseñanza se basa, por tanto, en un delicado equilibrio entre las competencias con fecha de caducidad y aquellas con diferentes tipos de uso. Una de las mayores dificultades a menudo radica en demostrar el valor que puede tener la enseñanza de algunas habilidades que no se utilizan actualmente durante el curso de la formación continua.
+
+El ritmo al que se actualizan y organizan los cursos educativos no es (ni debería intentar serlo) el mismo que en el mundo profesional. La tasa de cambio en la informática y la tecnología es opresiva. Por su propia naturaleza, las escuelas y universidades no deben seguir ritmos insostenibles, sino concentrarse en habilidades a mediano plazo que permitan al estudiante abrirse camino por su cuenta una vez finalizada la formación. Nadie puede afirmar con certeza cómo cambiará la labor del diseñador gráfico en los próximos años y lo mínimo que puede hacer un establecimiento educativo es intentar equipar a sus alumnos para que gestionen sus competencias de forma autónoma.
+
+A nivel tecnológico, considero incorrecto enseñar el uso de herramientas de una profesión cuya programación se volverá obsoleta en poco tiempo. Creo que es más apropiado apuntar a crear un paquete de habilidades técnicas sólidas que preparen al estudiante para moverse en el siempre cambiante taller de tablas de cálculo. Menos software de autoedición y más programación orientada a gráficos.
+----
+#### image ####
+name: tools_box.svg
+----
+class: small-image
+----
+#### text-block ####
+content:
+Lo que me unió a mí y a mis nuevos colegas fue un profundo sentimiento de frustración. Nues­tros estudios de profesionalización se basaron en un modelo que ya se estaba desmoronando en los noventa, y que en los 2000 era solo un múltiplo difuminado de la matriz original. Estábamos listos para ofrecer servicios que nues­tros interlocutores ideales no necesitaban y no teníamos ninguna de las herramientas necesarias para llenar el vacío. La escuela en la que habíamos depositado nuestra confianza no había cumplido su promesa. Acabábamos de partir y ya nos sentíamos inú­tiles. Éramos demasiados escribas de un idioma que se había vuelto cada vez menos complejo de escribir.
+----
+#### section-title ####
+content: Dejado a la deriva
+----
+class: default
+----
+#### text-block ####
+content:
+Lo que suele escapar a la narrativa popular sobre la programación es su vertiente lingüística. Programar es, ante todo, escribir el rendimiento de una máquina. Utilizando caracteres monoespaciados, la composición generalmente trabaja en dos ejes espaciales activos. No es difícil encontrar ecos en la poesía concreta o en la justificación vertical interna de Stefan Themerson.
+
+Los lenguajes de programación pertenecen al amplio grupo de lenguajes formales, es decir, aquellas formas de notación y expresión diseñadas en un momento dado (actualizadas allí y luego si es necesario) para cumplir un propósito específico. Mientras que un lenguaje natural evoluciona naturalmente a través de ciclos de contracción y expansión a lo largo de un lapso de tiempo que excede la vida del individuo, un lenguaje formal cobra vida a través del trabajo de un pequeño grupo de seres humanos. Los lenguajes formales incluyen notaciones científicas de varios tipos, en áreas como la química, la física y las matemáticas. O en las artes, la notación musical y la notación Laban utilizada en la coreografía. No es casualidad que _Progetto Grafico_ le haya dedicado mucho espacio a lo largo de los años.
+
+Al ser una actividad de escritura, uno de los propósitos de la programación es crear un sistema de conocimiento organizado. Uno de los principios que se repiten con más frecuencia en la gestión de todos estos datos y segmentos de comportamiento es DRY (don't repeat yourself [no te repitas a ti mismo]), acuñado por Andy Hunt y Dave Thomas a finales de la década de 1990. Cada segmento de conocimiento organizado dentro de un sistema debe estar exento de ambigüedad. Si esto no es así, tarde o temprano las diferentes representaciones inevitablemente se desfasarán entre sí. Teniendo en cuenta que los sistemas están sujetos a actualizaciones, las representaciones múltiples también deben mantenerse alineadas.
+----
+#### image ####
+name: map-city.svg
+----
+class: large-image
+
+----
+#### text-block ####
+content:
+La cartografía es quizás el campo en el que es más fácil encontrar una conexión con este principio: cuando los elementos de un mapa están asociados a un grupo de variables visuales es fundamental que las atribuciones no entren en conflicto para no generar confusión. Si decides utilizar la doble línea discontinua roja para señalar las carreteras, el mismo grupo de variables visuales no se puede utilizar para ninguno de los otros elementos.
+
+Construir imágenes gramaticalmente sólidas implica construir un sistema de reglas sintácticas igualmente sólidas. Cuando organizas un sistema de imágenes, escribes un reglamento tipográfico o tomas una serie de fotos realizas un tipo de programación más o menos informal. ¿Es entonces la programación tan diferente de escribir imágenes?
+----
+#### section-title ####
+content: ¿Hacia un nuevo taller?
+----
+class: default
+----
+#### text-block ####
+content:
+Un aumento de complejidad corresponde proporcionalmente a un aumento en el número de dispositivos que nos separan de la comprensión de los procesos subyacentes. Por cada interfaz aceptada sin crítica, se pierde cierto grado de comprensión y la capacidad de manipular el material de la imagen.
+
+Encajado firmemente en el monopolio de herramientas que imponen un flujo de trabajo altamente estandarizado, el diseño de imágenes se ve obligado así a formar parte de una línea de montaje de creatividad donde el diseñador tarde o temprano quedará obsoleto.
+
+Los talleres de gráficos digitales deben ser trasladados al mundo de la enseñanza. Ojalá se produzca una reacción a la marginación del trabajo del diseñador gráfico, a quien se le otorgarán habilidades que le devuelvan su independencia en este modelo tecnológico.
+
+Dejemos una cosa clara, las propias computadoras no son la causa de este empobrecimiento, sino la rendición a los cambios que han impuesto. El potencial es enorme, el problema es que faltan las habilidades lingüísticas para aprovecharlo. No haría falta mucho para entenderse mejor; quitar algunas capas de la computadora y echar un vistazo al interior.
+----
+#### section-title ####
+content: Destacados
+----
+class: workbook
+----
+#### text-block ####
+content: *El artículo se concibió originalmente con algunos aspectos destacados independientes adicionales. Son parte de una colección más amplia de hechos y herramientas que encontré al escribir este artículo. De alguna manera pensé que podrían agregar algo al resto incluso sin una integración completa en el tema principal.*
+----
+#### section-title ####
+content: Motivos recurrentes en la series
+----
+class: default
+----
+#### image ####
+name: strings.svg
+----
+class: small-image
+----
+#### text-block ####
+content:
+Los lenguajes de programación existen para todos los gustos, y vale la pena dedicar un poco de tiempo a comprender qué puede resultar realmente útil sin requerir años de estudio. Por ejemplo, existe un lenguaje de programación popular que le permite codificar un patrón de caracteres de texto. Estos patrones se denominan expresiones regulares. Es una notación que le permite hacer declaraciones como: "Una secuencia de caracteres que comienza con letras mayúsculas, contiene al menos un dígito, no termina en una T y se establece entre espacios o signos de puntuación". Esta notación es tan poderosa que puede estar en todas partes. Todo editor de texto que se respete a sí mismo admite expresiones regulares para sus capacidades de búsqueda, Adobe Indesign no es una excepción.
+
+Cuando hice el borrador de este artículo, usé en exceso los adverbios que terminan en –mente. Esto sucede a menudo cuando solo está anotando. Hacen una lectura pesada y en algunos casos pueden distraer. Así que decidí usar la expresión regular *\b[AZa- z] + mente\b* para seleccionar todos los adverbios del artículo y eliminarlos. Luego, cuando volví a leer, los devolví solo donde sentí que se había perdido el significado. Aquí está la lista de aquellos sin los que no podría prescindir (en orden de aparición): especialmente, progresivamente, generalmente, específicamente, decididamente, especialmente, improbablemente, paciente, drásticamente, aparentemente, autónomamente, naturalmente, gramaticalmente, proporcionalmente, acríticamente, altamente.
+----
+#### section-title ####
+content: El artesano y su taller
+----
+class: default
+----
+#### image ####
+name: books.svg
+----
+class: small-image
+----
+#### text-block ####
+content:
+Existe una interesante tradición de artesanos/diseñadores que describen las formas en que han dado forma a su entorno de trabajo. Norman Potter dedica una sección completa de su monografía publicada por _Hyphen Press_ a explicar en detalle la organización espacial de sus herramientas de trabajo. _Writing Illuminating and Lettering_ de Edward Johnston contiene conside­raciones recopiladas de años de práctica y creación de herramientas. _Counterpunch_ de Fred Smeijers es una investigación histórica de retroingeniería sobre el flujo de trabajo de los cortadores de punzones del Renacimiento. Cuando descubrí el fervor con el que los desarro­lladores –de todo tipo y nivel– discuten sobre la configuración de sus editores de código o las guías de estilo para escribirlos, me parece que, sin saberlo, están alimentando una larga tradición literaria.
+----
+#### section-title ####
+content: Regla involuntaria
+----
+class: default
+----
+#### image ####
+name: computer.svg
+----
+class: small-image
+----
+#### text-block ####
+content:
+En los albores de los gráficos digitales, los campeones del modernismo gráfico estadounidense como Paul Rand y Massimo Vignelli mostraron un desprecio mal disimulado por lo que estaba produciendo la nueva generación de diseñadores. Después de todo, la computadora estaba haciendo que su jerarquía se derrumbara, lo que les dificultaba criticar el mundo de la imagen.
+
+En el prefacio de _Design by Numbers_ de John Maeda, Paola Antonelli relata cómo Maeda fue en peregrinaje al malhumorado Paul Rand. El propósito de la misión era tratar de convencer al maestro de que también se podía usar una computadora para hacer un buen diseño modernista, y no solo los gráficos locos de Carson, Brody y Emigre. El episodio dice mucho sobre la conciencia que los escritores de reglas tenían de las herramientas de su oficio, ya fueran tipos de letra o herramientas de diseño.
+----
+#### section-title ####
+content: La generosa cartera del monopolista de herramientas
+----
+class: default
+----
+#### image ####
+name: arrow.svg
+----
+class: small-image
+----
+#### text-block ####
+content:
+Durante la edición de 2017 de TypoLabs en Berlín, el director del departamento de tipografía de Adobe, Matthew Rechs, fue cuestionado por el alto costo de Creative Cloud. "¿Por qué debería gastar €70 al mes para probar los tipos de letra en los que estoy trabajando?", preguntó un diseñador entre la multitud. Un poco avergonzado, Rechs afirmó aceptar su punto, pero respondió que desde que Adobe introdujo la suscripción mensual, nunca había tenido tanto éxito. De hecho, el aumento de valor en el mercado de valores NASDAQ habla por sí mismo: anterior­mente, Adobe cotizaba a $25 por acción, hoy en día ronda los $200. La ventaja de tener un monopolio.
+----
+---
+hasTocNumber: yes

@@ -1,0 +1,81 @@
+_model: chapter
+---
+_slug: un-disenador-deberia-programar
+---
+title: ¿Un diseñador debería programar?
+---
+abstract: Antes de sumergirnos en el código, aclaremos por qué la programación puede ser una buena habilidad para un dise­ñador.
+---
+sort_key: 1
+---
+visual_abstract: abstract-1.svg
+---
+og_image: abstract-1.png
+---
+body:
+
+#### text-block ####
+content: La gente ha estado debatiendo esto desde la llegada de los gráficos por computadora. Mi opinión es fácil de imaginar, dado el objetivo de este manual. Pero, querido diseñador, no me malinterpretes. La programación no salvará al mundo. No te garantizará una carrera bri­llante: aún tendrás que estudiar y practicar muchas otras cosas, pero seguro que será una habilidad importante entre otras. La programación puede ayudarte a aligerar la carga de la producción, –auto­matizando tareas simples–, lo que te deja más tiempo para pensar, bocetar y diseñar.
+----
+#### image ####
+name: typographicalMachine.svg
+----
+class: small-image
+----
+#### text-block ####
+content: Hoy en día, la computadora es una caja de herramientas obligatoria para cualquier disciplina de diseño, y también para la mayoría de trabajos. Solo conozco unos pocos diseñadores que tienden a no utilizar herramientas digitales. Lo compensan con una artesanía que tarda décadas en desarrollarse. Sin embargo, uno no tiene que elegir: puede tener ambos.
+
+Lo que hace a una computadora es su capacidad para componer y hacer cálculos. Estas funciones están realmente en su núcleo. Si deseas comprender mejor las computadoras, un poco de matemáticas y tipografía pueden ayudar.
+----
+#### image ####
+name: coffeeBooks.svg
+----
+class: small-image
+----
+#### text-block ####
+content: Eres diseñador y también quieres ser programador. No significa que tengas que ser un tipo _nerd_ como las películas de Hollywood pueden hacerte pensar. La programación es principalmente una habilidad orientada al lenguaje. La capacidad de describir un procedimiento en un lenguaje formal no aumenta con la testosterona. En cambio, requiere lógica, un poco de matemáticas (menos de lo que piensas), terquedad, estudio y práctica. Estos requisitos son compartidos por muchas otras disciplinas que no están sujetas al mismo tipo de tergiversación racial y de género.
+
+Además, la programación no es solo para programadores: es una habilidad que puede complementar a otras. Un físico programa para simular experimentos. Un contador experto sabe cómo escribir fórmulas y macros para manejar hojas de cálculo grandes y complejas. Un diseñador puede programar para automatizar tareas repetitivas.
+
+Toma en cuenta que este manual no está destinado a entrenar a un programador súper avanzado. Una facultad de informática es un lugar mejor si buscas ese tipo de orientación. Su objetivo es fortalecer la relación entre diseñadores y computadoras y, con suerte, hacerla más amigable. La programación es un ejercicio excelente para los dise­ñadores porque mejora sus habilidades de comunicación. Una vez que comiences a practicar la programación, poco a poco tu lenguaje natu­ral (el idioma que hablas) se volverá cada vez más preciso. Quizás un poco más formal. Te inclinarás a reducir el espacio para la ambigüedad en tu comunicación diaria, aumentando la claridad (tal vez).
+----
+#### exercise ####
+assignment: Explícale a un amigo cómo llegar a la heladería más cercana. Si lo deseas, puedes utilizar lápiz y papel. Trata de evitar la redundancia, pero no seas completamente ambiguo.
+----
+#### image ####
+name: writingTools.svg
+----
+class: small-image
+----
+#### text-block ####
+content: Herramientas. Herramientas. Herramientas. Desde el descubrimiento del fuego, nos rodeamos de herramientas para realizar la mayoría de nuestras tareas. Prometeo, el titán que donó fuego a los hombres antiguos acercándolos a la divinidad, fue castigado por Zeus. Las herramientas son de mucha importancia. Como diseñador, probablemente hayas notado que las herramientas influyen en la forma en que haces las cosas. Son prótesis que usamos para alargar los brazos, agudizar los ojos, etc. Incluso cambian nuestra perspectiva de la realidad, porque cualquier herramienta es expresión de ideología.
+----
+#### exercise ####
+assignment: Observa el desarrollo de la fotografía como medio. La forma en que las cámaras y los soportes evolucionaron a lo largo de los años ha influido enormemente en el estado de la "imagen". ¿Puedes señalar algunos de esos momentos críticos? Podrías comenzar con películas en color o cámaras portátiles. Además, ¿se puede vincular el trabajo de un artista con un tipo específico de tecnología fotográfica?
+----
+#### image ####
+name: WYGIWYG.svg
+----
+class: small-image
+----
+#### text-block ####
+content: Una vez que reconozcas esto, puedes intentar moldearlos de una manera que te ayuden a lograr tus objetivos y funcionar de acuerdo con tu visión de las cosas, o usarlas como son. El dise­ñador tipográfico Luciano Perondi resumió estos dos enfoques con dos siglas: *What You See Is What You Get (WYSWYG)* –lo que ves es lo que obtienes– (el mantra de la autoedición) vs. *What You Get Is What You Want(WYGWYW)* –lo que obtienes es lo que quieres–. Los entornos gráficos son un gran logro para la relación entre humanos y máquinas. Pero, si las interfaces gráficas de usuario (GUI por sus siglas en inglés) son tu único canal de comunicación con las computadoras, probablemente estés perdiendo muchas oportunidades que ofrece tu entorno de trabajo. El problema con *lo que ves es lo que obtienes* es que lo que ves es todo lo que obtienes..
+
+Al diseñar una nueva herramienta, los fabricantes de herramientas, así como las casas de software, intentan llegar a la base de usuarios más amplia con el menor código posible. Para generar algún beneficio, una herramienta debe ser lo suficientemente genérica, fácil de usar y económica de mantener. Por supuesto que existen diferentes equilibrios entre estos aspectos, dado si la herramienta está hecha para profesionales o no. Pero, ¿y si ese problema que estás tratando de resolver hoy no estuviera en la lista de prioridades del departamento de di­seño de productos de tu proveedor de herramientas? Puedes contratar a alguien para que lo resuelva por ti o puedes hacerlo tu mismo. La decisión es tuya.
+----
+#### exercise ####
+assignment: Intenta enumerar tres momentos en los que deseabas ir más allá de una interfaz de usuario para lograr una tarea de manera menos dolorosa.
+----
+#### image ####
+name: yogi_designer.svg
+----
+class: small-image
+----
+#### text-block ####
+content: Toma también en cuenta que las herramientas digitales patentadas a menudo no están dise­ñadas para ser intercambiables. La interrelación entre el software que pertenece a la misma _suite_ (como Illustrator e InDesign) es inusual fuera de esa valla específica. Un poco de código te permite hacer que dos herramientas diferentes (ya sean de código abierto o propietarias) se comuniquen de una manera en la que sus desarrolladores no pensaron. Lo que intento decir es que la programación te convierte en un dise­ñador más flexible. Podrás modificar tu flujo de trabajo (y a ti mismo) para alcanzar tus objetivos.
+----
+#### exercise ####
+assignment: Intenta enumerar tres momentos en los que te resultó difícil intercambiar datos entre diferentes aplicaciones (por ejemplo, Excel vs Illustrator). ¿Qué querías lograr? ¿Qué le habrías pedido a tu computadora?
+----
+---
+hasTocNumber: yes
