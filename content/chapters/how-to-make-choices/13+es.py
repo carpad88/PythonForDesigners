@@ -1,0 +1,4 @@
+papas
+comestibles
+berenjenas
+tomates

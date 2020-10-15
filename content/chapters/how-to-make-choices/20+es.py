@@ -1,0 +1,2 @@
+if condicion:
+    cuerpo

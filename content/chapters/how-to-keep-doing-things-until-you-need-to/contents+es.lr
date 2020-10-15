@@ -1,0 +1,220 @@
+_model: chapter
+---
+_slug: como-seguir-haciendo-cosas-hasta-que-lo-necesites
+---
+title: Cómo seguir haciendo cosas hasta que lo necesites
+---
+abstract: La construcción condicional se puede ampliar fácilmente con la iteración. ¡Deja que la computadora haga el trabajo duro!
+---
+sort_key: 8
+---
+visual_abstract: abstract-7.svg
+---
+og_image: abstract-7.png
+---
+body:
+
+#### text-block ####
+content:
+
+Las computadoras son máquinas de calcular rápidas. Se las arreglan para realizar tareas muy simples muy rápidamente. Una tarea compleja es solo una gran cantidad de tareas simples muy bien organizadas. ¿Organizado cómo? Mediante programación.
+
+En este capítulo aprenderemos cómo instruir a Python –y DrawBot– para que ejecuten comandos repetitivos sin hacer que nuestras instrucciones sean repetitivas. ¡Sígueme!
+
+En el capítulo 5, hemos visto cómo dibujar formas básicas en el lienzo DrawBot. Como recordarás, podemos trazar una línea usando:
+----
+#### code-example ####
+snippet: 01.py
+----
+image: one-line.png
+----
+#### text-block ####
+content: Dado que tenemos que especificar numéricamente la posición de cada forma en el lienzo, dibujar un patrón puede resultar muy aburri­do. Veamos qué significa dibujar un patrón de líneas cruzadas de esta manera...
+----
+#### code-example ####
+snippet: 02.py
+----
+image: grid_line.png
+----
+#### text-block ####
+content:
+
+El código funciona, pero escribirlo no fue divertido, ¿verdad? Usando identificadores podríamos evitar escribir muchas veces los mismos números, pero de esta manera aún tenemos que invocar demasiadas veces la misma función.
+
+Supongamos que ahora decidimos oscurecer un poco este patrón. Hay dos opciones: hacer las líneas más gruesas o aumentar la cantidad de líneas. Ahora el problema ahora es: si queremos exprimir un par de líneas más en nuestro patrón, tenemos que editar casi todas las líneas del código anterior. Esto no es nada conveniente. Afortunadamente, Python ofrece una sintaxis sintética y elegante para instruir tareas ite­rativas al intérprete escribiendo lo menos posible. Considera la posible alternativa:
+----
+#### code-example ####
+snippet: 03.py
+----
+image: grid_line.png
+----
+#### text-block ####
+content: Esta solución trae una serie de beneficios:
+----
+#### text-block ####
+content:
+
++ es compacto y por lo tanto elegante
++ si necesitamos cambiar la cantidad de formas, solo necesitamos editar un poco
++ es mucho más explícito con respecto a nuestras intenciones (dibujar un patrón de líneas, no solo un montón de líneas arbitrarias)
++ generalmente es más fácil de editar, escalar y reutilizar
+----
+#### text-block ####
+content:
+
+Python ofrece dos construcciones de iteración diferentes. Acabamos de ver la sintaxis <code>while</code> en acción, que es similar a la construcción condicional (<code>if</code>, <code>elif</code>, <code>else</code>) que presentamos en el último capítulo. Esta construcción permite una repetición general basada en la evalua­ción de una expresión booleana. Podríamos definirlo como una "iteración condicional": *seguir haciendo esto, hasta que sea necesario*.
+
+La sintaxis es la siguiente:
+
+----
+#### code-example ####
+snippet: 04+es.py
+----
+#### image ####
+name: while.svg
+----
+class: large-image
+----
+#### text-block ####
+content: Según la sintaxis de los dos puntos explorada en el capítulo anterior, el cuerpo se considera como tal si:
+----
+#### text-block ####
+content:
+
++ la condición es seguida por dos puntos
++ las líneas que lo forman están indentadas cuatro espacios hacia la derecha (sin excepciones)
+----
+#### text-block ####
+content:
+
+El ciclo <code>while</code> comienza con la evaluación de la condición que sigue a la palabra clave <code>while</code>. Si la expresión booleana se evalúa como <code>True</code>, se realiza el cuerpo del bucle. Después de la ejecución del cuerpo, la condición se prueba nuevamente. Si el resultado es <code>True</code>, se vuelve a realizar el cuerpo. Tan pronto como la condición se evalúa como <code>False</code>, se omite el cuerpo y el intérprete continúa su viaje más allá del cuerpo del bucle. Toma en cuenta que, hasta que alguna acción en el cuerpo no cambie el estado de la condición, el ciclo continuará. POR SIEMPRE.
+
+Python proporciona dos palabras clave protegidas para controlar el flujo de una iteración: <code>break</code> y <code>continue</code>.
+
+La sentencia <code>break</code> sale del bucle más interno que encierra el while (pero también del bucle for que encontraremos pronto). Consi­deremos:
+----
+#### code-example ####
+snippet: 05.py
+----
+#### text-block ####
+content:
+
+Tan pronto como <code>index</code> sea igual a <code>20</code>, se ejecutará el cuerpo de la construcción condicional (<code>if</code>). La instrucción <code>break</code> detiene el bucle y el intérprete continúa justo después del cuerpo <code>while</code>. Considera este fragmento de código solo como un ejemplo, ya que es mejor evaluar tanto como sea posible en la condición <code>while</code>.
+----
+#### code-example ####
+snippet: 06.py
+----
+#### image ####
+name: while-if.svg
+----
+class: large-image
+----
+#### text-block ####
+content:
+
+Escribir un bloque <code>while</code> en pleno funcionamiento podría ser complicado al comienzo de tu ruta de aprendizaje. De hecho, si el cuerpo <code>while</code> no cambia de alguna manera la condición <code>while</code>, su ciclo se ejecutará sin fin. Si esta no es tu salida deseada, esto es bastante malo porque tendrás que forzar la salida de DrawBot. No hay otra forma desde dentro de la aplicación para detener al intérprete antes de que finalice un script en ejecución. Una buena solución para este proble­ma podría ser utilizar una técnica de paracaídas.
+
+Un paracaídas es una medida de seguridad temporal que evita que tu intérprete haga un bucle interminable haciendo uso de una decla­ración <code>break</code>. Considera el siguiente ejemplo:
+----
+#### code-example ####
+snippet: 07+es.py
+----
+#### text-block ####
+content:
+
+Luego, una vez que su bloque <code>while</code> esté funcionando correctamente, puede deshacerse del paracaídas.
+
+La instrucción <code>continue</code> se usa para omitir parte del código en el cuerpo solo para la iteración actual. El bucle no termina sino que continúa hasta la siguiente iteración del bucle.
+----
+#### code-example ####
+snippet: 08+es.py
+----
+#### image ####
+name: continue.svg
+----
+class: large-image
+----
+#### section-title ####
+content: Manual de trabajo
+----
+class: workbook
+----
+#### exercise ####
+assignment: Intenta cubrir todo el lienzo con un patrón de rayas en blanco y negro. El usuario debe poder controlar la densidad del patrón y la dirección de las líneas (horizontal o vertical).
+----
+image: stripes.png
+----
+solution: stripes.py
+----
+#### exercise ####
+assignment: Intenta cubrir todo el lienzo con una línea en zig-zag. La línea se mueve horizontalmente comenzando en el vértice superior izquierdo del lienzo. Permite que el usuario controle la densidad de las líneas.
+----
+image: zigzag.png
+----
+solution: zigzag.py
+----
+#### exercise ####
+assignment: Crea un lienzo de 200x200pt. Dibuja una secuencia de cuadrados de arriba a abajo usando un bucle while. El lado cuadrado debe ser ajustable mediante una variable. Los cuadrados impares deben ser de color gris claro, los pares deben ser de color gris oscuro.
+----
+image: exercise6_1.png
+----
+solution: sequenceOfSquares.py
+----
+#### exercise ####
+assignment: Extiende el ejercicio anterior. Anida dos declaraciones while y dibuja un patrón hecho de cuadrados en todo el lienzo. Intenta conseguir un efecto de tablero de ajedrez.
+----
+image: chessboard.png
+----
+solution: squaresMatrix.py
+----
+#### exercise ####
+assignment: Escribe un programa capaz de cubrir un rectángulo (no necesariamente el lienzo) con líneas verticales negras. El usuario debe poder controlar la cobertura total del rectángulo (de 0% a 100%) y el grosor de la línea. El paso entre cada línea debe calcularse de acuerdo con estas variables. Una buena ventaja sería tener la primera y la última línea del patrón tocando los bordes del rectángulo sin ningún desbordamiento. Puedes permitir algunos redondeos para obtener un mejor resultado visual.
+----
+image: grayscaleLines.png
+----
+solution: grayscaleLines.py
+----
+#### exercise ####
+assignment: Dibuja una forma de hoja blanca usando solo líneas negras.
+----
+image: threadCurves.png
+----
+solution: whiteLeaf.py
+----
+#### exercise ####
+assignment: Extiende el ejercicio anterior: dibuja un círculo blanco utilizando únicamente líneas rectas negras.
+----
+image: theadCicle.png
+----
+solution: whiteCircle.py
+----
+#### exercise ####
+assignment: Crea una secuencia de gradientes horizontales. No puedes usar ninguna función de degradado automática, intenta lograr este efecto visual a través de formas separadas. Los gradientes deben tener una dirección alternativa.
+----
+image: gradientStripes.png
+----
+solution: gradientStripes.py
+----
+#### exercise ####
+assignment: Crea un patrón de líneas horizontales. Las líneas deben ser más gruesas en el medio, como puedes ver en la imagen de ejemplo. Permite que el usuario controle la densidad del patrón, el valor máximo del grosor y un margen del lienzo.
+----
+image: linePattern.png
+----
+solution: dashedLinesPattern.py
+----
+#### exercise ####
+assignment: Tu objetivo es dibujar una secuencia de óvalos como bustrófedon (de izquierda a derecha y de derecha a izquierda en líneas alternas). Comienza desde la esquina inferior izquierda del lienzo y alterne el color de los óvalos (gris oscuro, gris claro). Aumenta el radio del óvalo de acuerdo con su posición dentro de la secuencia de dibujo de la línea (poco al principio, más grande al final). La distancia vertical y horizontal entre los óvalos es constante. Da al usuario la opción de establecer un valor de margen para el lienzo e intenta usar solo uno mientras construyes. Puedes resolverlo evitando dos bucles <code>while</code> anidados, un bucle <code>while</code> básico es suficiente.
+----
+image: pattern_oval.png
+----
+solution: boustrophedonic.py
+----
+#### exercise ####
+assignment: Escribe un programa capaz de dibujar una regla de una unidad de medida específica (puntos PostScript o milímetros) en todo el lienzo. Las marcas de la regla deben tener diferentes longitudes según un ritmo determinado. Usa un bucle <code>while</code>. Los números que se muestran a lo largo de la regla son una ventaja.
+----
+image: typometer.png
+----
+solution: tipometer.py
+----
+---
+hasTocNumber: yes

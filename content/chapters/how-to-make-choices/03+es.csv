@@ -1,0 +1,5 @@
+Operadores	Significado
+<code>is</code>	misma identidad
+<code>is not</code>	diferente identidad
+<code>==</code>	equivalentes
+<code>!=</code>	no equivalentes

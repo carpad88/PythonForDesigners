@@ -1,0 +1,10 @@
+Expresiones	Operadores
+llamada de función, cortar una secuencia	<code>func(), sequence[]</code>
+exponenciación	<code>**</code>
+multiplicación, división	<code>*, /, //, %</code>
+suma, resta	<code>+, -</code>
+comparasiones	<code>is, is not, ==, !=, , >=</code>
+lógico no	<code>not</code>
+lógico y	<code>and</code>
+lógico o	<code>or</code>
+asignaciones	<code>=, +=, -=, /=, *=</code>

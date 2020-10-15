@@ -1,0 +1,408 @@
+_model: chapter
+---
+_slug: cadenas-de-texto-codificación-y-unicode
+---
+title: Cadenas de texto, codificación y unicode
+---
+abstract: Antes de sumergirnos en la composición tipográfica, debemos tener claro cómo las computadoras manejan el texto
+---
+sort_key: 9
+---
+visual_abstract: abstract-8.svg
+---
+og_image: abstract-8.png
+---
+body:
+
+#### image ####
+name: textfile.gif
+----
+class: small-image
+----
+#### text-block ####
+content: Desde el advenimiento de las computadoras personales y la autoedición, cada vez más personas escriben fuentes en una pantalla. Esta práctica estuvo alguna vez confinada a una cate­goría profesional. Hoy en día la composición tipográfica es omnipresente. Está tan extendido que la escritura y la composición tipográfica se consideran casi lo mismo. Las diferencias entre los dos reinos son importantes y un diseñador visual debe ser consciente de ellas.
+
+Una noción amplia de escritura (no confunda caligrafía con escritura) podría considerarse la disposición visual del lenguaje sobre un soporte para transmitir significado. De hecho, es una definición muy amplia. De alguna manera, incluso las artes escénicas encajan en él. Escribir implica el uso de cualquier herramienta en cualquier tipo de superficie, siempre que disponga el lenguaje visual. ¿Qué pasa con la notación Braille? Eso también es escritura, pero está un poco fuera del alcance de este manual.
+
+La definición de tipografía es más limitada. La tipografía es la disposición del lenguaje visual utilizando elementos especialmente dise­ñados para su reproducción y reutilización: tipos. Estos tipos pueden estar hechos de plomo, película, bytes. No importa siempre que estén prefabricados. Entonces, la tipografía es definitivamente un subconjunto de la escritura. La caligrafía o rotulación (_lettering_) son otros subconjuntos de la escritura y comparten con la tipografía el hecho de que todas tratan con formas de letras, pero de formas muy diferentes.
+----
+#### image ####
+name: writing.svg
+----
+class: large-image
+----
+#### section-title ####
+content: Gutenberg y los tipos móviles
+----
+class: default
+----
+#### image ####
+name: vectorVSpixel.svg
+----
+class: small-image
+----
+#### text-block ####
+content:
+
+Piensa en esto: si te preguntas qué inventó realmente Gutenberg, no encontrarás fácilmente un "objeto" para imaginar. Imprentas, papel, tinta, sellos de metal, el alfabeto latino, libros: ya estaban allí. ¿Podemos nombrar con mayor precisión su invento? Por supuesto: Gutenberg hizo _discreta_ la superficie continua de la escritura, lo que significa que consta de elementos separados.
+
+Podríamos afirmar que hacer algo discreto es definir un átomo o un conjunto de reglas que reducirán sustancialmente las posibilidades que permite el sistema: desde el conjunto más amplio infinito de opciones hasta un conjunto más estrecho infinito de opciones. Significa establecer uno o más umbrales que definirán de forma inequívoca qué información se descartará o no. Tomemos, por ejemplo, los planos de escala en la arquitectura: el valor de 1 a *algo* define el umbral en la representación que establece la cantidad de información y detalles transmitidos por la imagen.
+
+¿Cómo podría ser algo bueno la pérdida de detalles y opciones? Bueno, la idea es descartar lo que no necesitamos para lograr un determinado objetivo, para que nuestro proceso sea más eficiente. Menos opciones significa transformaciones más rápidas, menos datos para transferir, pruebas más rápidas, etc.
+
+En otras palabras, Gutenberg redujo las posibilidades inagotables de la escritura para agilizar la disposición y reproducción de líneas de texto. La pérdida de libertad de composición fue sustancial, pero la ganancia en velocidad y facilidad de producción fue enorme.
+----
+#### image ####
+name: medievalVGutenberg.svg
+----
+class: large-image
+----
+#### image ####
+name: illustrationVStypography.svg
+----
+class: small-image
+----
+#### text-block ####
+content:
+
+En el caso de Gutenberg, esta reducción significó que tenía que identificar y seleccionar los componentes más frecuentes de la escritura -en su contexto las letras del alfabeto latino- y hacer que encajaran en una caja de acuerdo con una serie de restricciones. Se suponía que estas restricciones harían que estas cajas fueran intercambiables. Todo lo demás fuera de esta selección de elementos comenzó a tratarse como ilustración, tallado en bloques de madera y mantenido separado del "texto".
+
+Ok, pero... las letras ya eran cosas separadas antes de la invención de Gutenberg, ¿verdad? A es A, B es B y así sucesivamente. Eso es cierto, pero cuando uno escribe, digamos, a mano, la superficie no está cortada, es continua. Si comparamos la escritura con la música, probablemente esto sea más fácil de entender. La tipografía, como cualquier disposición visual, consiste tanto en blanco como en negro. No es negro sobre blanco, es blanco y negro. Es tanta tinta como papel. Tanto píxeles activos como inactivos. Tanto espacio lleno como vacío. Ahora, traduce esto a Música. ¿Qué sería una nota sin la ausencia de sonido que la rodea? La ausencia de sonido contribuye a la construcción del significado así como a la presencia de sonido. ¿Qué sería una composición tipográfica sin el blanco rodeando al negro? Solo algunas manchas de tinta sucias.
+----
+#### image ####
+name: hello.svg
+----
+class: large-image
+----
+#### text-block ####
+content: Lo que hizo Gutenberg fue romper el continuo de la escritura en rectángulos de altura regular. Debido a las limitaciones de producción, Gutenberg también quería tener el grafismo (la forma negra) completamente contenido en una caja. La forma más fácil y lógica de hacerlo era cortar entre cada forma negra. Esto significa que si el grafismo está intacto, el vacío (blanco) debe cortarse en diferentes piezas y distribuirse entre las cajas.
+----
+#### image ####
+name: space-glyph.svg
+----
+class: large-image
+----
+#### text-block ####
+content: Esta reorganización de la superficie de la escritura se condensa y repre­senta en una herramienta que realmente inventó Gutenberg: el molde ajustable. Esta herramienta le permitió moldear muchas cajitas de plomo con la misma altura pero diferente ancho. A continuación se muestra un esquema sintético del proceso:
+----
+#### image ####
+name: mould.svg
+----
+class: large-image
+----
+#### section-title ####
+content: Composición tipográfica, desde cajas sólidas hasta cajas virtuales
+----
+class: default
+----
+#### text-block ####
+content: La composición tipográfica digital liberó a la tipografía de los límites físicos del tipo de metal. Incluso si transportó el tipo de uno tridimensional a uno bidimensional, comparte con su antiguo antepasado la misma tensión de modularidad y algunas costumbres.
+----
+#### image ####
+name: avatar.svg
+----
+class: large-image
+----
+#### image ####
+name: body.svg
+----
+class: small-image
+----
+#### text-block ####
+content: Por ejemplo, dado que el tipo de metal consistía en elementos físicos utilizados como ladrillos que formaban una pared de letras prefabricadas, tenía sentido hacer un seguimiento de la altura de la caja en lugar de la altura de los glifos representados en la caja. Esta costumbre todavía se usa hoy en día, incluso si las cajas son completamente virtuales. Toma en cuenta este aspecto al comparar dos fuentes diferentes. A menudo, incluso si usas el mismo tamaño de cuerpo, las letras resultantes no tendrán la misma altura.
+----
+#### image ####
+name: same-body.svg
+----
+class: large-image
+----
+#### section-title ####
+content: Caracteres y mapeo
+----
+class: default
+----
+#### text-block ####
+content: Antes de explorar el ámbito de la composición tipográfica en Python, necesitamos aprender cómo Python trata los datos de texto. Las computadoras en general necesitan codificar cualquier tipo de información en notación binaria. El texto no es una excepción. La forma en que se resolvió originalmente este problema de codificación se basa en el alfabeto y, por lo tanto, está centrado en Occidente. A cada elemento de texto, como letras, dígitos, símbolos, puntuación, espacios en blanco y elementos de control como _nueva línea_ (_return_) o _eliminar_ (_backspace_), se le asignó un número. Lo extraño es que cada componente de una caja de tipográfica estándar recibió un valor. Por ejemplo, _A_ y _a_ obtienen un valor diferente incluso si representan la misma letra en una estructura de dibujo diferente. Esto no es un gran pro­blema con el latín, pero este enfoque tuvo serias consecuencias al mapear hangul, árabe y muchas escrituras no alfabéticas.
+----
+#### image ####
+name: decimal-binar.svg
+----
+class: large-image
+----
+#### text-block ####
+content: El proceso de asignar un carácter a un número se llama codificación. El código Morse es un tipo de codificación muy antiguo. Uno de los estándares más antiguos y extendidos para la codificación de texto en la era de las computadoras es el famoso (no tanto) Código estándar estadounidense para el intercambio de información (ASCII por sus siglas en inglés). Su origen se remonta a la comunicación telegráfica.
+
+Debido a su herencia y su relación especial con el idioma inglés, los caracteres ASCII se representan usando un valor entero de 7 bits, lo que significa que el índice máximo disponible en el mapeo se puede describir con un número binario de 7 dígitos.
+----
+#### table ####
+path: 01.csv
+----
+headers: 1
+----
+#### code-example ####
+snippet: 01.py
+----
+#### text-block ####
+content: Si incluimos el 0, los índices disponibles suman 128 opciones.
+----
+#### image ####
+name: us-ascii.svg
+----
+class: large-image
+----
+#### text-block ####
+content: Cuando los bytes de 8 bits se convirtieron en el estándar en informática, cada carácter comenzó a representarse con un número binario de 8 dígitos (1 byte). Esto abrió el mapeo a 256 opciones.
+----
+#### table ####
+path: 02.csv
+----
+headers: 1
+----
+#### code-example ####
+snippet: 01_01.py
+----
+#### text-block ####
+content: Este espacio del mapeo a menudo se implementó de diferentes mane­ras en diferentes sistemas operativos, como Apple (macOS Roman), IBM y Microsoft (ISO 8859) y países. El intercambio de información entre diferentes computadoras se volvió más difícil, hasta que el Consorcio Unicode logró crear un nuevo estándar de mapeo independien­te del sistema operativo más amplio. El Consorcio Unicode finalmente comenzó a mirar más allá de los países de habla inglesa. Luego, el último bit del primer byte se fijó en ISO LATIN 1, como se ve en el siguiente diagrama.
+----
+#### image ####
+name: ISOLATIN1.svg
+----
+class: large-image
+----
+#### text-block ####
+content: Cada carácter en la asignación Unicode se puede representar como dos bytes, lo que abre las opciones de asignación a 65 536. El mapeo se puede extender más allá de los dos bytes, de hecho, los emojis se almacenan en un plano multilingüe complementario que comienza justo después de U+FFFF. A veces nos referiremos al mapeo Unicode usando la abreviatura UTF-8, que es una forma inteligente de representar caracteres Unicode guardando datos según su posición en el mapeo.
+----
+#### section-title ####
+content: Datos de texto en Python
+----
+class: default
+----
+#### text-block ####
+content: Después de este extenso preámbulo, es hora de preguntar: ¿cómo nos relacionamos con los datos de texto usando Python? En el escenario específico de este manual, usaremos el objeto estándar de cadena de texto (_string_) de Python para crear, almacenar y manipular texto. Luego usaremos DrawBot para componer el texto en un lienzo PDF.
+
+La cadena de texto de Python, como las tuplas y las listas, es una secuencia: una colección de valores donde el orden es significativo. Las tuplas y las listas son contenedores genéricos: pueden almacenar cualquier tipo de datos. Una cadena de texto está especialmente dise­ñada para representar secuencias inmutables de caracteres de texto. Una representación esquemática de una cadena podría ser
+----
+#### image ####
+name: hello-access.svg
+----
+class: large-image
+----
+#### text-block ####
+content:
+
+La indexación de secuencias comienza desde 0. Lo que significa que una cadena de _n_ elementos tiene los elementos indexados de <code>0</code> a <code>n-1</code> y es inclusiva. Se puede crear una cadena usando comillas rectas simples <code>'</code>(U + 0022) o dobles <code>"</code>(U + 0027). Dos opciones son convenientes en caso de que necesite insertar un carácter delimitador en la representación de la cadena:
+----
+#### code-example ####
+snippet: 02+es.py
+----
+#### text-block ####
+content: De lo contrario, se puede usar un carácter de barra invertida de escape para informar al intérprete que el carácter que sigue a la barra invertida no es el final de la secuencia, sino parte de ella:
+----
+#### code-example ####
+snippet: 03+es.py
+----
+#### text-block ####
+content: Otros caracteres que se escapan comúnmente son la línea nueva (<code>\n</code>) y el tabulador pestaña (<code>\t</code>). Además, Python admite la declaración de cadenas de comillas triples para cadenas que incorporan caracteres de nueva línea de forma natural. Se utilizan especialmente para fines de documentación de código.
+----
+#### code-example ####
+snippet: 04+es.py
+----
+#### text-block ####
+content: Como se dijo antes, a cada carácter se le asigna a un valor numérico según el estándar Unicode. Python proporciona la función incorporada <code>ord()</code> para obtener la posición de un carácter dentro del mapeo estándar.
+----
+#### code-example ####
+snippet: 05.py
+----
+#### text-block ####
+content: Por otra parte, Python brinda la posibilidad de acceder a una posición de mapeo usando un valor entero a través de la función <code>chr()</code>. Dado que cada número está asignado a un único carácter, utilizando 192 como valor de entrada obtendremos:
+----
+#### code-example ####
+snippet: 06.py
+----
+#### text-block ####
+content: Las referencias a caracteres Unicode rara vez se hacen utilizando su valor de base 10. Como dijimos, la mayoría de los caracteres tienen una representación de dos bytes, que se puede representar convenientemente con un número hexadecimal de cuatro dígitos, como:
+----
+#### table ####
+path: 03+es.csv
+----
+headers: 1
+----
+#### text-block ####
+content: Esta notación también se puede incluir en la declaración de secuencia de texto de Python usando el literal de escape <code>\u</code>:
+----
+#### code-example ####
+snippet: 07.py
+----
+#### text-block ####
+content: Las secuencias de texto, como los otros tipos de datos básicos, tienen una función constructora incorporada llamada <code>str()</code>. Esta función permite la conversión de un tipo diferente de objeto en una secuencia de texto. Acepta casi cualquier tipo de objeto, pero tiene una gama limitada de opciones.
+----
+#### code-example ####
+snippet: 08.py
+----
+#### text-block ####
+content: Se explican métodos de conversión mucho más detallados en [Transformar secuencias de texto]({{ '/chapters/transform-strings'|url(alt='es') }}).
+
+Como se mencionó anteriormente, las cadenas de texto son secuencias. Python proporciona una sintaxis específica para realizar algunas operaciones básicas de secuencia como acceder, segmentar, verificar la inclusión, probar la equivalencia y la concatenación.
+----
+#### section-title ####
+content: Accesar
+----
+class: default
+----
+#### text-block ####
+content: Es posible acceder al contenido de una secuencia usando un índice desde 0 hasta la longitud de la secuencia menos 1.
+----
+#### code-example ####
+snippet: 09+es.py
+----
+#### text-block ####
+content: Python también ofrece la posibilidad de utilizar un índice negativo. Esto podría leerse como _longitud de secuencia menos índice_. Es como empezar desde el final. Por ejemplo:
+----
+#### code-example ####
+snippet: 10+es.py
+----
+#### image ####
+name: hello-access-negative.svg
+----
+class: large-image
+----
+#### text-block ####
+content: Toma en cuenta que proporcionar un índice igual o superior a la longitud de la secuencia provocará un <code>IndexError</code> durante el tiempo de ejecución.
+----
+#### section-title ####
+content: Cortar
+----
+class: default
+----
+#### text-block ####
+content: Puedes crear una copia de subsecuencia profunda utilizando una extensión de la sintaxis de acceso. Funciona así:
+----
+#### code-example ####
+snippet: 11+es.py
+----
+#### text-block ####
+content: Recuerda que <code>final</code> es el índice del primer valor que no se incluirá en la subsecuencia.
+----
+#### code-example ####
+snippet: 12.py
+----
+#### image ####
+name: startEndStep.svg
+----
+class: large-image
+----
+#### text-block ####
+content: Los argumentos se pueden omitir para hacerlos implícitos, de la siguiente manera:
+----
+#### code-example ####
+snippet: 13+es.py
+----
+#### text-block ####
+content: En cuanto a la sintaxis de acceso, <code>comienzo</code> y <code>final</code> pueden tener un valor negativo.
+----
+#### code-example ####
+snippet: 14.py
+----
+#### image ####
+name: endStep.svg
+----
+class: large-image
+----
+#### section-title ####
+content: Comprobar inclusión
+----
+class: default
+----
+#### code-example ####
+snippet: 15+es.py
+----
+#### text-block ####
+content: Activa una expresión booleana capaz de verificar si una secuencia contiene un valor o no. Por ejemplo:
+----
+#### code-example ####
+snippet: 16+es.py
+----
+#### text-block ####
+content: Esta expresión puede aceptar subsecuencias como
+----
+#### code-example ####
+snippet: 17+es.py
+----
+#### section-title ####
+content: Prueba de igualdad
+----
+class: default
+----
+#### text-block ####
+content: Si necesitas comparar el contenido de dos cadenas de texto diferentes, debes usar los operadores de igualdad.
+----
+#### code-example ####
+snippet: 18+es.py
+----
+#### text-block ####
+content: Cuidado con los operadores de identidad. Las cadenas de texto cortas están muy almacenadas en caché; así que, su identidad no es confia­ble. Por lo tanto, siempre prefiere <code>'Miauuu' != 'miauuu'</code> sobre <code>'Miauuu' is not 'miauuu'</code>.
+----
+#### section-title ####
+content: Orden natural
+----
+class: default
+----
+#### text-block ####
+content: Los siguientes operadores pueden resultar útiles para determinar cómo se relacionan dos cadenas de texto de acuerdo con un orden lexicográfico.
+----
+#### code-example ####
+snippet: 19.py
+----
+#### text-block ####
+content: ¿Por qué no alfabético? Podríamos considerar “lexicográfico” como una noción más amplia de alfabético, donde la clasificación hace refe­rencia a un conjunto de caracteres más amplio que el alfabeto latino. Piensa por un momento ¿qué pasaría si le preguntas al intérprete cuál viene primero entre algunos caracteres latinos y cirílicos? El juego de caracteres de referencia es el mapeo Unicode. Consideremos:
+----
+#### code-example ####
+snippet: 20.py
+----
+#### text-block ####
+content: Para resolver dicha expresión, Python convierte cada carácter en su representación númerica de unicode y luego evalúa su orden comenzando por la izquierda
+----
+#### code-example ####
+snippet: 21.py
+----
+#### image ####
+name: evaluateHat.svg
+----
+class: large-image
+----
+#### text-block ####
+content: Las dos primeras representaciones de caracteres son iguales, pero la tercera (<code>b</code> vs. <code>t</code>) no lo es, lo que significa que <code>"habit"</code> es inferior a <code>"hat"</code>. De hecho, la expresión se evalúa como <code>True</code>. Esto se aplica a nuestra noción común de orden alfabético. Entonces considere lo siguiente
+----
+#### code-example ####
+snippet: 22.py
+----
+#### text-block ####
+content:
+
+También esperaríamos que esta expresión se evalúe como <code>True</code>, porque la <code>'b'</code> viene antes de la <code>'m'</code> en el alfabeto latino. Bueno, en realidad no. Porque la <code>'M'</code> mayúscula viene antes de la <code>'b'</code> minúscula en el mapeo Unicode. Sé que no tiene sentido a primera vista, pero si los caracteres en mayúsculas y minúsculas ocupan dos lugares diferentes en la codificación, de alguna manera se trata de un comportamiento obligatorio. Revisemos los números:
+----
+#### code-example ####
+snippet: 23.py
+----
+#### text-block ####
+content: Lo que significa que
+----
+#### code-example ####
+snippet: 24.py
+----
+#### section-title ####
+content: Concatenación
+----
+class: default
+----
+#### text-block ####
+content: Python permite la concatenación de secuencias de texto usando los operadores <code>+</code> y <code>*</code>. Por ejemplo
+----
+#### code-example ####
+snippet: 25.py
+----
+#### text-block ####
+content: Toma en cuenta que una secuencia solo se puede multiplicar por un valor entero, no se permiten puntos flotantes. Nota que esta operación no es eficiente en memoria. Si necesitas concatenar mucho, considera usar el método de la cadena de texo <code>.join()</code>.
+----
+---
+hasTocNumber: yes

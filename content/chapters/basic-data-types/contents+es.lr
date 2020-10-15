@@ -1,0 +1,219 @@
+_model: chapter
+---
+_slug: tipos-de-datos-basicos
+---
+title: Tipos de datos básicos
+---
+abstract: ¿De qué están hechos los valores? Es hora de responder algunas preguntas existenciales.
+---
+sort_key: 6
+---
+visual_abstract: abstract-5.svg
+---
+og_image: abstract-5.png
+---
+body:
+
+#### text-block ####
+content:
+
+¿Qué son los datos? Datos es una palabra del latín que se usa actualmente en español. Es el plural de _datum_. Podemos considerar un dato como un átomo de un grupo de información más grande. La pieza más pequeña, el valor mínimo que podemos usar para construir una colección más grande de cantidades y relaciones. Los datos son nues­tros ladrillos en el acto de programar. El tamaño de un rectángulo, la cantidad de personas en un país, una dirección de correo electrónico, la posición del puntero del mouse en la pantalla, la ubicación de un archivo en un servidor. Dado que existen diferentes tipos de datos, Python proporciona una serie de tipos de datos. Tipos que indican cantidades (<code>int</code>, <code>float</code>), si una condición es verdadera o no (<code>bool</code>), fragmentos de texto (<code>str</code>), colecciones ordenadas de otros datos (<code>list</code>), datos para ausencia de información (<code>None</code>), colecciones no ordenadas (<code>set</code>, <code>dict</code>) y así sucesivamente.
+----
+#### image ####
+name: datum.svg
+----
+class: large-image
+----
+#### text-block ####
+content:
+
+Python es un lenguaje escrito dinámicamente, lo que significa que el programador no tiene que declarar de antemano el tipo de datos que está asociado con un identificador. Un identificador se puede asociar con cualquier tipo de datos y luego reasignar a otro. Si tienes experien­cia con Processing/Java probablemente hayas notado que este no es el caso allí. Esto se debe a que Java es escrito estáticamente. En el mundo de Python, los valores están vinculados a un tipo específico, los identificadores no.
+----
+#### image ####
+name: datum_label.svg
+----
+class: large-image
+----
+#### text-block ####
+content:
+
+Antes de nuestro viaje hacia los tipos de datos, tenemos que introducir la noción de mutabilidad y su opuesto, inmutabilidad. Un tipo de datos es inmutable si tiene un valor fijo que no se puede cambiar después de su creación. Por el contrario, un objeto mutable se puede actualizar en el camino. Piense en un objeto mutable como un jarrón hecho de arcilla antes de ser cocido en el horno. Todavía puedes cambiar su forma. En cambio, un objeto inmutable ya está cocido y, por lo tanto, se fija en una forma permanente. Si deseas una forma diferente, debes crear un nuevo jarrón.
+----
+#### image ####
+name: vases.svg
+----
+class: large-image
+----
+#### text-block ####
+content:
+
+Los lenguajes de programación tienen la capacidad crucial de cambiar los valores asignados a las variables durante la ejecución de un programa. Toma en cuenta que no se puede asignar un identificador a dos valores diferentes al mismo tiempo. Considera analizar una hoja de cálculo. Una hoja de cálculo es una tabla llena de números y texto. Es una base de datos muy simple y la usarás con bastante frecuencia. Si necesitas leer los datos dentro de la hoja de cálculo, probablemente comenzarás línea por línea. Durante la iteración de las líneas de la tabla, tendría sentido reasignar un identificador cada vez a una sola línea para cargar y luego visualizar los datos.
+----
+#### image ####
+name: table.svg
+----
+class: large-image
+----
+#### text-block ####
+content: Un programador puede establecer un alias asignando otro identificador a un objeto existente.
+----
+#### code-example ####
+snippet: 01+es.py
+----
+#### image ####
+name: int20.svg
+----
+class: large-image
+----
+#### text-block ####
+content:
+
+Esto significa que ambos nombres hacen referencia al mismo objeto y se pueden utilizar para acceder al objeto. Si el objeto admite comportamientos que pueden afectar su estado, lo que significa que es mutable, ambos nombres reflejarán estos cambios. Sin embargo, si uno de los nombres se reasigna a un nuevo valor utilizando una instrucción de asignación posterior, esto no afectará al objeto con alias, solo romperá el enlace con el alias. Considera este ejemplo:
+----
+#### code-example ####
+snippet: 02+es.py
+----
+#### image ####
+name: int2030.svg
+----
+class: large-image
+----
+#### text-block ####
+content:
+
+Observemos la línea 6. La ejecución de este comando comienza con la evaluación de la expresión en el lado derecho del operador de asignación <code>=</code>. Esta expresión se evalúa sobre la base de la asociación existente del nombre altoRect. Dado que <code>altoRect</code> es <code>20</code>, <code>altoRect + 10</code> es <code>30</code>. Los valores enteros son inmutables, por lo que se crea un nuevo valor (<code>30</code>) y se asocia, según el operador de asignación, al nombre altoRect. Veremos un ejemplo de alias de un objeto mutable en unos pocos párrafos. Ahora estamos listos para sumergirnos en los tipos de datos de Python.
+----
+#### section-title ####
+content: Tipo booleano
+----
+class: default
+----
+#### image ####
+name: boolean.svg
+----
+class: large-image
+----
+#### text-block ####
+content:
+
+Los tipos de datos booleanos se utilizan para manipular valores lógicos y las únicas dos instancias posibles a las que pueden hacer refe­rencia son <code>True</code> (verdadero) y <code>False</code> (falso). ¡Estos son literales, no secuencias de texto! De hecho, forman parte de la lista de palabras clave reservadas. Python proporciona una función incorporada para crear un valor booleano a partir de los no booleanos, esta es <code>bool()</code>.
+
+Un número se convierte a <code>False</code> si es igual a cero, <code>True</code> si es diferente de cero. Las secuencias u otros contenedores se traducen a <code>False</code> si están vacíos, a <code>True</code> si tienen objetos dentro. El tipo booleano se usa principalmente para describir una condición: ¿es negro?, ¿es un digi­to?, ¿llegué a la puerta?, ¿todavía tengo espacio en la página? y así sucesivamente. Esta condición se usa luego en combinación con estructuras de control como <code>if</code> (si) o <code>while</code> (mientras).
+
+----
+#### section-title ####
+content: Números (Enteros y punto flotante)
+----
+class: default
+----
+#### text-block ####
+content:
+
+Python proporciona dos tipos principales para describir cantidades, enteros y puntos flotantes. ¿No son todos iguales los números? Bueno, sí y no. En programación, hay varias situaciones en las que necesitas precisión, por ejemplo, al escalar un dibujo. En otros casos, no puedes permitir describir una cantidad utilizando una fracción de un número entero, por ejemplo, cuando deseas describir un proceso iterativo. ¿Puedes repetir una acción tres veces y media? Podría tener algún sentido en lenguaje natural, debido al nivel de ambigüedad permitido, pero ciertamente no tiene sentido para nuestro intérprete de Python.
+----
+#### image ####
+name: int_float.svg
+----
+class: large-image
+----
+#### text-block ####
+content:
+
+En Python, un objeto entero se designa para representar números enteros. La declaración literal de dicho valor es un dígito con un signo de polaridad opcional: <code>2</code>, <code>+45</code>, <code>-12</code>.
+
+A veces puede resultar útil describir un número entero utilizando una base diferente, como binaria, octal o hexadecimal. Esto se puede hacer usando 0 como prefijo y un carácter que represente la base
+----
+#### table ####
+path: 01+es.csv
+----
+headers: 0
+----
+#### image ####
+name: binary.svg
+----
+class: large-image
+----
+#### image ####
+name: octal.svg
+----
+class: large-image
+----
+#### image ####
+name: standard_base.svg
+----
+class: large-image
+----
+#### image ####
+name: hexadecimal.svg
+----
+class: large-image
+----
+#### text-block ####
+content:
+
+Estas expresiones representan la misma cantidad con diferentes sistemas de notación.
+
+Python proporciona una función para convertir un valor en un entero: <code>int()</code>.
+
+Estos son los comportamientos que deberías esperar:
+----
+#### text-block ####
+content:
+
++ si se proporciona un punto flotante como argumento, el intérprete truncará el punto y cualquier dígito siguiente. Por ejemplo, <code>3.99</code> y <code>3.1</code> se convertirán en 3.
++ si se proporciona una secuencia de texto como argumento, el intérprete intentará analizarla y transformarla en un valor entero. La salida de int <code>int('-3')</code> será <code>-3</code>. Algo como <code>int('hola')</code> generará un <code>ValueError</code> (error de valor).
+----
+#### text-block ####
+content: Por defecto, <code>int()</code> usa una base 10 para la conversión. Si necesitas una base diferente, puedes indicar un segundo argumento opcional, como
+----
+#### code-example ####
+snippet: 03.py
+----
+#### exercise ####
+assignment: ¿Cómo representarías 30₁₀ usando la base 2, 8 y 16? Intenta utilizar el mismo método de conversión visual de los diagramas anteriores.
+----
+#### text-block ####
+content:
+
+El objeto <code>float</code> en Python se usa para representar un número decimal positivo o negativo. Su declaración literal se compone de un signo de polaridad (opcional), dígitos y un punto final seguido opcionalmente por otros dígitos. Por tanto, tanto <code>-3.14</code> como <code>3.</code>. pueden ser números de punto flotante.
+
+Otra forma de declarar un número de punto flotante es utilizar una notación científica. El equivalente de Python para <code>6.02x10²³</code> es <code>6.02e23</code>.
+
+Python proporciona una función para obtener un valor de punto flotante de un objeto existente: <code>float()</code>. Estos son los comportamientos que debes esperar:
+
++ si el argumento es un número entero, se convertirá a punto flotante
++ si el argumento es una secuencia de texto, el intérprete intentará analizarlo y transformarlo en un valor de punto flotante. Puedes esperar que float <code>float(-3.14)</code> se transforme en <code>-3.14</code>. Por el contrario, si el intérprete encuentra <code>float('-3,14')</code> o <code>float('mundo')</code>, generará un <code>ValueError</code>.
+----
+#### section-title ####
+content: Ningún tipo
+----
+class: default
+----
+#### text-block ####
+content: En Python, la palabra clave reservada <code>None</code> permite expresar la ausencia de datos. Se puede utilizar en varias situaciones:
+----
+#### text-block ####
+content:
+
++ creando un identificador sin asignarle ningún dato específico. Algo como decir "Voy a usar esto, pero todavía no sé cómo"
++ desvincular un identificador de un valor sin asignarlo a nada más
++ usar <code>None</code> en una declaración condicional para verificar si un identificador está vinculado a un valor o no.
+----
+#### image ####
+name: none.svg
+----
+class: large-image
+----
+#### text-block ####
+content:
+
+Tome en cuenta que si la llamada de una función no fructífera (lo que significa que no incluye declaraciones <code>return</code> ni <code>yield</code> en su cuerpo) se asigna a un identificador, el intérprete de Python no generará ningún error, sino que asignará el valor <code>None</code> a el identificador. Por ejemplo:
+----
+#### code-example ####
+snippet: 04+es.py
+----
+#### text-block ####
+content: El valor asociado con <code>miValor</code> será <code>None</code> porque <code>interpolarValor</code> no tiene declaración de retorno.
+----
+---
+hasTocNumber: yes

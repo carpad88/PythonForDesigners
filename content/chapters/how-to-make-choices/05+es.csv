@@ -1,0 +1,8 @@
+Operador	Operación
+<code>+</code>	suma
+<code>-</code>	resta
+<code>*</code>	multiplicación
+<code>/</code>	división
+<code>//</code>	división entera
+<code>%</code>	operador módulo
+<code>**</code>	potencia

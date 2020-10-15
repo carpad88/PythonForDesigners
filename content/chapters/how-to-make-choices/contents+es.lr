@@ -1,0 +1,450 @@
+_model: chapter
+---
+_slug: como-tomar-decisiones
+---
+title: Cómo tomar decisiones
+---
+abstract: Desafortunadamente, esta no es la sección de autoayuda del manual. Se trata del constructor condicional
+---
+sort_key: 7
+---
+visual_abstract: abstract-6.svg
+---
+og_image: abstract-6.png
+---
+body:
+
+#### section-title ####
+content: Operadores, expresiones y declaraciones
+----
+class: default
+----
+#### text-block ####
+content:
+
+Una expresión es una combinación de identificadores, valores y operadores que calcula un valor. Es bastante similar a una expresión aritmética, con la única diferencia de que el alcance de las expresiones de los lenguajes de programación es mucho mayor, ya que pueden calcular cualquier tipo de datos, ya sean numéricos o de otro tipo. Ya hemos profundizado en identificadores y valores; lo que echamos de menos para escribir expresiones Python adecuadas son ahora los opera­dores. Son símbolos especiales y palabras clave que instruyen un cálculo entre dos valores. La semántica de un operador depende del tipo de sus operandos.
+----
+#### section-title ####
+content: Operadores lógicos (producen booleanos)
+----
+class: default
+----
+#### text-block ####
+content:
+
+Los operadores lógicos permiten manipular y encadenar valores booleanos. Los valores no booleanos también pueden ser operandos de un operador lógico, pero se convertirán implícitamente en valores booleanos con el constructor de tipo de datos <code>bool()</code> antes de la evalua­ción.
+----
+#### image ####
+name: not.svg
+----
+class: small-image
+----
+#### text-block ####
+content:
+
+<code>not</code> (negación unaria) se usa para cambiar el estado de un tipo booleano, de <code>False</code> a <code>True</code>, de <code>True</code> a <code>False</code>. Es como presionar un interruptor. “Unario” significa que el operador solo afecta al siguiente operando.
+----
+#### image ####
+name: or.svg
+----
+class: small-image
+----
+#### text-block ####
+content:
+
+<code>or</code> se usa para construir una expresión lógica que evaluará <code>True</code> si alguno de los operandos es <code>True</code>. Mira el diagrama: la tubería tiene una bifurcación con un grifo a cada lado. La bifurcación es el operador "o" y las derivaciones son los operandos; si alguna de las válvulas está abierta (<code>True</code>), el agua fluirá por el otro lado.
+----
+#### image ####
+name: and.svg
+----
+class: small-image
+----
+#### text-block ####
+content:
+
+<code>and</code> (condicional y) se usa para construir una expresión lógica que evaluará <code>True</code> si cada operando es <code>True</code>. Mira el diagrama: una tubería recta representa la expresión booleana con dos grifos seguidos. La única forma de dejar pasar el agua es abrir ambas válvulas. Lo que significa que cada operando tiene que ser verdadero.
+
+<code>and</code> y <code>or</code> también se denominan operadores de "corto circuito", porque el intérprete no evaluará la expresión completa si es innecesario.
+----
+#### image ####
+name: not_evaluated.svg
+----
+class: large-image
+----
+#### text-block ####
+content: Aquí está una tabla mostrando sus comportamientos:
+----
+#### table ####
+path: 01+es.csv
+----
+headers: 1
+----
+#### text-block ####
+content: Toma en cuenta que los operadores lógicos aceptan cualquier tipo como operandos, no solo booleanos. Si el tipo de operando no es booleano, el intérprete convertirá la expresión a un valor booleano y solo después evaluará la expresión lógica. Por ejemplo:
+----
+#### table ####
+path: 02+es.csv
+----
+headers: 1
+----
+#### text-block ####
+content: y así. Consulta la sección Tipo booleano si tiene alguna duda sobre la forma en que funciona <code>bool()</code>.
+----
+#### section-title ####
+content: Operadores de igualdad (producen booleanos)
+----
+class: default
+----
+#### text-block ####
+content: Para tomar decisiones razonables, es muy importante evaluar si los valores son los mismos. Python puede probar dos nociones diferentes de "igualdad", igualdad e identidad:
+----
+#### table ####
+path: 03+es.csv
+----
+headers: 1
+----
+#### text-block ####
+content:
+
+Es esencial comprender la diferencia entre las dos nociones diferentes para poder escribir código semántico y confiable.
+
+Los operadores de igualdad investigan los valores de los objetos referidos; generalmente son enteros, cadenas, contenedores:
+----
+#### code-example ####
+snippet: 01+es.py
+----
+#### text-block ####
+content: En su lugar, los operadores de identidad comprueban si dos identificadores se refieren o no al mismo objeto. Entonces, en diferentes palabras, verifican si dos identificadores apuntan al mismo lugar en la memoria. Escribamos una pequeña variación del código anterior:
+----
+#### code-example ####
+snippet: 02+es.py
+----
+#### text-block ####
+content:
+
+Entonces, ¿cuándo deberías usar qué? Al comparar números, texto, contenido de contenedores es una buena práctica usar <code>==</code> y <code>!=</code> Evita <code>is</code> y <code>is not</code>, son ambiguos y, a menudo, no son confiables debido al almacenamiento en caché. En cambio, al comparar identificadores con conjuntos unitarios (<code>True</code>, <code>False</code>, <code>None</code>), siempre debes usar <code>is</code> y <code>is not</code>. ¿Por qué? Porque solo hay una instancia de cada uno de estos tipos (por lo tanto, su identidad es confiable) y hace que su código sea más legible.
+----
+#### code-example ####
+snippet: 03+es.py
+----
+#### section-title ####
+content: Operadores de comparación (producen booleanos)
+----
+class: default
+----
+#### text-block ####
+content: Ordenar cosas es un gran problema en la programación. Python proporciona algunos operadores capaces de detectar el tamaño de dos expresiones:
+----
+#### table ####
+path: 04+es.csv
+----
+headers: 1
+----
+#### code-example ####
+snippet: 04+es.py
+----
+----
+#### code-example ####
+snippet: 05+es.py
+----
+----
+#### text-block ####
+content: Al comparar instancias no enteras, se traducen en un valor numérico y luego se evalúan. Por ejemplo, las secuencias de texto se convierten en secuencias de números enteros según la posición de cada carácter en el estándar Unicode.
+----
+#### section-title ####
+content: Operadores aritméticos (producen punto flotante o entero)
+----
+class: default
+----
+#### text-block ####
+content: Las computadoras tienen la capacidad de calcular expresiones aritméticas muy rápidamente. Python, por supuesto, admite los operadores aritméticos estándar de la siguiente manera:
+----
+#### table ####
+path: 05+es.csv
+----
+headers: 1
+----
+#### text-block ####
+content: La suma, la resta y la multiplicación tienen un comportamiento muy sencillo: si ambos operandos son enteros, dan como resultado un entero. Si uno de los operandos es un punto flotante, devolverán un valor de punto flotante. Por ejemplo:
+----
+#### code-example ####
+snippet: 06.py
+----
+#### text-block ####
+content: La división tiene dos operadores diferentes que se comportan de manera ligeramente diferente. La división estándar es lo que espe­raría de ella:
+----
+#### code-example ####
+snippet: 07.py
+----
+#### text-block ####
+content: Si se te permite cortar unidades, puedes proceder de la siguiente manera:
+----
+#### image ####
+name: 4times.svg
+----
+class: large-image
+----
+#### text-block ####
+content: En cambio, la división de enteros produce el piso matemático del cociente:
+----
+#### code-example ####
+snippet: 08.py
+----
+#### text-block ####
+content: si no puedes dividir las unidades, agrupas 4 unidades solo una vez de una colección de 6
+----
+#### image ####
+name: 4.svg
+----
+class: small-image
+----
+#### text-block ####
+content: El operador módulo produce el residuo de dicha división:
+----
+#### code-example ####
+snippet: 09.py
+----
+#### image ####
+name: modulo.svg
+----
+class: small-image
+----
+#### text-block ####
+content: En combinación con el operador equivalente (<code>==</code>) o no equivalente (<code>!=</code>), El módulo puede ser realmente útil para verificar si un número es par o impar, si un número es decimal o no, etc.
+----
+#### code-example ####
+snippet: 10+es.py
+----
+#### section-title ####
+content: Expresiones compuestas
+----
+class: default
+----
+#### text-block ####
+content: Python brinda la oportunidad de combinar más expresiones a la vez. El resultado de estas expresiones compuestas se basa en la evaluación de cada una de las expresiones que contiene. El orden de evaluación afecta el resultado final, por lo que es muy importante controlar el estándar de precedencia del intérprete. Por ejemplo:
+----
+#### code-example ####
+snippet: 11.py
+----
+#### text-block ####
+content: Debido a la mayor precedencia de la multiplicación sobre la suma, primero se evalúa <code>2*8</code>, luego se suma <code>16</code> a <code>5</code>, dando como resultado <code>21</code>. Para manipular el orden de ejecución de la evaluación, se pueden utilizar paréntesis. Por ejemplo:
+----
+#### code-example ####
+snippet: 12.py
+----
+#### text-block ####
+content: Aquí hay una tabla concisa del orden de evaluación de las expresiones ordenadas por mayor precedencia
+----
+#### table ####
+path: 06+es.csv
+----
+headers: 1
+----
+#### section-title ####
+content: Sintaxis de los dos puntos
+----
+class: default
+----
+#### text-block ####
+content: Como ya mencionamos, el espacio en blanco es semántico en Python. Esto significa que para agrupar líneas de código es necesario componer las instrucciones que forman el bloque en consecuencia. Considere la siguiente lista de palabras:
+----
+#### code-example ####
+snippet: 13+es.py
+----
+#### text-block ####
+content: Aquí no aprovechamos las variables visuales para hacer que la jerarquía sea más accesible para los lectores. Solo podemos confiar en el significado de estas palabras e intentar detectar una posible estructura. Entonces, a primera vista, no detectamos ninguna jerarquía, pero después de leer, notamos que <code>comestibles</code> puede agrupar todos los demás artículos.
+----
+#### image ####
+name: groceries.svg
+----
+class: small-image
+----
+#### text-block ####
+content: Hay algunos trucos que podemos implementar para expresar esta estructura en el mejor de los casos utilizando solo tipografía. Comencemos a hacer algunos pedidos moviendo <code>comestibles</code> a la parte superior:
+----
+#### code-example ####
+snippet: 14+es.py
+----
+#### text-block ####
+content: Entonces deberíamos encontrar una manera de asociar inequívocamente las <code>papas</code>, las <code>berenjenas</code> y los <code>tomates</code> como parte del mismo grupo. Una forma muy elegante y económica es mover su alineación hacia la derecha, así:
+----
+#### code-example ####
+snippet: 15+es.py
+----
+#### text-block ####
+content: Después de agrupar, jerarquía. Una forma muy común y compartida de etiquetar la primera línea de una lista como título es usar el signo de dos puntos, como:
+----
+#### code-example ####
+snippet: 16+es.py
+----
+#### text-block ####
+content:
+
+Si comparamos el resultado final con el original, notaremos una mejora sensible. Hacemos esto todo el día sin siquiera darnos cuenta. Activamos variables visuales para construir imágenes con significados claros y de fácil acceso para otras personas. Es un tipo de gramática sutil, pero extremadamente poderosa.
+
+El diseñador de Python, Guido van Rossum, decidió implementar dicho comportamiento en el lenguaje de programación Python. Este comportamiento es obligatorio, lo que significa que el intérprete de Python espera que el usuario aplique una sangría al código semánticamente para organizar los bloques de código.
+
+Estas declaraciones necesitan dos puntos como delimitador final:
+----
+#### code-example ####
+snippet: 17.py
+----
+#### text-block ####
+content: El código relacionado con la declaración debe estar sangrado cuatro espacios hacia la derecha –el intérprete también acepta la tabulación, pero no se recomienda– para que se considere el cuerpo del constructo. Por ejemplo:
+----
+#### code-example ####
+snippet: 18+es.py
+----
+#### text-block ####
+content: "algo más" no es parte de la construcción condicional porque se sale del cuerpo sangrado. Considera también que Python permite estructuras anidadas como:
+----
+#### code-example ####
+snippet: 19+es.py
+----
+#### text-block ####
+content: Para ejecutar la construcción condicional anidada en el bucle <code>for in</code>, esta debe tener una sangría de cuatro espacios más que su declaración principal, que ya tiene cuatro espacios de sangría. Es decir, debe tener una sangría de ocho espacios hacia la derecha. Como una matrioska.
+----
+#### image ####
+name: paper.svg
+----
+class: small-image
+----
+#### section-title ####
+content: Ejecución condicional
+----
+class: default
+----
+#### text-block ####
+content:
+
+Ahora que tenemos las herramientas, debemos instruir al intérprete para que tome decisiones razonables. Como ya dijimos, es fundamental durante la programación poder verificar si una condición es verdadera o no y luego poder desviar el flujo de ejecución en diferentes bloques de código.
+
+A continuación, se muestra un diagrama estándar común que se utiliza para describir estos patrones, el diagrama de flujo:
+
+----
+#### image ####
+name: fridge.svg
+----
+class: large-image
+----
+#### text-block ####
+content: Python proporciona una estructura de control llamada "construcción condicional" que permite definir si un bloque de código debe ejecutarse o no. La forma mínima de una estructura condicional es:
+----
+#### code-example ####
+snippet: 20+es.py
+----
+#### image ####
+name: condition1.svg
+----
+class: large-image
+----
+#### text-block ####
+content: Aquí está un ejemplo concreto:
+----
+#### code-example ####
+snippet: 21+es.py
+----
+#### text-block ####
+content: La condición es una expresión booleana. Si esta expresión da como resultado un valor <code>True</code>, se ejecutará el bloque de código sangrado que sigue. El cuerpo de la construcción condicional puede incluir otras estructuras anidadas, solo es necesario sangrarlas en consecuencia.
+----
+#### code-example ####
+snippet: 22+es.py
+----
+#### text-block ####
+content: Tan pronto como una declaración se sale del cuerpo sangrado, ya no se considera parte de la estructura condicional. Por ejemplo:
+----
+#### code-example ####
+snippet: 23+es.py
+----
+#### text-block ####
+content:
+
+En este caso, tanto si se ejecuta el cuerpo como si no, se dibujará un rectángulo en el lienzo.
+
+Se puede colocar una instrucción <code>else</code> al final de la construcción condicional. Las instrucciones agrupadas en esta instrucción se ejecutarán si no se cumple cualquier otra instrucción (<code>if</code>, <code>elif</code>) de la construcción condicional. Así es como se usa:
+----
+#### code-example ####
+snippet: 24+es.py
+----
+#### image ####
+name: else.svg
+----
+class: large-image
+----
+#### text-block ####
+content: Aquí está un ejemplo concreto:
+----
+#### code-example ####
+snippet: 25+es.py
+----
+#### text-block ####
+content: La palabra clave <code>else</code> no va seguida de ninguna condición, porque no necesita ninguna evaluación. Es un paracaídas del intérprete.
+----
+#### image ####
+name: parachute.svg
+----
+class: small-image
+----
+#### text-block ####
+content: Además, Python permite encadenar la evaluación de muchas condiciones a la vez, usando un número indefinido de <code>elif</code> (que significa "_else if_") entre declaraciones <code>if</code> (obligatorio) y <code>else</code> (opcional).
+
+La estructura es entonces:
+----
+#### code-example ####
+snippet: 26+es.py
+----
+#### image ####
+name: elif.svg
+----
+class: large-image
+----
+#### text-block ####
+content: por ejemplo
+----
+#### code-example ####
+snippet: 27+es.py
+----
+#### image ####
+name: myVar.svg
+----
+class: large-image
+----
+#### text-block ####
+content: Toma nota del uso de sangría. <code>if</code>, <code>elif</code> y <code>else</code> están alineados a la izquierda mientras que sus cuerpos están indentados cuatro espacios a la derecha.
+----
+#### section-title ####
+content: Manual de trabajo
+----
+class: workbook
+----
+#### exercise ####
+assignment:
+
+Escribe un programa capaz de dibujar un círculo colocado en el centro del lienzo. Su tamaño debería reaccionar a un "factor" de parámetro entre 0 y 1:
+
+- si es 0, el diámetro debe ser un cuarto de la altura del lienzo
+- si es 1, el diámetro debe ser tres cuartos de la altura del lienzo
+- cualquier cosa en el medio debe interpolarse suavemente
+
+Defina también una variable "switch" que apunte a un valor booleano. Un valor <code>True</code> debe crear un círculo negro sobre un fondo blanco, de otra manera, lo contrario.
+----
+image: exercisepy29.png
+----
+solution: flipCircle.py
+----
+#### exercise ####
+assignment: Dibuja cuatro círculos colocados en la diagonal del lienzo desde la esquina inferior izquierda a la superior derecha. El color de relleno de los círculos debe cambiar de gris claro a gris oscuro, siguiendo la dirección diagonal. Luego, asigna un valor booleano a un identificador llamado "primeroClaroLuegoOscuro". Esta variable debería permitir al usuario decidir en qué dirección se deben dibujar los círculos.
+----
+image: ex6.2.png
+----
+solution: circlesOnDiagonal.py
+----
+#### exercise ####
+assignment: Dibuja tres puntos alineados verticalmente en el medio de un lienzo cuadrado. Define una variable de "distancia" entre 0 y 1. Este valor debería empujar los puntos hacia los bordes del lienzo alternativamente en dirección opuesta. Define también una variable de "switch" con un valor booleano asignado capaz de cambiar la dirección de los puntos.
+----
+image: ex6.3.png
+----
+solution: pushingDots.py
+----
+---
+hasTocNumber: yes

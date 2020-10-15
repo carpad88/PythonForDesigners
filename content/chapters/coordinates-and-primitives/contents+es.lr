@@ -1,0 +1,356 @@
+_model: chapter
+---
+_slug: coordenadas-y-primitivos
+---
+title: Coordenadas y primitivos
+---
+abstract: Es hora de dibujar. Aquí nos ocupamos de las propiedades del lienzo y las funciones de dibujo.
+---
+sort_key: 5
+---
+visual_abstract: abstract-4.svg
+---
+og_image: abstract-4.png
+---
+body:
+
+#### image ####
+name: graphPaper.svg
+----
+class: small-image
+----
+#### text-block ####
+content:
+
+Un programa DrawBot puede controlar el dibujo de múltiples lienzos de PDF. Piensa en el lienzo como una hoja de papel cuadriculado. DrawBot es un amigo que está dispuesto a dibujar en el papel cuadriculado de acuerdo con tus instrucciones. La forma más inequívoca de comunicar lo que necesita es proporcionar datos numéricos para describir formas: estas son coordenadas.
+
+Cuando inicias DrawBot, te muestra un lienzo gris vacío (izquierda), un cuadro de texto donde puedes escribir código (arriba a la derecha) y una consola (abajo a la derecha). DrawBot tiene un tamaño de lienzo predeterminado de 1000 por 1000 puntos. Podemos definir un tamaño de lienzo diferente usando la función <code>newPage()</code>. Si deseas trabajar con un tamaño de lienzo específico, debes definirlo antes de invocar cualquier otro comando de dibujo; de lo contrario, DrawBot proporcionará uno estándar. Como en el mundo físico, donde tomamos un papel y luego comenzamos a dibujar.
+
+A diferencia de un intérprete interactivo, DrawBot se basa en un script. Significa que puedes almacenar tus programas como archivos de texto con una extensión .py. Si deseas ejecutar su programa, debes invocar al intérprete para "ejecutar (run)" utilizando cmd+R explícitamente.
+
+Dada la naturaleza bidimensional del lienzo de PDF, debes proporcionar un par de coordenadas: _x_ y _y_. El origen del sistema de coordenadas se encuentra en la esquina inferior izquierda del lienzo.
+----
+#### image ####
+name: cartesian.svg
+----
+class: large-image
+----
+#### text-block ####
+content:
+
+El orden de las coordenadas es convencionalmente _x_ seguido de _y_. En otras palabras, el ancho (_x_) viene primero y luego el alto (_y_).
+
+Toma en cuenta que, a diferencia de una cuadrícula de píxeles, un lienzo vectorial es continuo. Esto significa que puede aceptar coordenadas de puntos flotantes sin redondeos como 1.3.
+----
+#### image ####
+name: rounding.svg
+----
+class: large-image
+----
+#### text-block ####
+content: La función <code>newPage()</code> accepta dos tipos de parámetros:
+----
+#### text-block ####
+content:
+
++ un par de coordenadas
++ una secuencia de texto con un formato de página estándar de [esta lista](http://www.drawbot.com/content/canvas/pages.html#size).
+----
+#### text-block ####
+content: Dado que nos sumergiremos en las secuencias de texto en los próximos capítulos, por ahora limítate a los valores numéricos.
+----
+#### code-example ####
+snippet: 01.py
+----
+diagram: drawbot_canvas_1.svg
+----
+#### code-example ####
+snippet: 02.py
+----
+diagram: drawbot_canvas_2.svg
+----
+#### code-example ####
+snippet: 03.py
+----
+diagram: drawbot_canvas_3.svg
+----
+#### text-block ####
+content:
+
+Supongo que el ancho y la altura son nociones sencillas, pero, ¿qué significan estos números? ¿Manzanas, metros, yardas? Bueno, cada dimensión proporcionada a cualquier función de dibujo en DrawBot se expresa en puntos PostScript tipográficos. Como quizás sepas por tus clases de historia del diseño gráfico, los puntos tipográficos tienen una relación bastante problemática con otros sistemas de unidades. Desde la revolución de la autoedición, los puntos tipográficos se han hecho unívocamente proporcionales a otra unidad de medida, la pulgada. Un punto tipográfico equivale a la 72ª parte de una pulgada. Supongamos que estamos en el ámbito de las imágenes de píxeles y la densidad de la imagen es de 72 ppp; entonces un punto tipográfico también equivale a un píxel. Hablaremos más sobre resoluciones de imagen en los próximos capítulos.
+----
+#### image ####
+name: thumbmeter.svg
+----
+class: large-image
+----
+#### text-block ####
+content:
+
+Deberías ver a DrawBot como un dibujante hábil y rápido que ejecuta las instrucciones que diste en el editor de código. Como cualquier actividad de dibujo, debes pensar en colores y herramientas antes de usarlos. Primero decides de qué color, luego empiezas a esparcir tinta sobre el papel, ¿verdad?
+----
+#### image ####
+name: glasses.svg
+----
+class: small-image
+----
+#### text-block ####
+content:
+
+DrawBot establece algunos valores estándar tan pronto como inicia la aplicación: fondo blanco para el lienzo, negro RGB para el color de relle­no, trazo transparente de 1 pt de ancho.
+
+Nos sumergiremos en los colores con más detalle en los próximos capítulos. Para las siguientes demostraciones usaremos tonos de gris, que se expresan en valores entre 0 y 1:
+----
+#### text-block ####
+content:
+
++ 0 significa black
++ 1 significa white
++ 0.5 gris medio
+----
+#### text-block ####
+content:
+
+y así. Piensa en estas cifras como porcentajes de presencia de luz (0 como 0%, 0,5 como 50%, 1 como 100%).
+
+Las características de nuestra herramienta de dibujo están definidas por 3 funciones:
+----
+#### text-block ####
+content:
+
++ <code>fill(color)</code>
++ <code>stroke(color)</code>
++ <code>strokeWidth(grosor)</code>
+----
+#### text-block ####
+content:
+
+Deben llamarse antes de las funciones de dibujo: primero elegimos la herramienta, luego dibujamos.
+
+DrawBot proporciona cuatro funciones para dibujar formas primitivas.
+----
+#### code-example ####
+snippet: 04+es.py
+----
+diagram: rect().svg
+----
+#### text-block ####
+content: Esta función dibuja un rectángulo en el lienzo usando <code>x</code> y <code>y</code> como esquina inferior izquierda.
+----
+#### code-example ####
+snippet: 05+es.py
+----
+image: rect.png
+----
+#### exercise ####
+assignment: Crea un lienzo de 100x100pt. Dibuja cuatro cuadrados, con lados de 20 unidades, cada uno frente a una esquina del lienzo.
+----
+image: esRects.png
+----
+solution: fourSquares.py
+----
+#### code-example ####
+snippet: 06+es.py
+----
+diagram: oval().svg
+----
+#### text-block ####
+content:
+
+Esta función dibuja un óvalo en el lienzo usando <code>x</code> y <code>y</code> como el punto inferior izquierdo del rectángulo donde podrías inscribir el óvalo. Los argumentos de ancho y alto corresponden al diámetro horizontal y vertical.
+----
+#### code-example ####
+snippet: 07+es.py
+----
+image: ovals.png
+----
+#### exercise ####
+assignment: Crea un lienzo de 100x100pt. Dibuja cuatro óvalos, de 20 unidades de diámetro, cada uno con su punto central en una esquina del lienzo.
+----
+image: esOvals.png
+----
+solution: fourOvals.py
+----
+#### code-example ####
+snippet: 08.py
+----
+diagram: line().svg
+----
+#### text-block ####
+content: Esta función dibuja una línea entre dos puntos. Recuerda encerrar cada par de coordenadas entre paréntesis.
+----
+#### code-example ####
+snippet: 09+es.py
+----
+image: lines-01.png
+----
+#### exercise ####
+assignment: ¿Cómo podrías mejorar la calidad del código agregando dos identificadores?
+----
+solution: improve+es.py
+----
+#### code-example ####
+snippet: 10+es.py
+----
+image: lines2-01.png
+----
+#### code-example ####
+snippet: 11+es.py
+----
+image: lines3-01.png
+----
+#### exercise ####
+assignment: Crea un lienzo de 100x100pt. Dibuja dos líneas que conecten dos esquinas no contiguas del lienzo.
+----
+image: esX.png
+----
+solution: connectCorners.py
+----
+#### code-example ####
+snippet: 12+es.py
+----
+image: lines4-01.png
+----
+#### exercise ####
+assignment: Crea un lienzo de 100x100pt. Dibuja una polilínea conectada en zig zag comenzando desde la esquina superior izquierda y terminando en la esquina inferior derecha del lienzo
+----
+image: esZigZig.png
+----
+solution: polyline.py
+----
+#### code-example ####
+snippet: 13.py
+----
+diagram: polygon().svg
+----
+#### code-example ####
+snippet: 14.py
+----
+image: polygon.png
+----
+#### exercise ####
+assignment: Dibuja dos polígonos de tres lados cada uno, cada polígono debe tener dos vértices que coincidan con dos esquinas contiguas del lienzo y un vértice que coincida con el centro del lienzo.
+----
+image: esBlackWhite.png
+----
+solution: blackWhite.py
+----
+#### text-block ####
+content: El orden de ejecución del código, es decir, la disposición de sus declaraciones, refleja el orden en el que se dibujarán los elementos en el lienzo. Por ejemplo:
+----
+#### code-example ####
+snippet: 15.py
+----
+image: rect_oval.png
+----
+#### text-block ####
+content: da un resultado diferente de:
+----
+#### code-example ####
+snippet: 16.py
+----
+image: oval_rect.png
+----
+#### exercise ####
+assignment: Crea un lienzo de 100x100pt. Combina los ejercicios de círculos y cuadrados, pero dibuja los cuatro cuadrados debajo de los cuatro óvalos usando diferentes tonos de gris.
+----
+image: esOvalRect.png
+----
+solution: circles+squares.py
+----
+#### text-block ####
+content: Toma también en cuenta que una vez que se establece un <code>fill()</code> o <code>stroke()</code>, se usa hasta que se realicen más cambios. Este script:
+----
+#### code-example ####
+snippet: 17.py
+----
+image: ovalsss.png
+----
+#### text-block ####
+content: es diferente de este:
+----
+#### code-example ####
+snippet: 18.py
+----
+image: ovalsss2.png
+----
+#### section-title ####
+content: Manual de trabajo
+----
+class: workbook
+----
+#### exercise ####
+assignment:
+
+Tu objetivo es dibujar un rectángulo negro colocado en el medio del lienzo. Su altura es igual a la altura del lienzo. En cambio, el ancho del rectángulo cambia según un "factor" variable entre 0 y 1:
+
++ si es 0, el ancho del rectángulo es igual a 0
++ si es 1, el ancho del rectángulo es igual al ancho del lienzo
+----
+image: ex4.8.png
+----
+solution: middleCurtain.py
+----
+#### exercise ####
+assignment:
+
+Dibuja dos rectángulos, uno apoyado en el lado izquierdo del lienzo y el otro apoyado en el lado derecho. Sus alturas son iguales a las del lienzo. En cambio, el ancho de cada rectángulo está controlado por un "factor" variable entre 0 y 1. Cuando el "factor":
+
++  es 0, no ves ningún rectángulo
++  is 1, no puedes ver el fondo blanco del lienzo
+----
+image: ex4.9.png
+----
+solution: externalCurtain.py
+----
+#### exercise ####
+assignment:
+
+Dibuja cuatro triángulos. Rellena cada triángulo con un tono diferente de gris. Además, cada triángulo debe tener dos vértices que coincidan con las esquinas contiguas del lienzo y el último vértice colocado en el medio del lienzo.
+----
+image: ex4.10.png
+----
+solution: fourTriangles.py
+----
+#### exercise ####
+assignment:
+
+Extiende el ejercicio anterior: ¿cómo podrías hacer que la altura de cada triángulo reaccione a una variable llamada “factor”?
+
+- cuando el "factor" es 0, no ves triángulo (¡no tienen altura!)
+- cuando el "factor" es 1, los vértices tocan el centro del lienzo
+----
+image: ex4.11.png
+----
+solution: fourTrianglesMoving.py
+----
+#### exercise ####
+assignment:
+
+Dibuja cuatro círculos alineados verticalmente en el medio de un lienzo. Las formas deben estar igualmente distribuidas. Un "radio" variable controla el tamaño de cada círculo. El color de cada forma debe calcularse de acuerdo con su posición horizontal en el lienzo: izquierda más oscura, derecha más clara.
+----
+image: ex4.12.png
+----
+solution: fourCircles.py
+----
+#### exercise ####
+assignment:
+
+Dibuja dos cruces, una con forma de "más" en gris oscuro y una con forma de "multiplicar" en gris claro. La variable "factor" controla el grosor de las cruces:
+
++  si es 0, el grosor es 2pt
++  si es 1, el grosor es 30pt
+----
+image: ex4.13.png
+----
+solution: crosses.py
+----
+#### exercise ####
+assignment: Dibuja una cuadrícula con tres columnas y tres filas. El programa debe permitir la presencia de un espacio seguro entre los elementos (a menudo denominado "medianil"). El valor de "medianil" debe expresarse en puntos tipográficos.
+----
+image: ex4.14.png
+----
+solution: grid.py
+----
+---
+hasTocNumber: yes
