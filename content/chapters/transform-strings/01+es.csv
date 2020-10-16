@@ -1,0 +1,8 @@
+Tipo	Significado	Resultado
+<code>'b'</code>	Formato binario	Imprime el número en base 2
+<code>'c'</code>	Caracter	Convierte el número entero en el carácter Unicode correspondiente antes de imprimir
+<code>'d'</code>	Entero decimal	Imprime el número en base 10
+<code>'o'</code>	Formato octal 	Imprime el número en base 8
+<code>'x'</code>	Formato Hex	Imprime el número en base 16, utilizando letras minúsculas para los dígitos superiores al 9
+<code>'X'</code>	Formato Hex	Imprime el número en base 16, utilizando letras minúsculas para los dígitos superiores al 9
+<code>'n'</code>	Número	Es lo mismo que <code>'d'</code>, excepto que usa la configuración regional actual para insertar los caracteres separadores de números apropiados

@@ -1,0 +1,6 @@
+Método	Entrada	Salida
+<code>s.capitalize()</code>	<code>hola</code>	<code>Hola</code>
+<code>s.lower()</code>	<code>HOLA</code>	<code>hola</code>
+<code>s.swapcase()</code>	<code>Hola</code>	<code>hOLA</code>
+<code>s.title()</code>	<code>hola mundo</code>	<code>Hola Mundo</code>
+<code>s.upper()</code>	<code>hola</code>	<code>HOLA</code>

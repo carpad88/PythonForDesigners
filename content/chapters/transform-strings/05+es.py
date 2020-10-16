@@ -1,0 +1,1 @@
+f'{[expresión]:[amplitud][tipo]}'

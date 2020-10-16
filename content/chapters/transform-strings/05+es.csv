@@ -1,0 +1,5 @@
+Método	Comportamiento
+<code>s.index(s2, i, j)</code>	Índice de la primera ocurrencia de <code>s2</code> en <code>s</code> después del índice i y antes del índice j
+<code>s.rindex(s2)</code>	Retorna el índice más alto de <code>s2</code> en s (muestra <code>ValueError</code> si no es encontrado)
+<code>s.find(s2)</code>	Encuentra y retorna el índice más bajo de <code>s2</code> en <code>s</code>
+<code>s.rfind(s2)</code>	Return el índice más alto de <code>s2</code> en <code>s</code>

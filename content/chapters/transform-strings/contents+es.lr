@@ -1,0 +1,214 @@
+_model: chapter
+---
+_slug: transformar-cadenas-de-texto
+---
+title: Transformar cadenas de texto
+---
+abstract: La transformación eficiente de valores en cadenas de texto es esencial para una composición tipográfica adecuada.
+---
+visual_abstract: abstract-9.svg
+---
+og_image: abstract-9.png
+---
+sort_key: 10
+---
+body:
+
+#### section-title ####
+content: Formatear cadenas de texto
+----
+class: default
+----
+#### text-block ####
+content:
+
+Python admite varias formas de formatear cadenas de texto. Con el formato me refiero a la construcción de nuevas cadenas de texto a partir de diferentes tipos de valores. Los más comunes son el formato-<code>%</code> de la vieja escuela, el método <code>.format()</code> y las novedosas <code>f-strings</code> de Python3. En este manual, analizaremos la forma más reciente, dada su sintaxis mínima y su alta flexibilidad.
+
+Formatear cadenas de texto con <code>f-string</code> es tan fácil como definir un literal de cadena estándar, mira este ejemplo:
+----
+#### code-example ####
+snippet: 01+es.py
+----
+#### text-block ####
+content: Además, las <code>f-strings</code> permiten incluir expresiones completas de Python como:
+----
+#### code-example ####
+snippet: 02+es.py
+----
+#### text-block ####
+content: No olvides anteponer la <code>f-strings</code> con una <code>'f'</code> o <code>'F'</code>, de lo contrario se consideraría solo una cadena normal, mira:
+----
+#### code-example ####
+snippet: 03+es.py
+----
+#### text-block ####
+content: Como ya habrás notado, la expresión en la <code>f-strings</code> debe estar rodeada de llaves:
+----
+#### code-example ####
+snippet: 04+es.py
+----
+#### text-block ####
+content:
+
+De lo contrario, la expresión no se evalúa.
+
+<code>f-strings</code> y <code>.format()</code> comparten el mismo mini-lenguaje de especificador de formato. Que se puede sintetizar de la siguiente manera:
+----
+#### code-example ####
+snippet: 05+es.py
+----
+#### text-block ####
+content: Este mini-lenguaje nos permite instruir con precisión cómo formatear los datos en la cadena agregando información adicional después de dos puntos. Por ejemplo:
+----
+#### code-example ####
+snippet: 06+es.py
+----
+#### text-block ####
+content: Este paso es opcional, por lo que si omitimos cualquier instrucción adicional, Python usará un intento de conversión estándar.
+----
+#### code-example ####
+snippet: 07+es.py
+----
+#### text-block ####
+content: <code>[amplitud]</code> proporciona instrucciones sobre el relleno, por ejemplo, permitiendo agregar caracteres adicionales a la derecha
+----
+#### code-example ####
+snippet: 08+es.py
+----
+#### text-block ####
+content: o la izquierda
+----
+#### code-example ####
+snippet: 09+es.py
+----
+#### text-block ####
+content:
+
+En los casos anteriores, se agregarán espacios en blanco hasta que se alcance la longitud de 10 caracteres.
+
+<code>[amplitud]</code> también permite centrar una cadena de texto dentro de una cierta cantidad de caracteres:
+----
+#### code-example ####
+snippet: 10.py
+----
+#### text-block ####
+content: Puedes definir fácilmente qué carácter debe utilizar el intérprete:
+----
+#### code-example ####
+snippet: 11+es.py
+----
+#### code-example ####
+snippet: 12+es.py
+----
+#### code-example ####
+snippet: 13+es.py
+----
+#### image ####
+name: u00c0.svg
+----
+class: large-image
+----
+#### text-block ####
+content:
+
+Si no se define ninguna instrucción para <code>[tipo]</code>, Python utilizará la representación de cadena básica para el valor proporcionado. Por ejemplo, los enteros se representarán usando una notación de base 10, pero es convenientemente posible especificar una base diferente agregando <code>[tipo]</code>. Lo que sigue es una lista de las posibles opciones de conversión para valores enteros.
+----
+#### table ####
+path: 01+es.csv
+----
+headers: 1
+----
+#### text-block ####
+content: Considera los siguientes ejemplos:
+----
+#### code-example ####
+snippet: 14+es.py
+----
+#### text-block ####
+content: <code>242</code> se convierte en <code>11110010</code>. La representación binaria se centra en una cadena de longitud 12 utilizando <code>'.'</code> como marcador de posición
+----
+#### code-example ####
+snippet: 15+es.py
+----
+#### text-block ####
+content: <code>65</code> en el mapeo Unicode apunta a la "A" mayúscula que luego se une a la cadena de texto literal
+----
+#### code-example ####
+snippet: 16+es.py
+----
+#### text-block ####
+content: El signo más (+) frente a la amplitud de la cadena de texto obliga al intérprete a poner un signo delante del entero decimal incluso si es positivo. nota que el signo más se puede aplicar a cualquier conversión de datos numéricos. Se muestra <code>200</code> en la base 10, y se colocan algunos espacios en blanco delante del signo hasta que la cadena de texto alcanza la longitud <code>6</code>.
+----
+#### code-example ####
+snippet: 17+es.py
+----
+#### text-block ####
+content: convierte <code>3792₁₀</code> a <code>17B₁₆</code>, utilizando letras mayúsculas. Luego agrega un carácter 0 adicional delante de la representación hexadecimal para alcanzar la longitud 4. Finalmente, se vincula a la cadena literal <code>'U+'</code>.
+
+Ahora, veamos una selección de opciones para números de punto flotante
+----
+#### table ####
+path: 02+es.csv
+----
+headers: 1
+----
+#### text-block ####
+content: Considera los siguientes ejemplos:
+----
+#### code-example ####
+snippet: 18+es.py
+----
+#### text-block ####
+content: <code>'f'</code> en combinación con code>'.2'</code> generará una representación de punto flotante cuya precisión está limitada a 2 dígitos después del punto
+----
+#### code-example ####
+snippet: 19+es.py
+----
+#### text-block ####
+content: Este método de conversión puede resultar útil cuando se escriben idio­mas distintos del inglés. Consulta la documentación del estándar de Python para el módulo <code>locale</code>.
+----
+#### code-example ####
+snippet: 20+es.py
+----
+#### text-block ####
+content: El tipo de conversión <code>'%'</code> convertirá el punto flotante en porcentaje. <code>'.0'</code> truncará la información decimal del porcentaje (<code>45%</code> en lugar de <code>45.000000%</code>).
+----
+#### section-title ####
+content: Métodos útiles de cadenas de texto
+----
+class: default
+----
+#### text-block ####
+content: Python proporciona una serie de métodos específicos para transformar datos de texto. Recuerda que las cadenas de texto son inmutables, por lo que no se manipulan "ahí mismo". Los siguientes métodos generan una cadena de texto nueva que debes asignar a un identificador si necesitas usar su resultado posteriormente.
+----
+#### table ####
+path: 03+es.csv
+----
+headers: 1
+----
+#### text-block ####
+content: Python proporciona varios métodos específicos para inspeccionar datos de texto. Estos métodos devuelven un valor booleano, de hecho, su identificador describe una condición de una cadena de texto
+----
+#### table ####
+path: 04+es.csv
+----
+headers: 1
+----
+#### text-block ####
+content: Puedes encontrar las correspondencias de una subcadena en una cadena de texto utilizando los siguientes métodos:
+----
+#### table ####
+path: 05+es.csv
+----
+headers: 1
+----
+#### text-block ####
+content: O puedes generar nuevas cadenas de texto (o una lista de cadenas de texto) utilizando los siguientes métodos comunes:
+----
+#### table ####
+path: 06+es.csv
+----
+headers: 1
+----
+---
+hasTocNumber: yes

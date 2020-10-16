@@ -1,0 +1,8 @@
+Método	Comportamiento
+<code>s.islower()</code>	retorna <code>True</code> si <code>s</code> es minúscula
+<code>s.istitle()</code>	retorna <code>True</code> si <code>str</code> es tipo título (<code>'Hola Mundo'</code>)
+<code>s.isupper()</code>	retorna <code>True</code> si <code>str</code> es mayúscula
+<code>s.startswith(s2)</code>	retorna <code>True</code> si <code>str</code> empieza con <code>s2</code>
+<code>s.endswith(s2)</code>	retorna <code>True</code> si <code>str</code> termina con <code>s2</code>
+<code>s.isalnum()</code>	retorna <code>True</code> si <code>str</code> es alfanumérica (A-Z, a-z, 0-9, sin espacios blancos)
+<code>s.isalpha()</code>	retorna <code>True</code> si <code>str</code> es alfabética (A-Z, a-z, sin espacios blancos)

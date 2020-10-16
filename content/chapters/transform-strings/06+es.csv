@@ -1,0 +1,5 @@
+Método	Comportamiento
+<code>s.join('123')</code>	Retorna <code>s</code> unido por el iterable <code>'123'</code> si <code>s</code> es <code>'hola'</code> → <code>'1hola2hola3'</code>
+<code>s.split(sep, maxsplit)</code>	Devuelve la cadena de entrada dividida por el separador <code>sep</code>. Opcionalmente, puede definir una cantidad máxima de divisiones <code>maxsplits</code> a realizar
+<code>s.splitlines()</code>	Retorna una lista de líneas en <code>s</code> si <code>s</code> es <code>'hola\nmundo'</code> → <code>['hola', 'mundo']</code>
+<code>s.replace(s2, s3, count)</code>	Reemplaza <code>s2</code> con <code>s3</code> en <code>s</code> cuando mucho <code>count</code> veces

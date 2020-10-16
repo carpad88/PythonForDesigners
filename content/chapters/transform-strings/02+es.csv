@@ -1,0 +1,4 @@
+Tipo	Significado	Resultado
+<code>'f'</code>	Punto fijo	Muestra el número como un número de punto fijo. La precisión predeterminada es 6.
+<code>'n'</code>	Número	Utiliza la configuración regional actual para insertar los caracteres separadores de números adecuados. Si el número es demasiado grande, cambia a notación científica.
+<code>'%'</code>	Porcentaje	Multiplica el número por 100 y se muestra en formato fijo (<code> 'f' </code>), seguido de un signo de porcentaje.
