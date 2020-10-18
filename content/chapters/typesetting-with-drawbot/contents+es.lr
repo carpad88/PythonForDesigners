@@ -1,0 +1,274 @@
+_model: chapter
+---
+_slug: composicion-tipografica-con-drawbot
+---
+title: Composición tipográfica con drawbot
+---
+abstract: Finalmente dibujando texto en DrawBot, líneas simples o múltiples
+---
+sort_key: 11
+---
+visual_abstract: abstract-10.svg
+---
+og_image: abstract-10.png
+---
+body:
+
+#### section-title ####
+content: De caracteres a glifos
+----
+class: default
+----
+#### text-block ####
+content: La pregunta que aún debemos responder con respecto al texto es cómo dibujarlo. Observemos el proceso de escribir en un teclado:
+----
+#### text-block ####
+content:
++ una tecla es presionada (generalmente con un dedo, a veces por tu gato)
++ un número asignado a esa tecla es enviado al sistema operativo
++ el sistema operativo convierte el número en un carácter usando una codificación –la mayoría de las veces la referencia es Unicode
++ el caracter es dibujado en la pantalla con una fuente personalizada o estándar
+----
+#### image ####
+name: key_diagram.svg
+----
+class: large-image
+----
+#### image ####
+name: different_a.svg
+----
+class: small-image
+----
+#### text-block ####
+content:
+
+El dibujo del carácter que aparece en la pantalla no proviene de la codificación Unicode en sí. Se almacena en un contenedor diferente: una fuente. La codificación Unicode es solo un diccionario intermedio que se utiliza para elegir el dibujo correcto de la fuente. De hecho, la codificación Unicode contiene solo descripciones de caracteres y su organización. El archivo de una fuente es la traducción de la caja del tipógrafo a datos digitales. El término comúnmente utilizado para la representación prefabricada de un caracter es "glifo". Piensa en el caracter como una idea abs­tracta, una colección de características comunes que hacen que un signo sea reconocible como tal. Por ejemplo, describamos la noción de una A mayúscula que compartimos mutuamente: dos líneas diagonales que se conectan en la parte superior y divergen en la parte inferior más una barra horizontal que se cruza con ambas líneas diagonales, generalmente colocadas a medio camino entre la parte superior y la inferior.
+
+Es una descripción bastante genérica. Muchos dibujos diferentes pueden caer en eso. Pueden tener serifas o no, pueden ser stencil, pueden ser gruezas o delgadas, anchas o estrechas, etc. Toma también en cuenta que muchas representaciones podrían reconocerse como A mayúscula y quedar fuera de esa descripción. Es difícil, o tal vez imposible, armar la descripción correcta.
+----
+#### image ####
+name: encoding.svg
+----
+class: large-image
+----
+#### text-block ####
+content: Durante la era del tipo de metal, los glifos de plomo se almacenaban en cajones especiales con una organización estándar. ¿Sabías que los términos en _mayúsculas_ y _minúsculas_ derivan de dicha organización?
+----
+#### image ####
+name: lower-upper-case.svg
+----
+class: large-image
+----
+#### text-block ####
+content:
+
+Estos cajones luego se guardaron en armarios. Por lo general, un gabinete contendría diferentes tamaños o estilos relacionados. ¿Relacionado cómo? Bueno, compartirían algunos rasgos formales que los harían parecer emparentados, como los diferentes rostros de personas que forman parte de una misma familia.
+
+De hecho, este tipo de colección forma una familia de fuentes. Toma en cuenta que el término _tipografía_ se utiliza en cambio para referirse a las características comunes compartidas en una colección; es una terminología mucho más abstracta.
+----
+#### image ####
+name: cabinet.svg
+----
+class: small-image
+----
+#### text-block ####
+content: Como puedes haber inferido, en ese momento, cada fuente (piensa en el cajón del gabinete lleno de tipos de metal) tenía un tamaño específico. Las cosas cambiaron después de la introducción de contornos cúbicos y cuadráticos, cuando una fuente ya no estaba atada a un tamaño específico. Sin embargo, la distancia de lectura y el tamaño corporal siguen siendo aspectos cruciales en la experiencia de lectura. Nuestros ojos no cambiaron con la transformación digital de la tipografía. Por lo tanto, cuando uses una fuente, verifica si el diseñador la hizo teniendo en cuenta un rango específico de tamaños; incluso si se te permite escalarla a cualquier tamaño sin perder detalles.
+----
+#### section-title ####
+content: Configurar una línea de texto
+----
+class: default
+----
+#### text-block ####
+content: La acción de configuración mínima en DrawBot relacionada con los tipos es la composición de líneas individuales de glifos. Para hacerlo, tenemos que tomar una serie de decisiones por adelantado:
+----
+#### text-block ####
+content:
+
++ qué caracteres hay que dibujar, el contenido
++ la posición de la línea de texto en el lienzo
++ la fuente de la que deben tomarse los glifos
++ tamaño de cuerpo
++ color de relleno y trazo
+----
+#### text-block ####
+content:
+
+DrawBot tiene algunas opciones de respaldo si somos demasiado perezosos para especificarlas todas. Pero el contenido y la posición son obligatorios. Son, de hecho, los argumentos de la función <code>text()</code>:
+----
+#### code-example ####
+snippet: 01.py
+----
+image: text.png
+----
+#### text-block ####
+content: El origen de las coordenadas de posición es el punto inferior izquierdo de la composición. Toma en cuenta que el primer glifo puede tener algún margen izquierdo, lo que significa que las formas negras no tocarán el punto de coordenadas. Simplemente puedes probar el comportamiento:
+----
+#### code-example ####
+snippet: 02.py
+----
+image: text-rect.png
+----
+#### text-block ####
+content:
+
+Las otras opciones deben establecerse con funciones específicas y deben definirse antes de que se invoque la función <code>text()</code>.
+
+<code>font()</code> define la fuente utilizada para dibujar los caracteres. Acepta una cadena de texto como argumento. Debe ser el nombre de una fuente PostScript ya instalada en tu computadora.
+----
+#### code-example ####
+snippet: 03.py
+----
+image: text-font.png
+----
+#### text-block ####
+content:
+
+DrawBot proporciona una función capaz de hacer una lista de las fuentes PostScript instaladas en tu computadora. <code>installedFonts()</code> acepta opcionalment una cadena de texto como argumento con caracteres que deben ser compatibles con las fuentes enumeradas.
+
+Por ejemplo, puedes usarlo de la siguiente manera:
+----
+#### code-example ####
+snippet: 04.py
+----
+#### text-block ####
+content:
+
+Los nombres impresos en la consola son las fuentes que admiten los caracteres cirílicos <code>'ЉДЖ'</code>.
+
+El tamaño del cuerpo es manejado por la función <code>fontSize()</code>. Acepta un valor numérico, ya sea entero o flotante. La función establece el tamaño en puntos PostScript, el valor predeterminado es 10 puntos.
+----
+#### code-example ####
+snippet: 05.py
+----
+image: text-fontSize.png
+----
+#### text-block ####
+content: El color de de relleno y de trazo están definidos por <code>fill()</code> y <code>stroke()</code>
+----
+#### code-example ####
+snippet: 06.py
+----
+image: text-fill.png
+----
+#### text-block ####
+content: Una vez definidos, estos ajustes se aplicarán a todas las formas dibujadas posteriormente. Para cambiar estas opciones. simplemente llama las funciones de nuevo.
+----
+#### section-title ####
+content: Establecer varias líneas de texto
+----
+class: default
+----
+#### text-block ####
+content:
+
+La composición tipográfica es una disciplina cuyo objetivo es organizar el lenguaje dentro de un conjunto de limitaciones físicas. Estos límites suelen ser los bordes del lienzo. Por eso, una secuencia larga de caracteres no se puede mostrar en una sola línea. La secuencia debe dividirse en varias líneas.
+
+Estamos acostumbrados a secuencias de líneas de texto discontinuas. Estas entidades son los componentes básicos de la composición tipográfica, se denominan párrafos. Al abordar la composición tipográfica de un párrafo, debemos tener en cuenta algunas opciones adicionales en comparación con una sola línea.
+----
+#### image ####
+name: textbox.svg
+----
+class: large-image
+----
+#### text-block ####
+content:
+
+En primer lugar, deberíamos usar una función diferente a <code>text()</code>. Sería posible lidiar con el salto de línea nosotros mismos, pero DrawBot es lo suficientemente generoso como para proporcionar una función que se encargará de ello automáticamente: <code>textBox()</code>. A diferencia de <code>text()</code>, la secuencia de glifos encaja en un rectángulo. La función acepta una cadena de texto como primer argumento, seguida de lo necesario para definir el rectángulo <code>(x, y, width, height)</code> y, como argumento opcional, la alineación del texto.
+----
+#### code-example ####
+snippet: 07+es.py
+----
+image: someText.png
+----
+#### text-block ####
+content: Si deseas ver el cuadro que contiene el texto, simplemente usa una función <code>rect()</code> con los mismos argumentos:
+----
+#### code-example ####
+snippet: 08+es.py
+----
+image: text-box-rect.png
+----
+#### text-block ####
+content:
+
+Si algún texto no se ajusta al rectángulo proporcionado, <code>textBox()</code> lo devolverá. Esta función, combinada con un bucle <code>while</code>, se puede usar para agregar nuevas páginas hasta que el texto esté todo configurado en el lienzo.
+----
+#### code-example ####
+snippet: 09+es.py
+----
+diagram: 2pages.svg
+----
+#### text-block ####
+content:
+
+La mayoría de las decisiones que tenemos que tomar al establecer varias líneas de tipos tienen que ver con el espacio que rodea a los glifos. Por supuesto, las fuentes ya proporcionan algún estándar con res­pecto a las proporciones entre glifos, pero un tipógrafo tiene algunas herramientas para mejorar la composición de acuerdo con un contexto específico.
+
+La distribución vertical del espacio en un párrafo es manejada por la función <code>lineHeight()</code>. Se le llama comúnmente interlínea, un término que proviene de los días de los tipos de metal. Se refiere a las franjas de metal no impresas que se insertarían entre las líneas de los tipos. En un entorno digital, el valor de la interlínea define la distancia entre una línea de base y la siguiente.
+----
+#### image ####
+name: leading.svg
+----
+class: large-image
+----
+#### text-block ####
+content: También toma en cuenta que no hay restricciones físicas en un lienzo digital, lo que significa que el valor principal puede ser inferior al tamaño del cuerpo o incluso negativo.
+----
+#### code-example ####
+snippet: 10+es.py
+----
+diagram: 2pagesleading.svg
+----
+#### text-block ####
+content:
+
+El predeterminado de DrawBot es <code>tamañoFuente * 1.2</code>.
+
+Las fuentes ya contienen mucha información sobre la distribución horizontal del espacio. Como vimos en los capítulos anteriores, el blanco es tan importante como el negro. Un diseñador tipográfico proporcionará a la fuente todos los datos necesarios para componer un buen párrafo de texto. Piensa dos veces antes de sobreescribir esta información. Es una distorsión de los tipos tanto como una escala no proporcional. Bueno, tal vez un poco más sutil, pero un ojo entrenado lo reconocerá de inmediato.
+
+Pero hay algunos casos en los que tiene sentido alterar la composición con algo de espacio interno adicional para el carácter. La función <code>tracking()</code> está aquí para esto. El interletrado (_tracking_) –que no debe confundirse con el acoplamiento (_kerning_)–, es la inyección o sustracción de una cantidad fija de espacio en blanco entre los glifos. El texto compuesto en tamaño pequeño, como 8 puntos, podría beneficiarse de un espacio adicional.
+----
+#### image ####
+name: tracking.svg
+----
+class: large-image
+----
+#### text-block ####
+content:
+Romper las líneas del texto puede resultar doloroso para la calidad visual de un párrafo. Pero, seamos sinceros, no tenemos otra opción: o rompemos las líneas o componemos solo poesía. Minimizar los efectos negativos del salto de línea es parte del trabajo de un tipógrafo.
+
+Hay decisiones que influyen en la calidad del lado derecho de un párra­fo más que otras: ancho de promedio de la fuente en relación con el ancho de la caja de texto, alineación justificada contra alinea­ción desigual y separación de palabras, etc.
+
+La partición de palabras es una función que permite al compositor digital romper una línea utilizando sílabas de palabras, no solo espacios entre palabras. Esta opción agrega muchas opciones de ruptura que hacen que el proceso de romper una línea sea menos dañino para el párrafo de texto. Dicho esto, leer una palabra dividida en dos líneas puede no ser tan cómodo, especialmente si no estamos muy acostumbrados o si la palabra es muy corta.
+
+Toma en cuenta que las sílabas tienen diferentes definiciones en diferentes idiomas, así que recuerde configurar el idioma correcto utilizando la función <code>language()</code>. El idioma predeterminado es inglés.
+----
+#### code-example ####
+snippet: 11+es.py
+----
+diagram: language.svg
+----
+#### text-block ####
+content: Los ajustes de partición de palabras resuenan enormemente con la alineación justificada. Este método de composición crea un borde derecho uniforme al inyectar espacio extra entre palabras. Demasiado espacio extra hace que el párrafo sea muy incómodo de leer, por lo que la capacidad de romper la línea dentro de una palabra es fundamental.
+----
+#### image ####
+name: giustificazione.svg
+----
+class: large-image
+----
+#### text-block ####
+content: En otras palabras, si un párrafo tiene un ancho estrecho, una alineación justificada y sin partición de palabras, es muy probable que el espacio de palabras comience a aparecer en las líneas consecuentes que emergen de la textura del párrafo. Estos son los llamados ríos.
+----
+#### exercise ####
+assignment: Crea un párrafo con muchos "ríos" de blanco.
+----
+#### image ####
+name: hyphenation.svg
+----
+class: large-image
+----
+#### code-example ####
+snippet: 12+es.py
+----
+---
+hasTocNumber: yes
