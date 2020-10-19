@@ -1,0 +1,1 @@
+range(inicio, final, avance)

@@ -1,0 +1,1 @@
+posicion = (x, y, fechaTiempo)

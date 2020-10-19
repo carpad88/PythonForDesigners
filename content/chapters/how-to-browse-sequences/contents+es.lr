@@ -1,0 +1,440 @@
+_model: chapter
+---
+_slug: como-explorar-secuencias
+---
+title: Cómo explorar secuencias
+---
+abstract: ¿Nunca has oído hablar de tuplas y listas? ¡Aquí vamos!
+---
+sort_key: 12
+---
+visual_abstract: abstract-11.svg
+---
+og_image: abstract-11.png
+---
+body:
+
+#### text-block ####
+content:
+
+Ya pudimos probar qué son las secuencias gracias a las cadenas de texto. Pero las cadenas de texto solo incluyen texto. ¿Qué pasa si necesitamos almacenar un montón de valores numéricos? ¿O algunas cadenas junto con valores numéricos?
+
+Python proporciona dos tipos de datos estándar para contenedores donde el orden importa: uno mutable, <code>list()</code>, y uno inmutable, <code>tuple()</code>. Almacenan una secuencia ordenada de _referencias de valor_. Esto significa que si una lista contiene otra lista, por supuesto que esto es posible, la interna no se copiará dentro del contenedor, pero se almacenará una referencia a ella.
+
+En Python, una lista está delimitada por los caracteres <code>[]</code>, mientras que una tupla está delimitada por caracteres <code>()</code>.
+
+Aquí tienes una lista:
+----
+#### code-example ####
+snippet: 01+es.py
+----
+#### image ####
+name: list.svg
+----
+class: large-image
+----
+#### text-block ####
+content: Ahora, esto es una tupla:
+----
+#### code-example ####
+snippet: 02+es.py
+----
+#### image ####
+name: tuple.svg
+----
+class: large-image
+----
+#### text-block ####
+content:
+
+Como dijimos, los elementos en listas y tuplas son de naturaleza arbitraria: pueden ser cualquier tipo de objeto, <code>None</code> incluido. También pueden estar vacíos.
+
+El vacío no suele tener mucho sentido para las tuplas, dado que no se pueden modificar una vez creadas. En cambio, es muy común iniciar una lista vacía que se completará durante un proceso iterativo desencadenado por constructor <code>while</code> o <code>for</code>. Considera el siguiente ejemplo:
+
+----
+#### code-example ####
+snippet: 03+es.py
+----
+#### text-block ####
+content:
+
+Los constructores <code>list()</code> y <code>tuple()</code> aceptan cualquier tipo de iterable como argumento como cadenas de texto, listas o tuplas. Ellos "listan" o "hacen tuplas" sus argumentos. Por ejemplo, si se pasa una cadena de texto como argumento a una función <code>list()</code>, el resultado será un contenedor donde cada carácter se almacena por separado:
+----
+#### code-example ####
+snippet: 04+es.py
+----
+#### text-block ####
+content:
+
+En este punto, podrías preguntarte: ¿por qué tanto las tuplas como las listas? ¿No son suficientes las listas? Aparte de la diferencia en términos de mutabilidad, existe una diferencia semántica en el uso de tuplas y listas.
+
+Mientras que las tuplas se utilizan para almacenar estructuras de datos heterogéneas, las listas son secuencias ordenadas del mismo material. Toma en cuenta que tienen el mismo grado de libertad con respecto a los tipos de datos, es solo una cuestión de semántica.
+
+Consideremos el siguiente escenario: es hora de dar un paseo rápido en bicicleta y nos gustaría hacer un seguimiento de nuestro viaje utilizando una aplicación instalada en un teléfono inteligente. Supon­gamos que esta aplicación está escrita en Python. Cada pocos segundos, la aplicación solicitará al hardware del teléfono inteligente:
+
+----
+#### text-block ####
+content:
+
++ coordenada gps x
++ coordenada gps y
++ fecha y tiempo
+----
+#### code-example ####
+snippet: 05+es.py
+----
+#### text-block ####
+content:
+
+Estos datos se organizarán en una tupla. Dado que la longitud del contenedor no necesita ser flexible (por ejemplo, sabemos que no le agregaremos un índice z) sino solo para registrar un estado a través de múltiples valores, una tupla es una buena opción.
+
+El objetivo de la aplicación es rastrear una ruta, que es una secuencia de múltiples instancias de posición. Entonces, la aplicación necesita un contenedor que sea flexible y se pueda extender hasta el final del viaje: una lista.
+----
+#### code-example ####
+snippet: 06+es.py
+----
+#### text-block ####
+content: Una vez finalizado, la ruta del viaje se guarda en la memoria del teléfono inteligente. Una tabla estándar se adaptaría muy bien al propósito.
+----
+#### image ####
+name: list-table.svg
+----
+class: large-image
+----
+#### section-title ####
+content: Propiedades de secuencia para listas y tuplas
+----
+class: default
+----
+#### text-block ####
+content:
++ accesar
++ cortar
++ comprobar la contención
++ probar igualdad
++ orden natural
++ concatenación
+----
+#### section-title ####
+content: List Methods
+----
+class: default
+----
+#### text-block ####
+content: Como dijimos, una lista es un contenedor flexible, lo que significa que una vez creada, se puede manipular de múltiples formas. Python proporciona algunos métodos específicos para ello
+
+<code>.append(item)</code>
+----
+#### code-example ####
+snippet: 07+es.py
+----
+#### image ####
+name: append.svg
+----
+class: large-image
+----
+#### text-block ####
+content: <code>.extend(iterable)</code>
+----
+#### code-example ####
+snippet: 08+es.py
+----
+#### image ####
+name: extend.svg
+----
+class: large-image
+----
+#### text-block ####
+content: <code>.insert(index, item)</code>
+----
+#### code-example ####
+snippet: 09+es.py
+----
+#### image ####
+name: insert.svg
+----
+class: large-image
+----
+#### exercise ####
+assignment: transformar un triángulo rectángulo en un cuadrado añadiendo un punto
+----
+#### text-block ####
+content:  <code>.remove(item)</code>
+----
+#### code-example ####
+snippet: 10+es.py
+----
+#### image ####
+name: remove.svg
+----
+class: large-image
+----
+#### text-block ####
+content: <code>.pop(index)</code>
+----
+#### code-example ####
+snippet: 11+es.py
+----
+#### image ####
+name: pop.svg
+----
+class: large-image
+----
+#### text-block ####
+content: <code>.index(item)</code>
+----
+#### code-example ####
+snippet: 12+es.py
+----
+#### image ####
+name: index.svg
+----
+class: large-image
+----
+#### text-block ####
+content: <code>.sort()</code>
+----
+#### code-example ####
+snippet: 13+es.py
+----
+#### image ####
+name: sort.svg
+----
+class: large-image
+----
+#### text-block ####
+content: <code>.reverse()</code>
+----
+#### code-example ####
+snippet: 14+es.py
+----
+#### image ####
+name: reverse.svg
+----
+class: large-image
+----
+#### section-title ####
+content: Sintaxis for
+----
+class: default
+----
+#### text-block ####
+content:
+
+Python proporciona una sintaxis de bucle <code>for</code> que es útil para iterar sobre una serie de elementos. Donde <code>while</code> es útil cuando necesitamos seguir haciendo algo hasta que se cumple una condición, <code>for</code> es preferible cuando necesitamos explorar un contenedor. <code>for</code> puede usarse con cualquier tipo de _iterable_, que es una noción más amplia que las secuencias. Técnicamente, un iterable puede no estar ordenado (como <code>set</code> o <code>dict</code>).
+
+Aquí está la construcción general <code> for </code>:
+
+----
+#### code-example ####
+snippet: 15+es.py
+----
+#### text-block ####
+content: Toma en cuenta que el cuerpo tiene cuatro espacios sangrados hacia la derecha. <code>for</code> e <code>in</code> son palabras clave protegidas. <code>cadaElemento</code> es un identificador al que puede hacer referencia el cuerpo. Por supuesto, su nombre es arbitrario, solo necesita respetar las reglas estándar para identificadores.
+----
+#### image ####
+name: for.svg
+----
+class: large-image
+----
+#### text-block ####
+content: El iterable se puede crear antes de la declaración de apertura <code>for</code> o en el lugar. Lo que significa que este ejemplo:
+----
+#### code-example ####
+snippet: 16+es.py
+----
+#### text-block ####
+content: es equivalente a:
+----
+#### code-example ####
+snippet: 17+es.py
+----
+#### text-block ####
+content: Esto también significa que podríamos invocar una función que sea capaz de generar un iterable en el acto
+----
+#### code-example ####
+snippet: 18+es.py
+----
+#### text-block ####
+content: Python proporciona una función que usará muy a menudo en tu rutina de programación: <code>range()</code>. Esta función devuelve un iterador –no una lista real–, que proporcionará una secuencia de números enteros de acuerdo con los siguientes argumentos
+----
+#### code-example ####
+snippet: 19+es.py
+----
+#### text-block ####
+content: <code>inicio</code> y <code>avance</code> son opcionales. <code>inicio</code> debe ser abordado si se define <code>avance</code>. Toma en cuenta que, en cuanto a la notación de corte, el valor de <code>final</code> no se incluye en el rango creado.
+
+Esta función hará que la iteración sobre una secuencia de números enteros sea fácil y compacta:
+----
+#### code-example ####
+snippet: 20+es.py
+----
+#### text-block ####
+content: Una vez finalizado el ciclo, el identificador seguirá estando disponible en el espacio de nombres del programa, asignado al último elemento del iterable.
+----
+#### code-example ####
+snippet: 21+es.py
+----
+#### text-block ####
+content: ¿Cómo puede ser útil esto en una aplicación de diseño gráfico? Considera el siguiente escenario: te gustaría crear un documento pdf de dieciséis páginas y escribir en cada página un número de página secuencial. DrawBot puede hacer eso, por supuesto:
+----
+#### image ####
+name: 16pages.svg
+----
+class: large-image
+----
+#### code-example ####
+snippet: 22+es.py
+----
+#### text-block ####
+content: Un constructor <code>for</code> es la compañera perfecta de un método de lista <code>.append()</code>. Es muy común crear una serie de valores a partir de uno preexistente. Como hacer una versión en mayúsculas de una secuencia de palabras:
+----
+#### code-example ####
+snippet: 23+es.py
+----
+#### section-title ####
+content: Dibujar muchas veces en una dirección
+----
+class: default
+----
+#### text-block ####
+content:
+
+Al igual que la construcción <code>while</code>, <code>for</code> puede ser muy útil para dibujar formas repetitivamente. De esta manera, su código se verá compacto y será fácil de editar.
+
+En lugar de:
+----
+#### code-example ####
+snippet: 24.py
+----
+image: 4lines.png
+----
+#### text-block ####
+content: opta por este tipo de estructura
+----
+#### code-example ####
+snippet: 25+es.py
+----
+image: 4lines.png
+----
+#### text-block ####
+content: Las ventajas de la segunda versión son enormes, comenzando por el hecho muy básico de que puede sumar y restar elementos casi sin cambios.
+----
+#### code-example ####
+snippet: 26+es.py
+----
+image: 8lines.png
+----
+#### text-block ####
+content: ¿Qué sucede si necesita agregar puntos al principio y al final? Fácil de hacer.
+----
+#### code-example ####
+snippet: 27+es.py
+----
+image: linesOvals.png
+----
+#### text-block ####
+content: Junto con el dibujo, podemos realizar cualquier tipo de cálculo. Por ejemplo, el color de relleno de una forma podría definirse mediante el identificador proporcionado por el constructor <code>for</code>. He aquí un ejemplo.
+----
+#### code-example ####
+snippet: 28+es.py
+----
+image: scaleGrey.png
+----
+#### text-block ####
+content: O podemos afectar los argumentos utilizados para dibujar la forma en sí:
+----
+#### code-example ####
+snippet: 29+es.py
+----
+image: lines.png
+----
+#### text-block ####
+content: Recuerde que las declaraciones <code>if</code> pueden usarse en el cuerpo <code>for</code>, lo que significa que podemos realizar elecciones dentro de un proceso iterativo:
+----
+#### code-example ####
+snippet: 30+es.py
+----
+image: stripes.png
+----
+#### section-title ####
+content: Dibujar muchas veces en dos direcciones
+----
+class: default
+----
+#### text-block ####
+content: Un solo constructor <code>for</code> permite la repetición en una dimensión. Pero, como hemos visto con el ejemplo anterior, se pueden usar otras construcciones dentro del cuerpo <code>for</code>. Lo que significa que un segundo bucle <code>for</code> se puede anidar en el primer bucle <code>for</code>. De esta forma, la repetición se vuelve bidimensional.
+
+Si necesitamos dibujar una tabla o un patrón basado en 90 °, esta técnica se vuelve muy útil. Considera el siguiente dibujo
+----
+#### image ####
+name: matrix.svg
+----
+class: large-image
+----
+#### text-block ####
+content: Esta es una matriz bidimensional, es una tabla simple. Cada elemento de la matriz se llama celda. Cada celda de esta matriz se puede describir mediante dos índices: el índice de la columna y la fila a la que pertenece la celda. Si escribimos explícitamente cada índice en cada celda obtenemos
+----
+#### image ####
+name: matrix-number.svg
+----
+class: large-image
+----
+#### text-block ####
+content: En este punto solo necesitamos definir un tamaño para la celda y podemos dibujar la columna izquierda de la matriz
+----
+#### code-example ####
+snippet: 31+es.py
+----
+image: rows4.png
+----
+#### text-block ####
+content: o la fila inferior de la matriz
+----
+#### code-example ####
+snippet: 32+es.py
+----
+image: cols4.png
+----
+#### text-block ####
+content: Si combinamos los dos constructores juntos, podemos dibujar la matriz completa _llamando_ a la función rect <code>rect()</code> solo una vez
+----
+#### code-example ####
+snippet: 33+es.py
+----
+image: rowscols4.png
+----
+#### text-block ####
+content: Los índices de la matriz se pueden dibujar muy fácilmente
+----
+#### code-example ####
+snippet: 34+es.py
+----
+image: gridnumbers.png
+----
+#### text-block ####
+content: En cuanto al constructor individual <code>for</code>, los cálculos realizados dentro del cuerpo pueden afectar la calidad del dibujo. Un gradiente unidimensional puede convertirse fácilmente en bidimensional
+----
+#### code-example ####
+snippet: 35+es.py
+----
+image: matrixRect.png
+----
+#### text-block ####
+content: y una declaración <code>if</code> anidada en el bucle <code>for</code> interno puede dibujar un tablero de ajedrez:
+----
+#### code-example ####
+snippet: 36+es.py
+----
+image: chess.png
+----
+#### text-block ####
+content: Toma en cuenta que las construcciones anidadas <code>for</code> también se pueden utilizar para navegar por estructuras de datos anidadas como una lista de tuplas:
+----
+#### code-example ####
+snippet: 37+es.py
+----
+image: listprinted.png
+----
+---
+hasTocNumber: yes
