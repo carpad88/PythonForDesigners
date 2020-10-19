@@ -1,0 +1,242 @@
+title: Recetario
+---
+_slug: recetario
+---
+abstract: Una colección de prácticas recetas súper cortas de Python 🍳
+---
+og_image: fakeVisualAbstract.png
+---
+sort_key: 13
+---
+hasTocNumber: yes
+---
+_hidden: no
+---
+visual_abstract: abstract-cookbook.svg
+---
+body:
+
+#### section-title ####
+content: Entrada/Salida
+----
+class: cookbook
+#### recipe ####
+title: Cargar una tabla CSV
+----
+snippet: loadTable.py
+----
+image: 
+#### recipe ####
+title: Cargar una tabla CSV con claves
+----
+snippet: loadTableWithKeys.py
+----
+image: 
+#### recipe ####
+title: Escribir una tabla CSV
+----
+snippet: writeTable.py
+----
+image: 
+#### recipe ####
+title: Leer líneas de un archivo de texto
+----
+snippet: readStrings.py
+----
+image: 
+#### recipe ####
+title: Escribir líneas a un archivo de texto
+----
+snippet: writeStrings.py
+----
+image: 
+#### recipe ####
+title: Recopilar archivos de una carpeta
+----
+snippet: collectFilesPaths.py
+----
+image: 
+#### recipe ####
+title: Recopilar carpetas de una carpeta
+----
+snippet: collectSubFolders.py
+----
+image: 
+#### recipe ####
+title: Limpiar una carpeta
+----
+snippet: cleanFolder.py
+----
+image: 
+#### recipe ####
+title: Eliminar archivos con una extensión específica de una carpeta
+----
+snippet: deleteFilesFromFolder.py
+----
+image: 
+#### section-title ####
+content: Colores
+----
+class: cookbook
+#### recipe ####
+title: Convertir hexadecimal a RGB (255)
+----
+snippet: HEX2RGB.py
+----
+image: 
+#### recipe ####
+title: Convertir RGB (255) a hexadecimal
+----
+snippet: RGB2HEX.py
+----
+image: 
+#### recipe ####
+title: Interpolar colores RGB
+----
+snippet: lerpRGB.py
+----
+image: 
+#### section-title ####
+content: Cálculo
+----
+class: cookbook
+#### recipe ####
+title: Interpolar valor único
+----
+snippet: lerp.py
+----
+image: 
+#### recipe ####
+title: Extraer factor de extremos y valor interno
+----
+snippet: getFactor.py
+----
+image: 
+#### recipe ####
+title: Mapear un valor a un nuevo rango de extremos
+----
+snippet: remapValue.py
+----
+image: 
+#### section-title ####
+content: Información UFO
+----
+class: cookbook
+#### recipe ####
+title: Acoplamiento
+----
+snippet: flatKerning.py
+----
+image: 
+#### section-title ####
+content: Geometría
+----
+class: cookbook
+#### recipe ####
+title: Calcular ángulo desde dos puntos
+----
+snippet: calcAngle.py
+----
+image: 
+#### recipe ####
+title: Calcular distancia entre dos puntos
+----
+snippet: calcDistance.py
+----
+image: 
+#### recipe ####
+title: Punto más cercano
+----
+snippet: closestPoint.py
+----
+image: closestPoint.png
+#### section-title ####
+content: Curvas
+----
+class: cookbook
+#### recipe ####
+title: Óvalo
+----
+snippet: oval.py
+----
+image: oval.png
+#### recipe ####
+title: Lissajous
+----
+snippet: lissajous.py
+----
+image: lissajous.png
+#### recipe ####
+title: welch
+----
+snippet: Welch.py
+----
+image: welch.png
+#### recipe ####
+title: Bartlett
+----
+snippet: bartlett.py
+----
+image: bartlett.png
+#### recipe ####
+title: Seno
+----
+snippet: sine.py
+----
+image: sine.png
+#### recipe ####
+title: Coseno
+----
+snippet: cosine.py
+----
+image: cosine.png
+#### recipe ####
+title: Raíz cuadrada
+----
+snippet: sqRoot.py
+----
+image: sqRoot.png
+#### recipe ####
+title: Cuadrática
+----
+snippet: quadratic.py
+----
+image: quadratic.png
+#### section-title ####
+content: Dibujar
+----
+class: cookbook
+#### recipe ####
+title: Dibujar un glifo UFO
+----
+snippet: drawGlyph.py
+----
+image: 
+#### recipe ####
+title: Dibujar un polígono regular
+----
+snippet: regularPolygon.py
+----
+image: regularPolygon.png
+#### recipe ####
+title: Dibujar una retícula
+----
+snippet: drawGrid.py
+----
+image: grid.png
+#### recipe ####
+title: fondo
+----
+snippet: background.py
+----
+image: background.png
+#### section-title ####
+content: Texto
+----
+class: cookbook
+#### recipe ####
+title: recuperar el nombre de la base de datos Unicode
+----
+snippet: unicodeName.py
+----
+image: 
