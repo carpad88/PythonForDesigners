@@ -1,0 +1,34 @@
+title: Manual de trabajo
+---
+_slug: manual-de-trabajo
+---
+abstract: Una miscelánea de ejercicios avanzados.
+---
+og_image: workbook.png
+---
+sort_key: 14
+---
+visual_abstract: workbook.svg
+---
+hasTocNumber: yes
+---
+body:
+
+#### exercise ####
+image: unicodeTable.png
+----
+assignment: Escribe un script capaz de crear una tabla en varias páginas A4 que describa una secuencia arbitraria de caracteres Unicode. Cada línea de la tabla debe informar las representaciones binaria, decimal y hexadecimal UTF-8. Además, la línea debe representar el carácter en sí rodeado por dos barras verticales "|" en gris y una descripción del carácter según el estándar Unicode (ver el módulo [unicodedata](https://docs.python.org/3/library/unicodedata.html)). [Aquí]({{ '/chapters/workbook/unicodeTable.pdf'| url(alt='en') }}) puedes consultar un ejemplo en PDF. Sería bueno tener el encabezado de la tabla en negrita y la numeración de las páginas, ¿no crees?
+----
+solution: unicodeTable.py
+#### exercise ####
+image: operationMatrix.png
+----
+assignment: Dibuja una tabla de multiplicar. Deberías poder definir el primer y último valor del rango de números multiplicados (del 1 al 10, del 10 al 100, etc.). Luego, amplía las capacidades del programa para calcular muchas operaciones diferentes como suma, diferencia, potencias y división. Consulta el [módulo del operador](https://docs.python.org/3/library/operator.html) para obtener algunas sugerencias. Con diferentes operaciones, probablemente enfrentarás números muy grandes o números con una parte decimal. En el primer caso, reduce el tamaño de la letra si el número no se ajusta al tamaño de la celda; en el otro caso, usa algunas herramientas del [módulo de fracciones](https://docs.python.org/3/library/fractions.html) mezcladas con características OpenType para componer números como 0.333333333 de forma compacta. [Aquí]({{ '/chapters/workbook/operationMatrix.pdf'| url(alt='en') }}) tienes un ejemplo.
+----
+solution: funcMatrix.py
+#### exercise ####
+image: colors.png
+----
+assignment: El siguiente ejercicio consiste en componer una tabla de colores. Este archivo [CSV]({{ '/chapters/workbook/colors.csv'| url(alt='en') }}) contiene una colección de valores hexadecimales seguidos de un nombre; está compilado a partir de [esta](https://en.wikipedia.org/wiki/List_of_colors:_A%E2%80%93F) lista de colores de Wikipedia. Tu tabla debe mostrar una muestra de color, el nombre, el valor HLS, el valor RGB y el valor hexadecimal. Puedes elegir el formato de la página, pero los datos deberían distribuirse automáticamente en tantas páginas como se necesite. Cada página debe tener un encabezado que describa el contenido de las columnas. [Aquí]({{ '/chapters/workbook/colors.pdf'| url(alt='en') }}) puedes encontrar un ejemplo en PDF.
+----
+solution: colors.py
