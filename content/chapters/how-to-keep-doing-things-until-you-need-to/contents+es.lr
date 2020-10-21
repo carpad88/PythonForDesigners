@@ -24,7 +24,7 @@ En este capítulo aprenderemos cómo instruir a Python –y DrawBot– para que 
 En el capítulo 5, hemos visto cómo dibujar formas básicas en el lienzo DrawBot. Como recordarás, podemos trazar una línea usando:
 ----
 #### code-example ####
-snippet: 01.py
+snippet: 01+es.py
 ----
 image: one-line.png
 ----
@@ -32,7 +32,7 @@ image: one-line.png
 content: Dado que tenemos que especificar numéricamente la posición de cada forma en el lienzo, dibujar un patrón puede resultar muy aburri­do. Veamos qué significa dibujar un patrón de líneas cruzadas de esta manera...
 ----
 #### code-example ####
-snippet: 02.py
+snippet: 02+es.py
 ----
 image: grid_line.png
 ----
@@ -44,7 +44,7 @@ El código funciona, pero escribirlo no fue divertido, ¿verdad? Usando identifi
 Supongamos que ahora decidimos oscurecer un poco este patrón. Hay dos opciones: hacer las líneas más gruesas o aumentar la cantidad de líneas. Ahora el problema ahora es: si queremos exprimir un par de líneas más en nuestro patrón, tenemos que editar casi todas las líneas del código anterior. Esto no es nada conveniente. Afortunadamente, Python ofrece una sintaxis sintética y elegante para instruir tareas ite­rativas al intérprete escribiendo lo menos posible. Considera la posible alternativa:
 ----
 #### code-example ####
-snippet: 03.py
+snippet: 03+es.py
 ----
 image: grid_line.png
 ----
@@ -94,7 +94,7 @@ Python proporciona dos palabras clave protegidas para controlar el flujo de una 
 La sentencia <code>break</code> sale del bucle más interno que encierra el while (pero también del bucle for que encontraremos pronto). Consi­deremos:
 ----
 #### code-example ####
-snippet: 05.py
+snippet: 05+es.py
 ----
 #### text-block ####
 content:
@@ -102,7 +102,7 @@ content:
 Tan pronto como <code>index</code> sea igual a <code>20</code>, se ejecutará el cuerpo de la construcción condicional (<code>if</code>). La instrucción <code>break</code> detiene el bucle y el intérprete continúa justo después del cuerpo <code>while</code>. Considera este fragmento de código solo como un ejemplo, ya que es mejor evaluar tanto como sea posible en la condición <code>while</code>.
 ----
 #### code-example ####
-snippet: 06.py
+snippet: 06+es.py
 ----
 #### image ####
 name: while-if.svg

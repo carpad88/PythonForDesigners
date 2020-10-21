@@ -168,13 +168,13 @@ headers: 1
 content: La suma, la resta y la multiplicación tienen un comportamiento muy sencillo: si ambos operandos son enteros, dan como resultado un entero. Si uno de los operandos es un punto flotante, devolverán un valor de punto flotante. Por ejemplo:
 ----
 #### code-example ####
-snippet: 06.py
+snippet: 06+es.py
 ----
 #### text-block ####
 content: La división tiene dos operadores diferentes que se comportan de manera ligeramente diferente. La división estándar es lo que espe­raría de ella:
 ----
 #### code-example ####
-snippet: 07.py
+snippet: 07+es.py
 ----
 #### text-block ####
 content: Si se te permite cortar unidades, puedes proceder de la siguiente manera:
@@ -188,7 +188,7 @@ class: large-image
 content: En cambio, la división de enteros produce el piso matemático del cociente:
 ----
 #### code-example ####
-snippet: 08.py
+snippet: 08+es.py
 ----
 #### text-block ####
 content: si no puedes dividir las unidades, agrupas 4 unidades solo una vez de una colección de 6
@@ -202,7 +202,7 @@ class: small-image
 content: El operador módulo produce el residuo de dicha división:
 ----
 #### code-example ####
-snippet: 09.py
+snippet: 09+es.py
 ----
 #### image ####
 name: modulo.svg
@@ -224,13 +224,13 @@ class: default
 content: Python brinda la oportunidad de combinar más expresiones a la vez. El resultado de estas expresiones compuestas se basa en la evaluación de cada una de las expresiones que contiene. El orden de evaluación afecta el resultado final, por lo que es muy importante controlar el estándar de precedencia del intérprete. Por ejemplo:
 ----
 #### code-example ####
-snippet: 11.py
+snippet: 11+es.py
 ----
 #### text-block ####
 content: Debido a la mayor precedencia de la multiplicación sobre la suma, primero se evalúa <code>2*8</code>, luego se suma <code>16</code> a <code>5</code>, dando como resultado <code>21</code>. Para manipular el orden de ejecución de la evaluación, se pueden utilizar paréntesis. Por ejemplo:
 ----
 #### code-example ####
-snippet: 12.py
+snippet: 12+es.py
 ----
 #### text-block ####
 content: Aquí hay una tabla concisa del orden de evaluación de las expresiones ordenadas por mayor precedencia
@@ -287,7 +287,7 @@ El diseñador de Python, Guido van Rossum, decidió implementar dicho comportami
 Estas declaraciones necesitan dos puntos como delimitador final:
 ----
 #### code-example ####
-snippet: 17.py
+snippet: 17+es.py
 ----
 #### text-block ####
 content: El código relacionado con la declaración debe estar sangrado cuatro espacios hacia la derecha –el intérprete también acepta la tabulación, pero no se recomienda– para que se considere el cuerpo del constructo. Por ejemplo:

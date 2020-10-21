@@ -135,12 +135,12 @@ content: El proceso de asignar un carácter a un número se llama codificación.
 Debido a su herencia y su relación especial con el idioma inglés, los caracteres ASCII se representan usando un valor entero de 7 bits, lo que significa que el índice máximo disponible en el mapeo se puede describir con un número binario de 7 dígitos.
 ----
 #### table ####
-path: 01.csv
+path: 01+es.csv
 ----
 headers: 1
 ----
 #### code-example ####
-snippet: 01.py
+snippet: 01+es.py
 ----
 #### text-block ####
 content: Si incluimos el 0, los índices disponibles suman 128 opciones.
@@ -154,7 +154,7 @@ class: large-image
 content: Cuando los bytes de 8 bits se convirtieron en el estándar en informática, cada carácter comenzó a representarse con un número binario de 8 dígitos (1 byte). Esto abrió el mapeo a 256 opciones.
 ----
 #### table ####
-path: 02.csv
+path: 02+es.csv
 ----
 headers: 1
 ----
@@ -211,13 +211,13 @@ snippet: 04+es.py
 content: Como se dijo antes, a cada carácter se le asigna a un valor numérico según el estándar Unicode. Python proporciona la función incorporada <code>ord()</code> para obtener la posición de un carácter dentro del mapeo estándar.
 ----
 #### code-example ####
-snippet: 05.py
+snippet: 05+es.py
 ----
 #### text-block ####
 content: Por otra parte, Python brinda la posibilidad de acceder a una posición de mapeo usando un valor entero a través de la función <code>chr()</code>. Dado que cada número está asignado a un único carácter, utilizando 192 como valor de entrada obtendremos:
 ----
 #### code-example ####
-snippet: 06.py
+snippet: 06+es.py
 ----
 #### text-block ####
 content: Las referencias a caracteres Unicode rara vez se hacen utilizando su valor de base 10. Como dijimos, la mayoría de los caracteres tienen una representación de dos bytes, que se puede representar convenientemente con un número hexadecimal de cuatro dígitos, como:
@@ -231,13 +231,13 @@ headers: 1
 content: Esta notación también se puede incluir en la declaración de secuencia de texto de Python usando el literal de escape <code>\u</code>:
 ----
 #### code-example ####
-snippet: 07.py
+snippet: 07+es.py
 ----
 #### text-block ####
 content: Las secuencias de texto, como los otros tipos de datos básicos, tienen una función constructora incorporada llamada <code>str()</code>. Esta función permite la conversión de un tipo diferente de objeto en una secuencia de texto. Acepta casi cualquier tipo de objeto, pero tiene una gama limitada de opciones.
 ----
 #### code-example ####
-snippet: 08.py
+snippet: 08+es.py
 ----
 #### text-block ####
 content: Se explican métodos de conversión mucho más detallados en [Transformar secuencias de texto]({{ '/chapters/transform-strings'|url(alt='es') }}).
@@ -284,7 +284,7 @@ snippet: 11+es.py
 content: Recuerda que <code>final</code> es el índice del primer valor que no se incluirá en la subsecuencia.
 ----
 #### code-example ####
-snippet: 12.py
+snippet: 12+es.py
 ----
 #### image ####
 name: startEndStep.svg
@@ -301,7 +301,7 @@ snippet: 13+es.py
 content: En cuanto a la sintaxis de acceso, <code>comienzo</code> y <code>final</code> pueden tener un valor negativo.
 ----
 #### code-example ####
-snippet: 14.py
+snippet: 14+es.py
 ----
 #### image ####
 name: endStep.svg
@@ -351,19 +351,19 @@ class: default
 content: Los siguientes operadores pueden resultar útiles para determinar cómo se relacionan dos cadenas de texto de acuerdo con un orden lexicográfico.
 ----
 #### code-example ####
-snippet: 19.py
+snippet: 19+es.py
 ----
 #### text-block ####
 content: ¿Por qué no alfabético? Podríamos considerar “lexicográfico” como una noción más amplia de alfabético, donde la clasificación hace refe­rencia a un conjunto de caracteres más amplio que el alfabeto latino. Piensa por un momento ¿qué pasaría si le preguntas al intérprete cuál viene primero entre algunos caracteres latinos y cirílicos? El juego de caracteres de referencia es el mapeo Unicode. Consideremos:
 ----
 #### code-example ####
-snippet: 20.py
+snippet: 20+es.py
 ----
 #### text-block ####
 content: Para resolver dicha expresión, Python convierte cada carácter en su representación númerica de unicode y luego evalúa su orden comenzando por la izquierda
 ----
 #### code-example ####
-snippet: 21.py
+snippet: 21+es.py
 ----
 #### image ####
 name: evaluateHat.svg
@@ -374,7 +374,7 @@ class: large-image
 content: Las dos primeras representaciones de caracteres son iguales, pero la tercera (<code>b</code> vs. <code>t</code>) no lo es, lo que significa que <code>"habit"</code> es inferior a <code>"hat"</code>. De hecho, la expresión se evalúa como <code>True</code>. Esto se aplica a nuestra noción común de orden alfabético. Entonces considere lo siguiente
 ----
 #### code-example ####
-snippet: 22.py
+snippet: 22+es.py
 ----
 #### text-block ####
 content:
@@ -382,13 +382,13 @@ content:
 También esperaríamos que esta expresión se evalúe como <code>True</code>, porque la <code>'b'</code> viene antes de la <code>'m'</code> en el alfabeto latino. Bueno, en realidad no. Porque la <code>'M'</code> mayúscula viene antes de la <code>'b'</code> minúscula en el mapeo Unicode. Sé que no tiene sentido a primera vista, pero si los caracteres en mayúsculas y minúsculas ocupan dos lugares diferentes en la codificación, de alguna manera se trata de un comportamiento obligatorio. Revisemos los números:
 ----
 #### code-example ####
-snippet: 23.py
+snippet: 23+es.py
 ----
 #### text-block ####
 content: Lo que significa que
 ----
 #### code-example ####
-snippet: 24.py
+snippet: 24+es.py
 ----
 #### section-title ####
 content: Concatenación
@@ -399,7 +399,7 @@ class: default
 content: Python permite la concatenación de secuencias de texto usando los operadores <code>+</code> y <code>*</code>. Por ejemplo
 ----
 #### code-example ####
-snippet: 25.py
+snippet: 25+es.py
 ----
 #### text-block ####
 content: Toma en cuenta que una secuencia solo se puede multiplicar por un valor entero, no se permiten puntos flotantes. Nota que esta operación no es eficiente en memoria. Si necesitas concatenar mucho, considera usar el método de la cadena de texo <code>.join()</code>.

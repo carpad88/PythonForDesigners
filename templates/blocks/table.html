@@ -1,1 +1,7 @@
-{{ this.path|importCsv(this.headers) }}
+{% if alt == 'en' %}
+    {% set pathFile = this.path %}
+{% else %}
+    {% set pathFile = alt + '/' + this.path %}
+{% endif %}
+
+{{ pathFile|importCsv(this.headers) }}

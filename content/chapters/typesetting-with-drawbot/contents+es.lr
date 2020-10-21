@@ -97,7 +97,7 @@ content:
 DrawBot tiene algunas opciones de respaldo si somos demasiado perezosos para especificarlas todas. Pero el contenido y la posición son obligatorios. Son, de hecho, los argumentos de la función <code>text()</code>:
 ----
 #### code-example ####
-snippet: 01.py
+snippet: 01+es.py
 ----
 image: text.png
 ----
@@ -105,7 +105,7 @@ image: text.png
 content: El origen de las coordenadas de posición es el punto inferior izquierdo de la composición. Toma en cuenta que el primer glifo puede tener algún margen izquierdo, lo que significa que las formas negras no tocarán el punto de coordenadas. Simplemente puedes probar el comportamiento:
 ----
 #### code-example ####
-snippet: 02.py
+snippet: 02+es.py
 ----
 image: text-rect.png
 ----
@@ -117,7 +117,7 @@ Las otras opciones deben establecerse con funciones específicas y deben definir
 <code>font()</code> define la fuente utilizada para dibujar los caracteres. Acepta una cadena de texto como argumento. Debe ser el nombre de una fuente PostScript ya instalada en tu computadora.
 ----
 #### code-example ####
-snippet: 03.py
+snippet: 03+es.py
 ----
 image: text-font.png
 ----
@@ -129,7 +129,7 @@ DrawBot proporciona una función capaz de hacer una lista de las fuentes PostScr
 Por ejemplo, puedes usarlo de la siguiente manera:
 ----
 #### code-example ####
-snippet: 04.py
+snippet: 04+es.py
 ----
 #### text-block ####
 content:
@@ -139,7 +139,7 @@ Los nombres impresos en la consola son las fuentes que admiten los caracteres ci
 El tamaño del cuerpo es manejado por la función <code>fontSize()</code>. Acepta un valor numérico, ya sea entero o flotante. La función establece el tamaño en puntos PostScript, el valor predeterminado es 10 puntos.
 ----
 #### code-example ####
-snippet: 05.py
+snippet: 05+es.py
 ----
 image: text-fontSize.png
 ----
@@ -147,7 +147,7 @@ image: text-fontSize.png
 content: El color de de relleno y de trazo están definidos por <code>fill()</code> y <code>stroke()</code>
 ----
 #### code-example ####
-snippet: 06.py
+snippet: 06+es.py
 ----
 image: text-fill.png
 ----

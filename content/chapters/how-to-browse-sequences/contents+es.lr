@@ -305,7 +305,7 @@ Al igual que la construcción <code>while</code>, <code>for</code> puede ser muy
 En lugar de:
 ----
 #### code-example ####
-snippet: 24.py
+snippet: 24+es.py
 ----
 image: 4lines.png
 ----

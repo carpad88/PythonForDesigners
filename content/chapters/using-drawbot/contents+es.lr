@@ -49,7 +49,7 @@ class: large-image
 #### text-block ####
 content: Pega el siguiente código de Python en el área de código, presiona cmd+R y verás algunos resultados en el lienzo.
 #### code-example ####
-snippet: 01.py
+snippet: 01+es.py
 ----
 image: 
 ----

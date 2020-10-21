@@ -15,10 +15,15 @@
 {% endif %}
 
 <div>
+    {% if alt == 'en' %}
+        {% set pathFile = this.snippet | url %}
+    {% else %}
+        {% set pathFile = record.path | url(alt=alt) + alt + '/' + this.snippet + '/' %}
+    {% endif %}
     <div class='snippet-download-wrapper'>
-        <p class='snippet-download'><a download="{{ this.snippet }}" href="{{ this.snippet | url(alt='en') }}">.py</a></p>
+        <p class='snippet-download'><a download="{{ pathFile }}" href="{{ pathFile }}">.py</a></p>
     </div>
-    <pre data-src="{{ this.snippet | url(alt='en') }}"></pre>
+    <pre data-src="{{ pathFile }} "></pre>
 </div>
 
 {% if this.image or this.diagram %}

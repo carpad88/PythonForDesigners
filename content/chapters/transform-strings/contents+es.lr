@@ -89,7 +89,7 @@ En los casos anteriores, se agregarán espacios en blanco hasta que se alcance l
 <code>[amplitud]</code> también permite centrar una cadena de texto dentro de una cierta cantidad de caracteres:
 ----
 #### code-example ####
-snippet: 10.py
+snippet: 10+es.py
 ----
 #### text-block ####
 content: Puedes definir fácilmente qué carácter debe utilizar el intérprete:

@@ -1,1 +1,0 @@
-rect(x, y, ancho, alto)

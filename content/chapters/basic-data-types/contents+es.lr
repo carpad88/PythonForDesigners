@@ -167,7 +167,7 @@ content:
 content: Por defecto, <code>int()</code> usa una base 10 para la conversión. Si necesitas una base diferente, puedes indicar un segundo argumento opcional, como
 ----
 #### code-example ####
-snippet: 03.py
+snippet: 03+es.py
 ----
 #### exercise ####
 assignment: ¿Cómo representarías 30₁₀ usando la base 2, 8 y 16? Intenta utilizar el mismo método de conversión visual de los diagramas anteriores.

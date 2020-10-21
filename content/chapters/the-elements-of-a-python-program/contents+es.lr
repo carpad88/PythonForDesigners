@@ -164,7 +164,7 @@ content: + son sensibles a las mayúsculas y minúsculas (<code>anchoRect</code>
 content: Solicitemos directamente a Python estas palabras clave reservadas. Es una buena oportunidad para utilizar el intérprete interactivo de Python. Abre la terminal (Terminal.app en Mac), escribe python y presiona <code>enter</code>. El carácter antes del cursor debería haber cambiado de <code>$</code> a <code>>>></code> (también llamado comillas angulares). Ahora estás utilizando el intérprete interactivo de Python. Estas son las declaraciones que debes escribir en la consola del intérprete para obtener las palabras clave que estamos buscando:
 ----
 #### code-example ####
-snippet: 04.py
+snippet: 04+es.py
 ----
 #### text-block ####
 content: La lista incluye <code>'global'</code>, ¿no es así? Acabas de ejecutar tus primeras declaraciones de importación e impresión. Bien hecho. Entraremos en estos más adelante.

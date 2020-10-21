@@ -60,17 +60,17 @@ content:
 content: Dado que nos sumergiremos en las secuencias de texto en los próximos capítulos, por ahora limítate a los valores numéricos.
 ----
 #### code-example ####
-snippet: 01.py
+snippet: 01+es.py
 ----
 diagram: drawbot_canvas_1.svg
 ----
 #### code-example ####
-snippet: 02.py
+snippet: 02+es.py
 ----
 diagram: drawbot_canvas_2.svg
 ----
 #### code-example ####
-snippet: 03.py
+snippet: 03+es.py
 ----
 diagram: drawbot_canvas_3.svg
 ----
@@ -172,7 +172,7 @@ image: esOvals.png
 solution: fourOvals.py
 ----
 #### code-example ####
-snippet: 08.py
+snippet: 08+es.py
 ----
 diagram: line().svg
 ----
@@ -219,12 +219,12 @@ image: esZigZig.png
 solution: polyline.py
 ----
 #### code-example ####
-snippet: 13.py
+snippet: 13+es.py
 ----
 diagram: polygon().svg
 ----
 #### code-example ####
-snippet: 14.py
+snippet: 14+es.py
 ----
 image: polygon.png
 ----
@@ -239,7 +239,7 @@ solution: blackWhite.py
 content: El orden de ejecución del código, es decir, la disposición de sus declaraciones, refleja el orden en el que se dibujarán los elementos en el lienzo. Por ejemplo:
 ----
 #### code-example ####
-snippet: 15.py
+snippet: 15+es.py
 ----
 image: rect_oval.png
 ----
@@ -247,7 +247,7 @@ image: rect_oval.png
 content: da un resultado diferente de:
 ----
 #### code-example ####
-snippet: 16.py
+snippet: 16+es.py
 ----
 image: oval_rect.png
 ----
@@ -262,7 +262,7 @@ solution: circles+squares.py
 content: Toma también en cuenta que una vez que se establece un <code>fill()</code> o <code>stroke()</code>, se usa hasta que se realicen más cambios. Este script:
 ----
 #### code-example ####
-snippet: 17.py
+snippet: 17+es.py
 ----
 image: ovalsss.png
 ----
@@ -270,7 +270,7 @@ image: ovalsss.png
 content: es diferente de este:
 ----
 #### code-example ####
-snippet: 18.py
+snippet: 18+es.py
 ----
 image: ovalsss2.png
 ----

@@ -1,0 +1,1 @@
+secuencia[comienzo:final:avance]
