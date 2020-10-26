@@ -1,0 +1,165 @@
+_model: tutorial
+---
+_slug: rueda-de-color-hsl
+---
+title: Rueda de color HSL
+---
+sort_key: 1
+---
+og_image: visual-abstract-hsl.png
+---
+abstract: El tono, la saturación y la luminosidad son cualidades que usamos a menudo para describir los colores en nuestra vida diaria. Representemos este modelo de colores usando el módulo de Python `colorsys` y la función Drawbot `arc()`
+---
+visual_abstract: visual-abstract-hsl.png
+---
+body:
+
+#### text-block ####
+content: Este tutorial te guiará a través de los detalles de una visualización alternativa del modelo de color RGB, llamada [Matiz, saturación, y luminosidad (HSL)](https://en.wikipedia.org/wiki/HSL_and_HSV). Es muy utilizado en aplicaciones gráficas y, a diferencia de RGB, está más ligado a nuestra percepción. HSL (por su siglas en inglés) son cualidades que usamos a menudo para describir el color en nuestra vida diaria. RGB, en cambio, es más una descripción técnica de cómo se genera el color en una pantalla y se almacena en la memoria.
+#### image ####
+name: cylinder.png
+----
+class: small_image
+#### text-block ####
+content: Una característica peculiar del modelo HSL es la forma en que se distribuye el matiz en el espacio. De hecho, el matiz tiene una organización radial, los colores de cada tono están dispuestos en un corte radial. En cambio, la saturación y la luminosidad son dimensiones linea­les. Podemos representar la suma de dos dimensiones lineales y una dimensión angular usando un cilindro (con un agujero longitudinal).
+#### text-block ####
+content: Podemos suponer que los valores que pertenecen a las dimensiones lineales fluctúan entre 0 y 1, mientras que la dimensión angular –matiz– se mueve entre 0 y 360. Esta suposición no surge de una necesidad técnica –de hecho, vamos a utilizar puntos flotantes de 0 a 1 para el matiz también– pero creo que hará que nuestro código sea más accesible. Aquí puedes ver cómo vamos a crear nuestro factor de matiz a partir de una iteración sobre un ángulo de círculo completo, ejecuta el script y verifica la salida de la consola
+#### code-example ####
+snippet: hueRange+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: Considera también que las dos dimensiones lineales –saturación y luminosidad– se pueden intercambiar en el modelo HSL 3D, por lo que nuestro programa debería poder reconocerlo. Los siguientes cilindros son representaciones válidas del modelo de color HSL.
+#### image ####
+name: cd-roms.png
+----
+class: large_image
+#### text-block ####
+content: Pero, nuestra imagen de referencia de visualización es un disco bidimensional, ¿qué relación tiene con estos cilindros? El programa cortará el cilindro como una sierra y luego mostrará la cara donde se hizo el corte. Este procedimiento requerirá una variable independiente para que el usuario decida dónde cortar el cilindro.
+#### image ####
+name: cd-rom-saw.png
+----
+class: large_image
+#### text-block ####
+content: Comencemos a ensamblar algo de código. En primer lugar, debemos convertir el valor HSL en RGB, porque Drawbot solo puede aceptar valores RGB o CMYK. El módulo `colorsys` de la biblioteca estándar proporciona la función perfecta para esta necesidad `hls_to_rgb(h, l, s)`.
+#### code-example ####
+snippet: hls_func+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: `hls_to_rgb()` devuelve una tupla con tres puntos flotantes que podemos usar directamente en la función de relleno Drawbot. Esta operación se puede lograr de dos maneras, podemos recoger cada elemento usando la sintaxis de acceso para secuencias
+#### code-example ####
+snippet: tuple_access+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: o podemos usar el [desempaquetado iterable](https://www.python.org/dev/peps/pep-3132/)
+#### code-example ####
+snippet: iterable_unpacking+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: Ahora que sabemos cómo emparejar `hls_to_rgb()` con las funciones de dibujo de Drawbot, intentemos atravesar por separado las tres dimensiones diferentes del modelo de color HSL. La dimensión angular –matiz– se puede mostrar a través de un anillo de óvalos llenos de diferentes matices.
+#### code-example ####
+snippet: hue_traverse+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: Las dimensiones lineales –saturación y luminosidad– se pueden presentar mediante una serie de rayas. Observa la construcción condicional dentro del bucle `for`, ya es posible que el usuario cambie entre saturación y luminosidad.
+#### code-example ####
+snippet: linear_traverse+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: También podríamos mostrarlos a la vez, usando una estructura visual matricial
+#### code-example ####
+snippet: sat+lum+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: Si alineamos las tres salidas del script anterior usando el ángulo de matiz de 0 °, 120 ° y 240 °, obtendremos tres tablas de saturación/luminosidad para los canales RGB: rojo, verde y azul.
+#### image ####
+name: matrix-sat-lum.png
+----
+class: large_image
+#### image ####
+name: radial.png
+----
+class: small_image
+#### text-block ####
+content: ¿Cómo podemos mezclar las dimensiones linea­les con la dimensión angular? Una estructura visual radial puede servir para este propósito. Podemos hacerlo usando un bucle `for` anidado –del ejemplo de la matriz– combinado con el anillo de óvalos. En este ejemplo, cada anillo representa un valor de luminosidad diferente, mientras que cada segmento de óvalos representa un valor de matiz diferente. La saturación es constante. A continuación, se muestra el código utilizado para generar esta imagen.
+#### code-example ####
+snippet: radial+es.py
+----
+image: 
+----
+diagram: 
+#### image ####
+name: detail.png
+----
+class: small_image
+#### text-block ####
+content: Ya casi llegamos, pero todavía tenemos que averiguar cómo trazar la secuencia de anillos del ejemplo inicial. No podemos usar una pila de círculos con radio creciente porque no podemos llenar los círculos con varios colores. Pero podemos cortar los círculos en múltiples arcos –muy pequeños–. Si hacemos zoom en el ejemplo inicial, podemos ver cómo se organizan las diferentes trayectorias 🔎
+#### text-block ####
+content: Drawbot proporciona un grupo de [funciones](https://www.drawbot.com/content/shapes/drawingPath.html) para dibujar trazados Bézier en un lienzo. En este grupo destaca la función `arco()`, la herra­mienta exacta que necesitamos para solucionar este problema. La función `arco()` debe ser adoptada por las funciones `newPath()` y `drawPath()` para poder ubicarse en el lienzo. Sus argumentos son el punto central y el radio del círculo al que pertenece el arco, más los ángulos que definen el rango del arco y la dirección del dibujo –en sentido horario o antihorario–.
+#### image ####
+name: arcs.png
+----
+class: large_image
+#### text-block ####
+content: Si combinamos muchos arcos juntos con un trazo grueso, el resultado en el lienzo se parecerá a una dona plana, un anillo con muchos arcos coloreados con diferentes matices. Si sustituimos los óvalos de uno de los ejemplos anteriores, podemos obtener la estructura de múltiples anillos del ejemplo inicial, solo tenemos que asegurarnos un agujero para la rosquilla.
+#### image ####
+name: donuts.png
+----
+class: large_image
+#### code-example ####
+snippet: donut+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: En este punto solo nos faltan los subtítulos. Deben colocarse en el bucle `for` exterior, después de que cada parte con el mismo se haya colocado en el lienzo. Considerando la necesidad de una transformación matricial –para rotar el texto–, es esencial encapsular esta parte del código en un contexto `savedState()`
+#### code-example ####
+snippet: multi-ring-with-captions+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: Observa también la forma en que organicé los estilos de los diferentes elementos, los arcos y los subtítulos. Escribí dos funciones separadas en las que agrupé las funciones de propiedades (`font()`, `fill()`, `stroke()`, `strokeWidth()`) y definí algunos valores predeterminados en la interfaz de función. De esta manera puedes verter algo de lógica sin prohibir una aplicación diferente.
+#### text-block ####
+content: En este punto, el programa está funcionando completamente, pero todavía hay algunas cosas que se pueden mejorar. Son opcionales. Me gusta que mi código, incluso los scripts simples como este, sea lo más modular posible, lo que significa que me gustaría encapsular la dona HSL en una función para poder importarlo desde otro script de Python con bastante facilidad. De esta manera, también me veo obligado a ser muy preciso en el manejo del espacio de nombres de la función. La declaración `Def` al rescate, que cualquier llamada de función debe estar envuelta en una construcción condicional `if __name__ == "__main__":`. De esta manera, la dona se dibujará solo si el módulo se ejecuta explícitamente, no si se importa. Por último, pero no menos importante, asegúrate de que el script tenga un nombre que siga las reglas de identificación.
+#### text-block ####
+content: Además, me gusta escribir –y a menudo ejecutar– mis scripts desde fuera de la aplicación Drawbot, para aprovechar las funciones IDE como el formateo de código, los cursores múltiples y otras cosas que adoran los programadores. Por esta razón, tengo que importar explícitamente cualquier función de Drawbot que necesite en la parte superior del script. Además, el dibujo debe ser adoptado por las funciones `newDrawing()` y `endDrawing()` para iniciar la pila de dibujos y luego limpiarla. Guardar una imagen, especialmente si se recomienda iniciar el script desde la terminal; de lo contrario, no tendrá ningún comentario visual. Entonces, aquí puedes encontrar el resultado final.
+
+#### code-example ####
+snippet: HSLdonut+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: ¿Tienes curiosidad por saber cómo hice las ilustraciones de los cilindros de colores? Importé la función hslDonut () de otro módulo y la llamé varias veces con el siguiente script:
+#### code-example ####
+snippet: axonometry+es.py
+----
+image: 
+----
+diagram: 
+---
+hasTocNumber: yes

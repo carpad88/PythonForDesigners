@@ -1,0 +1,277 @@
+title: Mapa de calor (Kerning)
+---
+_slug: mapa-de-calor-kerning
+---
+visual_abstract: visual-abstract-kerning.png
+---
+abstract: Los mapas de calor son un clásico en la visualización de datos. Combinémoslos con los datos de kerning de un archivo UFO.
+---
+hasTocNumber: yes
+---
+sort_key: 2
+---
+body:
+
+#### text-block ####
+content:
+
+Un mapa de calor es una visualización típica de datos organizados en una matriz. La matriz generalmente se representa en forma de tablero de ajedrez, donde cada celda tiene un color y algo de texto. Recopilaremos datos de kerning de un archivo UFO, donde está organizado con una estructura diferente a una matriz. Significa que tene­mos que adaptar los datos a nuestra estructura visual. El objeto de kerning almacenado en archivos .ufo es un objeto similar a un diccionario, y cada clave es un par de nombres de glifos que están asociados con un valor de corrección de espaciado en UPM. Para el propósito de este tutorial, trabajaremos con Source Serif Pro Regular. Puede descargar el archivo del [repositorio oficial](https://github.com/adobe-fonts/source-serif-pro/tree/master).
+
+El kerning se visualizó con mapas de calor por primera vez en RoboFOG, a mediados de los 90. [Erik van Blokland](http://www.letterror.com/), uno de los desarro­lladores de la aplicación, escribió un script que permitía a los usua­rios crear mapas de calor a partir de los datos de kerning almacenados en la fuente. A través de alguna forma de interacción con la cuadrícula, fue posible acceder y verificar las correcciones de kerning. El Kerning puede ser una tarea tediosa, por lo que cualquier herra­mienta que ayude a administrar el proceso es bienvenida. El desa­rrollo de RoboFOG terminó en 1997, y cuando [Tal Leming](https://www.typesupply.com/about) creó [MetricsMachine](https://extensionstore.robofont.com/extensions/metricsMachine/), transfirió la visualización a la nueva aplicación. Hoy en día, MetricsMachine es un complemento para [Robofont](https://robofont.com/).
+
+El mapa de calor de kerning sigue siendo una herramienta válida para proporcionar una descripción general del estado de kerning en una fuente. Poder materializar y dar forma a contenidos _inmateriales_ es fundamental para observar, cuestionar tu trabajo y tomar decisiones. Durante el proceso de diseño, a menudo se te pide que tomes decisiones con información incompleta. Todas las herramientas de visua­lización que te brindan información pueden ayudarte a avanzar en tu tarea. Entonces, ¿cómo podemos hacer uno de estos con Drawbot? ¡Empecemos!
+
+#### image ####
+name: multiplicationMatrix.png
+----
+class: large_image
+#### text-block ####
+content:
+El contenido de nuestra cuadrícula estará informado por dos secuencias de nombres de glifos. Las combinaciones de los nombres formarán un par que se utilizará para consultar los datos de kerning. El comportamiento no es muy diferente al de una tabla de multiplicar.
+
+Primero que nada, necesitamos acceder a una fuente UFO con Python. Esto es posible a través de la API [fontParts](https://fontparts.robotools.dev), la sucesora de RoboFab. FontParts se incluye junto con la aplicación Drawbot, por lo que debe instalarlo tu mismo solo si estás ejecutando tu código desde la terminal. Abrir una fuente UFO es tan fácil como este ejemplo
+#### code-example ####
+snippet: open+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: El identificador `miFuente` apunta al objeto `RFont`. Usando la notación de puntos podemos acceder a lo que hay dentro: atributos (subobjetos) y métodos. Aquí puedes ver el diagrama modelo de un `RFont` (redibujado del original en los documentos de fontParts)
+
+#### image ####
+name: fontPartsObjects.png
+----
+class: large_image
+
+#### text-block ####
+content: En el fragmento anterior, abrimos un archivo .ufo, accedimos al objeto de información –y a los atributos familyName y styleName–, y al objeto de `kerning`. Un objeto de `kerning` se comporta más o menos como un diccionario regular de Python. Tiene métodos y funcionalidades adicionales. Puedes encontrar los detalles en la sección fontParts. Solo para darte una idea de cómo un objeto de `kerning` se parece a un diccionario, aquí tienes un ejemplo
+
+#### code-example ####
+snippet: dummyKerning+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: Si estás familiarizado con el diseño de tipos, probablemente ya sepas que el kerning hoy en día hace uso de grupos. El objetivo es reducir el número de pares (en miles). Los glifos similares, como todos los derivados acentuados de un glifo, se agrupan y se utilizan en el kerning. En lugar de almacenar esto
+
+#### code-example ####
+snippet: expanded+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: es más conveniente hacer esto
+#### code-example ####
+snippet: grouped+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: Es un ejemplo del principio [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) aplicado a la estructura de datos de fuentes. Y recuerda, la mejor manera de iterar sobre todos los pares clave-valor contenidos en un diccionario, es usar el método `.items()`, de esta manera
+
+#### code-example ####
+snippet: items+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: Entonces, finalmente podemos acceder e iterar sobre el diccionario de kerning de Source Serif Pro. En el siguiente fragmento, comentado en el bucle, encontrarás las cuatro opciones posibles que podríamos encontrar: grupo vs grupo, grupo vs glifo, glifo vs grupo, glifo vs glifo.
+
+#### code-example ####
+snippet: iterateOverKerning+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content:
+
+Solo se puede acceder de inmediato a la última opción con un par de nombres de glifos, lo que significa que tenemos que aplanar los grupos sobre la marcha y crear un diccionario de kerning extendido.
+
+Con el fin de ofrecer scripts con direcciones de lectura diferentes a las del latín, los grupos no usan (más) izquierda o derecha en sus nombres para evaluar su posición en el par, sino primero y segundo. Se puede acceder a los grupos a través del objeto de `grupos` de esta manera
+
+#### code-example ####
+snippet: groupAccess+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: De manera similar al objeto de `kerning`, el objeto de `grupo` también tiene una estructura de datos similar a un diccionario. Sus valores almacenan tuplas con los nombres de glifos que forman el grupo. A continuación, se muestra un ejemplo de cómo se podría implementar el proceso de expansión.
+#### code-example ####
+snippet: flatGroup+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: Si aplicamos el mismo proceso a Source Serif Pro, tenemos que considerar las cuatro combinaciones diferentes que el intérprete puede encontrar durante el ciclo. Podemos evitar excepciones utilizando algunas construcciones condicionales. Tal vez haya formas más inteligentes de acortar este código, pero me gusta que mi código sea lo más explícito y sencillo posible, de lo contrario, me sentiré tonto mientras lo leo. Recuerda el [Zen of Python](https://www.python.org/dev/peps/pep-0020/) y comprueba la impresio­nante cantidad de pares nuevos creados durante el proceso.
+#### code-example ####
+snippet: flatKerning+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: Para hacer el código más modular (y los fragmentos más cortos a partir de ahora), agrupé estas instrucciones en una función y las moví a un módulo llamado `flatKerning.py`. Ahora estamos listos para centrarnos en la visualización de la matriz. La mejor manera de lograr una estructura visual similar a una cuadrícula es mediante la itera­ción anidada. Vamos a construir los pares de nombres de glifos a través de dos bucles `for` anidados que iteran sobre una cadena con caracteres en mayúscula. En este peculiar caso, los caracteres y los nombres de los glifos coinciden. De lo contrario, puedes utilizar una lista con una secuencia de nombres de glifos. Quizás el código en sí mismo lo explique mejor
+
+#### code-example ####
+snippet: lettersMatrix+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: Probablemente se esté preguntando «¿qué es esa cosa `enumerate` de allí?». La respuesta es simple: es una forma muy pitónica de contar ciclos en un bucle mientras se navega por una secuencia. Aquí hay un ejemplo
+
+#### code-example ####
+snippet: enumerate+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: Usamos los índices para colocar los rectángulos sobre el lienzo, mientras que los nombres de los glifos se convierten en el argumento de la función `text()`. Coloqué arbitrariamente el `glifoY` como segunda letra después del `glifoX`. Podría ser una suposición del script, pero es una limitación fácil de abordar con un [atajo de expresión condicional](https://www.python.org/dev/peps/pep-0308/) (los programadores se refieren a ella también como operador ternario). Es una línea de `if-else`, aquí se compara con una construcción condicional estándar
+
+#### code-example ####
+snippet: ternary+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: que se puede aplicar a nuestro caso de la siguiente manera
+
+#### code-example ####
+snippet: lettersMatrixTernary+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: Para apreciar la diferencia entre las dos opciones, podemos mostrarlas una cerca de la otra (los subtítulos se agregan a mano)
+
+#### image ####
+name: lettersMatrixFunc.png
+----
+class: large_image
+#### code-example ####
+snippet: lettersMatrixFunc+es.py
+----
+image: 
+----
+diagram: 
+
+#### text-block ####
+content: Genial, ahora podemos dibujar nuestros nombres de glifos en una estructura visual similar a una cuadrícula y podemos acceder a los datos de kerning desde la fuente ufo. Intentemos hacerlo
+
+#### code-example ####
+snippet: keyError+es.py
+----
+image: 
+----
+diagram: 
+
+#### text-block ####
+content: Este código no funciona, genera una excepción. La consola debería imprimir un mensaje similar a este
+
+#### code-example ####
+snippet: keyErrorTraceback+es.txt
+----
+image: 
+----
+diagram: 
+
+#### text-block ####
+content: La razón es simple: no todos los pares posibles tienen una corrección almacenada en el diccionario de kerning. La mayoría de las posibles permutaciones de glifos de una fuente funcionan bien con espaciado regular. El kerning aborda las excepciones que no se pueden resolver con ajustes de métricas. Tenemos que reconocer esta posibilidad, ¿cómo es eso? Veo dos opciones en este punto: podemos verificar la inclusión del par en el diccionario de kerning con una construcción condicional, o podemos usar una extensión del diccionario regular Python llamado `defaultdict` (del módulo `collections`). _Defaultdicts_ permite establecer un valor predeterminado para regresar cuando una clave no está presente en el diccionario, como este
+
+#### code-example ####
+snippet: defaultdict+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: Esta opción refleja correctamente nuestra situación: si un par no está almacenado en el diccionario de kerning, significa que no necesita ninguna corrección. Una versión actualizada de nuestra función `flatKerning` se vería así
+
+#### code-example ####
+snippet: flatKerningDefault+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: Estamos listos para mostrar nuestro mapa de calor, usaremos el rojo para negativo, verde para positivo y negro para ninguna corrección. Debajo del mapa de calor puede encontrar dos versiones de la palabra AVATAR, con y sin kerning como referencia.
+#### code-example ####
+snippet: discreteKerningHeatMap+es.py
+----
+image: discreteHeatMap.png
+----
+diagram: 
+
+#### text-block ####
+content: Esta imagen ya te da mucha información. Básicamente, cualquier combinación de la palabra AVATAR se corrige en Source Serif Pro Regular. Sin embargo, los datos no se integran en la imagen. Una gran corrección como AV tiene el mismo peso visual que una corrección mucho más pequeña como AR. ¿Cómo podemos abordar esto? Una opción podría ser que el color de la celda refleje el tamaño del valor que se representa mediante algún tipo de interpolación.
+
+Para interpolar necesitamos extremos. Un extremo es fácil de encontrar, es 0 para las correcciones negativas y positivas. Tenemos que recopilar el otro extremo del diccionario de kerning. Pero, no podemos simplemente buscar el valor más alto (o más bajo) en el diccionario, también debemos asegurarnos de filtrar nuestra búsqueda por pares de interés para nuestra visualización. Aquí hay una demostración de cómo se podría implementar (usando datos ficticios)
+
+#### code-example ####
+snippet: findExtremes+es.py
+----
+image: 
+----
+diagram: 
+
+#### text-block ####
+content: Así es como funciona el código. Simulamos un bucle for anidado en la lista de comprensión utilizando una función `product()` del módulo `itertools`. Solo se mantienen las correcciones de pares con ambos nombres de glifos en la cadena `nombresGlifos`, los demás se descartan. Como puedes ver, -120 no está presente en la lista de correcciones. Luego, la lista se ordena y solo el primer y el último elemento se asignan a `minCorr` y `maxCorr`. Aunque es un método abreviado condicional, el número con el valor absoluto más alto se asigna al identificador `referencia`. Entonces podría usarse como extremo de interpolación (con un signo menos agregado para valores negativos). ¡Interpolemos! Aquí operamos una interpolación RGB lineal muy sencilla entre `BLANCO` y `ROJO` / `VERDE`.
+
+#### image ####
+name: interpolateHeatMap.png
+----
+class: large_image
+#### code-example ####
+snippet: interpolateHeatMap+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: Si has leído el [tutorial anterior](/es/tutoriales/rueda-de-color-hsl/), debes saber algo sobre el módulo `colorsys`. Luego, podrías experimentar con el modo de color HLS para representar los valores del diccionario de kerning. En este punto, solo necesitamos agregar algunos subtítulos y ajustar la tipografía para facilitar la lectura del gráfico.
+#### image ####
+name: kerningHeatMap.png
+----
+class: large_image
+#### code-example ####
+snippet: kerningHeatMap+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content:
+Si desea generar un montón de estas matrices a la vez, puede importar fácilmente la función `kerningHeatMap()` en un nuevo script e iterarlo sobre una carpeta de archivos .ufo. Eso es lo mejor de hacer que su código sea modular, puede usarlo fácilmente de diferentes maneras. El siguiente script asume esta estructura de carpetas:
+
+- `flatKerningDefault.py`
+- `kerningHeatMap.py`
+- `multipleHeatMaps.py`
+- carpeta de salida
+ + fontName-UC.pdf
+ + fontName-LC.pdf
+ + [...]
+- fuentes
+ + fontRegular.ufo
+ + fontItalic.ufo
+ + [...]
+
+#### code-example ####
+snippet: multipleOutputs+es.py
+----
+image: 
+----
+diagram: 
+#### text-block ####
+content: Si estás dispuesto a explorar más sobre este tema, puedes experimentar con diferentes relaciones entre números y colores, o habilitar diferentes conjuntos de glifos para los ejes `x` y `y`, o descartar el kerning por completo y usar esta visualización para otra cosa.

@@ -21,7 +21,7 @@
 
         <div class="basic-container">
 
-            {% for tutorial in site.get('/tutorials').children.order_by('sort_key') %}
+            {% for tutorial in site.get('/tutorials', alt='es').children.order_by('sort_key') %}
                 <div class='tutorial-li'>
                     {% set imageObj = tutorial.attachments.get(tutorial.visual_abstract) %}
                     {{ renderRasterImage(tutorial.visual_abstract, imageObj, '') }}
